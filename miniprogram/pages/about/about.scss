@@ -52,8 +52,9 @@
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.2);
 }
 
-.logo-text {
-  font-size: 48rpx;
+.logo-icon {
+  width: 80rpx;
+  height: 80rpx;
 }
 
 .brand-name {
@@ -91,7 +92,10 @@
 }
 
 .title-icon {
+  width: 36rpx;
+  height: 36rpx;
   margin-right: 12rpx;
+  flex-shrink: 0;
 }
 
 .card-content {
@@ -116,7 +120,8 @@
 }
 
 .service-icon {
-  font-size: 48rpx;
+  width: 52rpx;
+  height: 52rpx;
   margin-bottom: 12rpx;
 }
 
@@ -142,8 +147,10 @@
 }
 
 .contact-icon {
-  font-size: 40rpx;
+  width: 44rpx;
+  height: 44rpx;
   margin-right: 20rpx;
+  flex-shrink: 0;
 }
 
 .contact-info {

@@ -32,11 +32,11 @@
             </view>
             <view class="action-right">
               <view class="action-item" bindtap="editAddress" data-id="{{item.id}}">
-                <text class="action-icon">✏️</text>
+                <image class="action-icon" src="/images/icons/edit.svg" mode="aspectFit"></image>
                 <text class="action-text">编辑</text>
               </view>
               <view class="action-item delete" bindtap="deleteAddress" data-id="{{item.id}}">
-                <text class="action-icon">🗑️</text>
+                <image class="action-icon" src="/images/icons/delete.svg" mode="aspectFit"></image>
                 <text class="action-text">删除</text>
               </view>
             </view>
@@ -47,7 +47,7 @@
 
     <!-- 空状态 -->
     <view wx:else class="empty-state">
-      <text class="empty-icon">📍</text>
+      <image class="empty-icon" src="/images/icons/location.svg" mode="aspectFit"></image>
       <text class="empty-text">暂无收货地址</text>
       <text class="empty-tip">点击下方按钮添加地址</text>
     </view>

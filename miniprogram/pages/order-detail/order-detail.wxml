@@ -9,7 +9,7 @@
 
 <!-- 提交成功提示 -->
 <view class="success-tip" wx:if="{{showSuccessTip}}">
-  <text class="success-icon">✓</text>
+  <image class="success-icon" src="/images/icons/confirmed.svg" mode="aspectFit"></image>
   <text class="success-text">订单提交成功，我们会尽快联系您确认</text>
 </view>
 
@@ -18,7 +18,7 @@
     <!-- 订单状态头部 -->
     <view class="status-header status-bg-{{order.status}}">
       <view class="status-main">
-        <text class="status-icon">{{statusIconMap[order.status]}}</text>
+        <image class="status-icon" src="{{statusIconMap[order.status]}}" mode="aspectFit"></image>
         <text class="status-text">{{order.statusText}}</text>
       </view>
       <text class="status-desc" wx:if="{{order.status === 'pending'}}">商家正在确认您的订单</text>
@@ -61,7 +61,7 @@
           <text class="logistics-value">{{order.logistics.trackingNo}}</text>
         </view>
         <view class="logistics-latest" wx:if="{{order.logistics.latestInfo}}">
-          <text class="latest-icon">📍</text>
+          <image class="latest-icon" src="/images/icons/location.svg" mode="aspectFit"></image>
           <text class="latest-text">{{order.logistics.latestInfo}}</text>
         </view>
       </view>
@@ -78,7 +78,7 @@
           <text class="receiver-phone" bindtap="callPhone">{{order.receiver.phone}}</text>
         </view>
         <view class="receiver-address">
-          <text class="address-icon">📍</text>
+          <image class="address-icon" src="/images/icons/location.svg" mode="aspectFit"></image>
           <text class="address-text">{{order.receiver.address}}</text>
         </view>
       </view>

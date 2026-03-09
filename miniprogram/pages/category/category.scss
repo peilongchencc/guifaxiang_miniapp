@@ -313,8 +313,10 @@ page {
 }
 
 .custom-tip-icon {
-  font-size: 32rpx;
+  width: 36rpx;
+  height: 36rpx;
   margin-right: 12rpx;
+  flex-shrink: 0;
 }
 
 .custom-tip-text {

@@ -16,7 +16,7 @@
 
     <!-- 空状态 -->
     <view wx:if="{{footprintList.length === 0 && !loading}}" class="empty-state">
-      <text class="empty-icon">👣</text>
+      <image class="empty-icon" src="/images/icons/footprint.svg" mode="aspectFit"></image>
       <text class="empty-text">暂无浏览记录</text>
       <view class="go-shopping-btn" bindtap="goShopping">去逛逛</view>
     </view>

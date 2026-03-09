@@ -11,7 +11,7 @@
   <!-- 头部品牌信息 -->
   <view class="header-section">
     <view class="logo-wrapper">
-      <text class="logo-text">🏮</text>
+      <image class="logo-icon" src="/images/icons/logo.svg" mode="aspectFit"></image>
     </view>
     <view class="brand-name">贵发祥殡葬用品</view>
     <view class="brand-slogan">专业服务 · 用心守护</view>
@@ -22,7 +22,7 @@
     <!-- 公司简介 -->
     <view class="info-card">
       <view class="card-title">
-        <text class="title-icon">📖</text>
+        <image class="title-icon" src="/images/icons/book.svg" mode="aspectFit"></image>
         <text>公司简介</text>
       </view>
       <view class="card-content">
@@ -33,24 +33,24 @@
     <!-- 服务特色 -->
     <view class="info-card">
       <view class="card-title">
-        <text class="title-icon">⭐</text>
+        <image class="title-icon" src="/images/icons/star.svg" mode="aspectFit"></image>
         <text>服务特色</text>
       </view>
       <view class="service-list">
         <view class="service-item">
-          <view class="service-icon">🕐</view>
+          <image class="service-icon" src="/images/icons/clock.svg" mode="aspectFit"></image>
           <view class="service-name">24小时服务</view>
         </view>
         <view class="service-item">
-          <view class="service-icon">🚚</view>
+          <image class="service-icon" src="/images/icons/truck.svg" mode="aspectFit"></image>
           <view class="service-name">全城免费配送</view>
         </view>
         <view class="service-item">
-          <view class="service-icon">👨‍💼</view>
+          <image class="service-icon" src="/images/icons/expert.svg" mode="aspectFit"></image>
           <view class="service-name">专业指导</view>
         </view>
         <view class="service-item">
-          <view class="service-icon">✅</view>
+          <image class="service-icon" src="/images/icons/shield.svg" mode="aspectFit"></image>
           <view class="service-name">品质保障</view>
         </view>
       </view>
@@ -59,26 +59,26 @@
     <!-- 联系方式 -->
     <view class="info-card">
       <view class="card-title">
-        <text class="title-icon">📞</text>
+        <image class="title-icon" src="/images/icons/contact.svg" mode="aspectFit"></image>
         <text>联系我们</text>
       </view>
       <view class="contact-list">
         <view class="contact-item" bind:tap="callPhone">
-          <text class="contact-icon">📱</text>
+          <image class="contact-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
           <view class="contact-info">
             <view class="contact-label">服务热线</view>
             <view class="contact-value">{{contact.phone}}</view>
           </view>
         </view>
         <view class="contact-item" bind:tap="copyWechat">
-          <text class="contact-icon">💬</text>
+          <image class="contact-icon" src="/images/icons/wechat.svg" mode="aspectFit"></image>
           <view class="contact-info">
             <view class="contact-label">微信号</view>
             <view class="contact-value">{{contact.wechat}}</view>
           </view>
         </view>
         <view class="contact-item" bind:tap="openLocation">
-          <text class="contact-icon">📍</text>
+          <image class="contact-icon" src="/images/icons/location.svg" mode="aspectFit"></image>
           <view class="contact-info">
             <view class="contact-label">门店地址</view>
             <view class="contact-value">{{contact.address}}</view>

@@ -28,14 +28,14 @@ Component({
     
     // 商品分类入口
     categories: [
-      { id: 1, name: '寿衣', emoji: '👔' },
-      { id: 2, name: '骨灰盒', emoji: '🏺' },
-      { id: 3, name: '花圈', emoji: '💐' },
-      { id: 4, name: '祭祀用品', emoji: '🕯️' },
-      { id: 5, name: '丧葬服务', emoji: '🙏' },
-      { id: 6, name: '纸扎用品', emoji: '📜' },
-      { id: 7, name: '香烛', emoji: '🪔' },
-      { id: 8, name: '更多', emoji: '📋' }
+      { id: 1, name: '寿衣', icon: '/images/icons/garment.svg' },
+      { id: 2, name: '骨灰盒', icon: '/images/icons/urn.svg' },
+      { id: 3, name: '花圈', icon: '/images/icons/wreath.svg' },
+      { id: 4, name: '祭祀用品', icon: '/images/icons/ritual.svg' },
+      { id: 5, name: '丧葬服务', icon: '/images/icons/funeral-service.svg' },
+      { id: 6, name: '纸扎用品', icon: '/images/icons/paper.svg' },
+      { id: 7, name: '香烛', icon: '/images/icons/incense.svg' },
+      { id: 8, name: '更多', icon: '/images/icons/more.svg' }
     ],
     
     // 热销/推荐商品
@@ -48,10 +48,10 @@ Component({
     
     // 服务特色
     services: [
-      { id: 1, icon: '🕐', title: '24小时服务', desc: '全天候响应' },
-      { id: 2, icon: '🚚', title: '免费配送', desc: '全城免运费' },
-      { id: 3, icon: '👨‍💼', title: '专业指导', desc: '一对一咨询' },
-      { id: 4, icon: '✅', title: '品质保证', desc: '正品保障' }
+      { id: 1, icon: '/images/icons/clock.svg', title: '24小时服务', desc: '全天候响应' },
+      { id: 2, icon: '/images/icons/truck.svg', title: '免费配送', desc: '全城免运费' },
+      { id: 3, icon: '/images/icons/expert.svg', title: '专业指导', desc: '一对一咨询' },
+      { id: 4, icon: '/images/icons/shield.svg', title: '品质保证', desc: '正品保障' }
     ],
     
     // 联系信息（修改电话号码在此处）

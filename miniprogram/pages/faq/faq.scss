@@ -113,4 +113,13 @@
   padding: 20rpx 40rpx;
   border-radius: 40rpx;
   font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.contact-btn-icon {
+  width: 32rpx;
+  height: 32rpx;
+  flex-shrink: 0;
 }

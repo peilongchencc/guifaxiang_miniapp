@@ -5,7 +5,7 @@
   <!-- 1. 搜索栏 -->
   <view class="search-section">
     <view class="search-bar">
-      <image class="search-icon" src="/images/search-icon.png" mode="aspectFit"></image>
+      <image class="search-icon" src="/images/icons/search.svg" mode="aspectFit"></image>
       <input 
         class="search-input" 
         placeholder="搜索商品，如骨灰盒、寿衣" 
@@ -54,7 +54,7 @@
         data-id="{{item.id}}"
       >
         <view class="category-icon-wrapper">
-          <text class="category-emoji">{{item.emoji}}</text>
+          <image class="category-icon" src="{{item.icon}}" mode="aspectFit"></image>
         </view>
         <text class="category-name">{{item.name}}</text>
       </view>
@@ -102,7 +102,7 @@
     </view>
     <view class="service-grid">
       <view wx:for="{{services}}" wx:key="id" class="service-item">
-        <text class="service-icon">{{item.icon}}</text>
+        <image class="service-icon" src="{{item.icon}}" mode="aspectFit"></image>
         <text class="service-title">{{item.title}}</text>
         <text class="service-desc">{{item.desc}}</text>
       </view>
@@ -116,28 +116,28 @@
     </view>
     <view class="contact-list">
       <view class="contact-item" bindtap="onCallPhone">
-        <text class="contact-icon">📞</text>
+        <image class="contact-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
         <view class="contact-info">
           <text class="contact-label">服务热线</text>
           <text class="contact-value">{{contact.phone}}</text>
         </view>
-        <text class="contact-arrow">></text>
+        <text class="contact-arrow">›</text>
       </view>
       <view class="contact-item" bindtap="onContactWechat">
-        <text class="contact-icon">💬</text>
+        <image class="contact-icon" src="/images/icons/wechat.svg" mode="aspectFit"></image>
         <view class="contact-info">
           <text class="contact-label">微信联系</text>
           <text class="contact-value">{{contact.workTime}}</text>
         </view>
-        <text class="contact-arrow">></text>
+        <text class="contact-arrow">›</text>
       </view>
       <view class="contact-item" bindtap="onViewAddress">
-        <text class="contact-icon">📍</text>
+        <image class="contact-icon" src="/images/icons/location.svg" mode="aspectFit"></image>
         <view class="contact-info">
           <text class="contact-label">门店地址</text>
           <text class="contact-value">{{contact.address}}</text>
         </view>
-        <text class="contact-arrow">></text>
+        <text class="contact-arrow">›</text>
       </view>
     </view>
   </view>

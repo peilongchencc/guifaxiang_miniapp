@@ -29,7 +29,8 @@
   <view class="contact-section">
     <text class="contact-tip">没有找到答案？</text>
     <view class="contact-btn" bind:tap="contactService">
-      <text>📞 联系客服</text>
+      <image class="contact-btn-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
+      <text>联系客服</text>
     </view>
   </view>
 </view>

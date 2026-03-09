@@ -4,7 +4,7 @@
   <view class="navbar-content" style="height: {{menuButtonHeight}}px; margin-top: {{menuButtonTop - statusBarHeight}}px; padding-right: {{menuButtonRight + menuButtonWidth + 16}}px;">
     <!-- 搜索框 -->
     <view class="search-box">
-      <image class="search-icon" src="/images/search-icon.png" mode="aspectFit"></image>
+      <image class="search-icon" src="/images/icons/search.svg" mode="aspectFit"></image>
       <input 
         class="search-input" 
         type="text" 
@@ -48,9 +48,9 @@
     
     <!-- 寿衣系列定制提示条 -->
     <view wx:if="{{currentCategoryId === '1' && !isSearchMode}}" class="custom-tip-bar" bindtap="onCustomTipTap">
-      <text class="custom-tip-icon">✂️</text>
+      <image class="custom-tip-icon" src="/images/icons/scissors.svg" mode="aspectFit"></image>
       <text class="custom-tip-text">如您需要定制寿衣，请微信沟通</text>
-      <text class="custom-tip-arrow">></text>
+      <text class="custom-tip-arrow">›</text>
     </view>
     
     <!-- 按二级分类分组展示 -->

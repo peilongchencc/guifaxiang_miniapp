@@ -113,15 +113,15 @@
 <view class="bottom-bar" wx:if="{{!isLoading && product}}">
     <view class="bar-left">
       <view class="bar-item" bindtap="contactService">
-        <text class="bar-icon">📞</text>
+        <image class="bar-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
         <text class="bar-text">客服</text>
       </view>
       <view class="bar-item" bindtap="toggleFavorite">
-        <text class="bar-icon">{{isFavorite ? '❤️' : '🤍'}}</text>
+        <image class="bar-icon" src="{{isFavorite ? '/images/icons/heart.svg' : '/images/icons/heart-outline.svg'}}" mode="aspectFit"></image>
         <text class="bar-text">收藏</text>
       </view>
       <view class="bar-item" bindtap="shareProduct">
-        <text class="bar-icon">📤</text>
+        <image class="bar-icon" src="/images/icons/share.svg" mode="aspectFit"></image>
         <text class="bar-text">分享</text>
       </view>
     </view>

@@ -30,8 +30,7 @@ page {
   width: 36rpx;
   height: 36rpx;
   margin-right: 16rpx;
-  opacity: 0.7;
-  filter: brightness(0) invert(1);
+  flex-shrink: 0;
 }
 
 .search-input {
@@ -142,8 +141,9 @@ page {
   border: 1rpx solid rgba(200, 160, 82, 0.15);
 }
 
-.category-emoji {
-  font-size: 46rpx;
+.category-icon {
+  width: 48rpx;
+  height: 48rpx;
 }
 
 .category-name {
@@ -303,8 +303,10 @@ page {
 }
 
 .service-icon {
-  font-size: 48rpx;
+  width: 52rpx;
+  height: 52rpx;
   margin-bottom: 14rpx;
+  flex-shrink: 0;
 }
 
 .service-title {
@@ -349,8 +351,10 @@ page {
 }
 
 .contact-icon {
-  font-size: 40rpx;
+  width: 44rpx;
+  height: 44rpx;
   margin-right: 20rpx;
+  flex-shrink: 0;
 }
 
 .contact-info {

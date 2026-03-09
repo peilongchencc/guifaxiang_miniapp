@@ -56,13 +56,13 @@ Component({
       completed: '已完成',
       cancelled: '已取消'
     } as Record<string, string>,
-    // 状态对应的图标
+    // 状态对应的图标路径
     statusIconMap: {
-      pending: '⏳',
-      confirmed: '✓',
-      shipped: '🚚',
-      completed: '✅',
-      cancelled: '❌'
+      pending: '/images/icons/pending.svg',
+      confirmed: '/images/icons/confirmed.svg',
+      shipped: '/images/icons/shipped.svg',
+      completed: '/images/icons/completed.svg',
+      cancelled: '/images/icons/cancelled.svg'
     } as Record<string, string>
   },
 

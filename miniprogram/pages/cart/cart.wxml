@@ -19,7 +19,7 @@
   <view class="cart-content" wx:else>
       <!-- 提示信息 -->
       <view class="cart-notice" bindtap="resetAllSwipedItems">
-        <text class="notice-icon">💡</text>
+        <image class="notice-icon" src="/images/icons/tip.svg" mode="aspectFit"></image>
         <text class="notice-text">量大可咨询店主获取优惠价格</text>
       </view>
 
