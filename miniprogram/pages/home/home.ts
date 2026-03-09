@@ -18,11 +18,11 @@ Component({
     // 搜索关键词
     searchKeyword: '',
     
-    // 轮播图数据
+    // 轮播图数据（link 为点击后跳转路径，linkType: 'tab' 用 switchTab，'navigate' 用 navigateTo）
     banners: [
-      { id: 1, image: '/images/banner-1.png', title: '专业殡葬服务 用心守护每一程' },
-      { id: 2, image: '/images/banner-2.png', title: '全城免费配送 24小时响应' },
-      { id: 3, image: '/images/banner-3.png', title: '品质保证 价格优惠' }
+      { id: 1, image: '/images/banner-1.png', link: '/pages/about/about', linkType: 'navigate' },
+      { id: 2, image: '/images/banner-2.png', link: '/pages/category/category', linkType: 'tab' },
+      { id: 3, image: '/images/banner-3.png', link: '/pages/category/category', linkType: 'tab' }
     ],
     currentBanner: 0,
     
@@ -137,9 +137,23 @@ Component({
       this.setData({ currentBanner: e.detail.current })
     },
 
-    // 点击轮播图
-    onBannerTap() {
-      wx.showToast({ title: '轮播详情待开发', icon: 'none' })
+    /**
+     * 点击轮播图
+     *
+     * 根据 banner 配置的 linkType 跳转到对应页面：
+     * - tab 页面使用 switchTab
+     * - 普通页面使用 navigateTo
+     */
+    onBannerTap(e: WechatMiniprogram.TouchEvent) {
+      const id = e.currentTarget.dataset.id as number
+      const banner = this.data.banners.find(b => b.id === id)
+      if (!banner?.link) return
+
+      if (banner.linkType === 'tab') {
+        wx.switchTab({ url: banner.link })
+      } else {
+        wx.navigateTo({ url: banner.link })
+      }
     },
 
     // 点击分类
