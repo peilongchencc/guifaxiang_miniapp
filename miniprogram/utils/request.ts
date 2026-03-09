@@ -4,7 +4,7 @@
  */
 
 // API 基础地址
-const BASE_URL = 'https://guifaxiang.vip/api'
+const BASE_URL = 'https://api.guifaxiang.vip'
 
 // 通用响应格式
 interface ApiResponse<T = unknown> {

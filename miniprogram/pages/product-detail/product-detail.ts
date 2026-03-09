@@ -43,6 +43,12 @@ interface ProductDetailResponse {
 }
 
 Component({
+  properties: {
+    id: { type: String, value: '' },
+    name: { type: String, value: '' },
+    image: { type: String, value: '' }
+  },
+
   data: {
     product: null as ProductDetail | null,
     isLoggedIn: false,
@@ -93,12 +99,7 @@ Component({
 
     /** 从API加载商品详情 */
     async loadProductDetail() {
-      const pages = getCurrentPages()
-      const currentPage = pages[pages.length - 1] as WechatMiniprogram.Page.Instance<
-        Record<string, unknown>,
-        Record<string, unknown>
-      >
-      const { id } = currentPage.options || {}
+      const id = this.properties.id
 
       if (!id) {
         wx.showToast({ title: '商品ID不存在', icon: 'none' })
