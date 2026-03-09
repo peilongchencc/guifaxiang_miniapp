@@ -181,13 +181,12 @@ page {
 }
 
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16rpx;
 }
 
 .product-item {
-  width: calc(50% - 8rpx);
   background: #fff;
   border-radius: 16rpx;
   overflow: hidden;
