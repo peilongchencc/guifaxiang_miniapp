@@ -88,6 +88,8 @@ page {
   margin: 0 20rpx;
   border-radius: 16rpx;
   overflow: hidden;
+  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.07);
+  border: 1rpx solid rgba(200, 160, 82, 0.1);
 }
 
 // 左滑删除容器

@@ -19,34 +19,15 @@ page {
   box-sizing: border-box;
 }
 
-/* 顶部装饰元素 */
-.mine-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 300rpx;
-  background: linear-gradient(180deg, 
-    rgba(26, 31, 46, 0.08) 0%,
-    rgba(37, 43, 59, 0.05) 50%,
-    transparent 100%
-  );
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* 用户信息头部 */
+/* 用户信息头部（延续导航栏深色，形成英雄区域） */
 .user-header {
-  background: transparent;
-  margin: 10rpx 30rpx;
-  padding: 16rpx 30rpx;
+  background: linear-gradient(180deg, #252b3b 0%, #1e2436 50%, #f2f0ec 100%);
+  padding: 24rpx 40rpx 48rpx;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0;
   position: relative;
-  z-index: 1;
 }
 
 .avatar-wrapper {
@@ -64,8 +45,8 @@ page {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  border: 4rpx solid rgba(200, 160, 82, 0.4);
-  box-shadow: 0 4rpx 12rpx rgba(26, 31, 46, 0.15);
+  border: 3rpx solid rgba(200, 160, 82, 0.7);
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.3);
   transition: all 0.15s ease;
   overflow: hidden;
   object-fit: cover;
@@ -125,7 +106,7 @@ page {
 }
 
 .nickname-input {
-  color: #1a1f2e;
+  color: #fff;
   font-size: 36rpx;
   font-weight: bold;
   background: transparent;
@@ -161,11 +142,11 @@ page {
 }
 
 .nickname-input::placeholder {
-  color: rgba(26, 31, 46, 0.4);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .phone-display {
-  color: #999;
+  color: rgba(255, 255, 255, 0.55);
   font-size: 24rpx;
   margin-top: 12rpx;
 }
@@ -180,7 +161,7 @@ page {
 }
 
 .login-btn {
-  color: #1a1f2e;
+  color: #fff;
   font-size: 36rpx;
   font-weight: bold;
 }
@@ -190,7 +171,7 @@ page {
 }
 
 .login-tip {
-  color: #999;
+  color: rgba(255, 255, 255, 0.55);
   font-size: 24rpx;
   margin-top: 12rpx;
 }
@@ -198,17 +179,14 @@ page {
 
 /* 订单状态快捷入口 */
 .order-status-section {
-  margin: 20rpx 30rpx;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(248, 246, 242, 0.98) 100%
-  );
-  border-radius: 16rpx;
+  margin: -24rpx 30rpx 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
   padding: 30rpx 20rpx;
-  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.08);
-  border: 1rpx solid rgba(200, 160, 82, 0.12);
+  box-shadow: 0 8rpx 32rpx rgba(26, 31, 46, 0.12);
+  border: 1rpx solid rgba(200, 160, 82, 0.15);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .order-status-grid {
@@ -269,13 +247,10 @@ page {
 /* 常用功能区域 */
 .common-functions {
   margin: 20rpx 30rpx;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(248, 246, 242, 0.98) 100%
-  );
+  background: #fff;
   border-radius: 16rpx;
   padding: 30rpx;
-  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.08);
+  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.07);
   border: 1rpx solid rgba(200, 160, 82, 0.12);
   position: relative;
   z-index: 1;
@@ -339,13 +314,10 @@ page {
 /* 服务与帮助 */
 .service-help-section {
   margin: 20rpx 30rpx;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(248, 246, 242, 0.98) 100%
-  );
+  background: #fff;
   border-radius: 16rpx;
   padding: 30rpx;
-  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.08);
+  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.07);
   border: 1rpx solid rgba(200, 160, 82, 0.12);
   position: relative;
   z-index: 1;

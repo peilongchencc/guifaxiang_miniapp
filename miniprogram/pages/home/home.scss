@@ -11,36 +11,37 @@ page {
   overflow-y: hidden;
 }
 
-/* 搜索栏 */
+/* 搜索 + 品牌头部（英雄区域，延续导航栏深色） */
 .search-section {
-  padding: 20rpx 24rpx;
-  background: transparent;
+  padding: 16rpx 24rpx 32rpx;
+  background: linear-gradient(180deg, #252b3b 0%, #1e2436 60%, #f2f0ec 100%);
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 40rpx;
   padding: 16rpx 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+  border: 1rpx solid rgba(200, 160, 82, 0.35);
 }
 
 .search-icon {
   width: 36rpx;
   height: 36rpx;
   margin-right: 16rpx;
-  opacity: 0.5;
+  opacity: 0.7;
+  filter: brightness(0) invert(1);
 }
 
 .search-input {
   flex: 1;
   font-size: 28rpx;
-  color: #333;
+  color: #fff;
 }
 
 .search-placeholder {
-  color: #999;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .search-btn {
@@ -49,19 +50,21 @@ page {
   color: #fff;
   font-size: 26rpx;
   border-radius: 30rpx;
+  font-weight: 500;
 }
 
 /* 轮播图 */
 .banner-section {
   padding: 0 24rpx;
-  margin-bottom: 24rpx;
+  margin-bottom: 28rpx;
   position: relative;
 }
 
 .banner-swiper {
-  height: 300rpx;
-  border-radius: 16rpx;
+  height: 320rpx;
+  border-radius: 20rpx;
   overflow: hidden;
+  box-shadow: 0 8rpx 32rpx rgba(26, 31, 46, 0.18);
 }
 
 .banner-item {
@@ -81,37 +84,38 @@ page {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20rpx 24rpx;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  padding: 24rpx 28rpx;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
   color: #fff;
   font-size: 28rpx;
   font-weight: 500;
+  letter-spacing: 1rpx;
 }
 
 .banner-dots {
   display: flex;
   justify-content: center;
-  margin-top: 16rpx;
+  margin-top: 18rpx;
 }
 
 .dot {
   width: 12rpx;
   height: 12rpx;
   border-radius: 6rpx;
-  background: rgba(200, 160, 82, 0.3);
+  background: rgba(200, 160, 82, 0.25);
   margin: 0 6rpx;
   transition: all 0.3s;
 }
 
 .dot.active {
-  width: 28rpx;
+  width: 32rpx;
   background: #c8a052;
 }
 
 /* 分类入口 */
 .category-section {
   padding: 0 24rpx;
-  margin-bottom: 24rpx;
+  margin-bottom: 28rpx;
 }
 
 .category-grid {
@@ -119,8 +123,9 @@ page {
   flex-wrap: wrap;
   background: #fff;
   border-radius: 20rpx;
-  padding: 28rpx 12rpx;
-  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+  padding: 28rpx 12rpx 20rpx;
+  box-shadow: 0 4rpx 24rpx rgba(26, 31, 46, 0.08);
+  border: 1rpx solid rgba(200, 160, 82, 0.1);
 }
 
 .category-item {
@@ -131,26 +136,31 @@ page {
   padding: 16rpx 0;
 }
 
+.category-item:active .category-icon-wrapper {
+  transform: scale(0.93);
+}
+
 .category-icon-wrapper {
-  width: 96rpx;
-  height: 96rpx;
-  border-radius: 24rpx;
-  background: linear-gradient(145deg, #f8f6f2 0%, #f2ede4 100%);
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 26rpx;
+  background: linear-gradient(145deg, #f8f6f2 0%, #f0ebe0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 14rpx;
-  box-shadow: 0 4rpx 12rpx rgba(200, 160, 82, 0.15);
+  box-shadow: 0 4rpx 14rpx rgba(200, 160, 82, 0.18);
   transition: transform 0.2s, box-shadow 0.2s;
+  border: 1rpx solid rgba(200, 160, 82, 0.15);
 }
 
 .category-emoji {
-  font-size: 44rpx;
+  font-size: 46rpx;
 }
 
 .category-name {
   font-size: 24rpx;
-  color: #444;
+  color: #333;
   font-weight: 500;
 }
 
@@ -158,7 +168,7 @@ page {
 /* 热销推荐 */
 .product-section {
   padding: 0 24rpx;
-  margin-bottom: 24rpx;
+  margin-bottom: 28rpx;
 }
 
 .section-header {
@@ -166,17 +176,20 @@ page {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20rpx;
+  padding-left: 16rpx;
+  border-left: 6rpx solid #c8a052;
 }
 
 .section-title {
   font-size: 32rpx;
-  font-weight: 600;
+  font-weight: 700;
   color: #1a1f2e;
+  letter-spacing: 1rpx;
 }
 
 .section-more {
   font-size: 24rpx;
-  color: #999;
+  color: #c8a052;
 }
 
 .product-grid {
@@ -190,8 +203,9 @@ page {
   background: #fff;
   border-radius: 16rpx;
   overflow: hidden;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.07);
   position: relative;
+  border: 1rpx solid rgba(200, 160, 82, 0.08);
 }
 
 /* 加入购物车按钮 */
@@ -270,15 +284,16 @@ page {
 /* 服务特色 */
 .service-section {
   padding: 0 24rpx;
-  margin-bottom: 24rpx;
+  margin-bottom: 28rpx;
 }
 
 .service-grid {
   display: flex;
   background: #fff;
   border-radius: 16rpx;
-  padding: 24rpx 0;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  padding: 28rpx 0;
+  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.07);
+  border: 1rpx solid rgba(200, 160, 82, 0.08);
 }
 
 .service-item {
@@ -287,17 +302,28 @@ page {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
+}
+
+.service-item + .service-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 1rpx;
+  background: rgba(200, 160, 82, 0.2);
 }
 
 .service-icon {
   font-size: 48rpx;
-  margin-bottom: 12rpx;
+  margin-bottom: 14rpx;
 }
 
 .service-title {
   font-size: 26rpx;
-  color: #333;
-  font-weight: 500;
+  color: #1a1f2e;
+  font-weight: 600;
   margin-bottom: 6rpx;
 }
 
@@ -309,25 +335,30 @@ page {
 /* 联系方式 */
 .contact-section {
   padding: 0 24rpx;
-  margin-bottom: 24rpx;
+  margin-bottom: 28rpx;
 }
 
 .contact-list {
   background: #fff;
   border-radius: 16rpx;
   overflow: hidden;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4rpx 20rpx rgba(26, 31, 46, 0.07);
+  border: 1rpx solid rgba(200, 160, 82, 0.08);
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   padding: 28rpx 24rpx;
-  border-bottom: 1rpx solid #f5f5f5;
+  border-bottom: 1rpx solid rgba(200, 160, 82, 0.08);
 }
 
 .contact-item:last-child {
   border-bottom: none;
+}
+
+.contact-item:active {
+  background: #f8f6f2;
 }
 
 .contact-icon {
@@ -341,7 +372,8 @@ page {
 
 .contact-label {
   font-size: 28rpx;
-  color: #333;
+  color: #1a1f2e;
+  font-weight: 500;
   display: block;
 }
 
@@ -354,7 +386,8 @@ page {
 
 .contact-arrow {
   font-size: 28rpx;
-  color: #ccc;
+  color: #c8a052;
+  opacity: 0.6;
 }
 
 /* 底部留白 */

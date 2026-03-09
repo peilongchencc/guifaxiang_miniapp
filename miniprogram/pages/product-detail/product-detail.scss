@@ -248,14 +248,14 @@ page {
 
   .notice-box {
     padding: 24rpx;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, rgba(200, 160, 82, 0.06) 0%, rgba(248, 246, 242, 0.8) 100%);
     border-radius: 12rpx;
     border-left: 6rpx solid #c8a052;
 
     .notice-title {
       font-size: 28rpx;
       font-weight: 600;
-      color: #333;
+      color: #1a1f2e;
       display: block;
       margin-bottom: 16rpx;
     }

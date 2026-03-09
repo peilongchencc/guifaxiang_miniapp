@@ -6,8 +6,9 @@
   align-items: center;
   justify-content: center;
   padding: 24rpx 32rpx;
-  background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+  background: linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%);
   color: #fff;
+  border-bottom: 2rpx solid rgba(200, 160, 82, 0.4);
 }
 
 .success-icon {
@@ -68,7 +69,7 @@ page {
 }
 
 .status-bg-shipped {
-  background: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
 }
 
 .status-bg-completed {
