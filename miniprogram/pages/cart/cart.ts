@@ -27,7 +27,7 @@ Component({
   data: {
     cartItems: [] as CartItem[],
     hasItems: false,
-    emptyImage: '/images/cart-empty.png',
+    emptyImage: '/images/cart-empty.svg',
     selectAll: true,
     totalCount: 0,
     remark: '',
