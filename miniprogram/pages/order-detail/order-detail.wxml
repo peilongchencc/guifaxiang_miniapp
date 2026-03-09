@@ -3,7 +3,7 @@
   title="订单详情"
   back="{{true}}"
   color="white"
-  background="linear-gradient(135deg, rgba(130, 180, 170, 0.85) 0%, rgba(100, 160, 150, 0.95) 100%)"
+  background="linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%)"
   bindback="goBack"
 ></navigation-bar>
 

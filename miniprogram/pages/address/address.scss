@@ -4,9 +4,9 @@ page {
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, 
-    #d4e8e0 0%,
-    #e8f4f0 30%,
-    #f5f9f7 100%
+    #f2f0ec 0%,
+    #f2f0ec 30%,
+    #f2f0ec 100%
   );
 }
 
@@ -32,16 +32,16 @@ page {
   border-radius: 16rpx;
   padding: 24rpx;
   box-shadow: 0 4rpx 16rpx rgba(100, 150, 140, 0.1);
-  border: 1rpx solid rgba(130, 170, 160, 0.15);
+  border: 1rpx solid rgba(200, 160, 82, 0.12);
 }
 
 .address-item.default {
-  border-color: rgba(90, 138, 126, 0.4);
+  border-color: rgba(200, 160, 82, 0.4);
 }
 
 .address-content {
   padding-bottom: 20rpx;
-  border-bottom: 1rpx solid rgba(130, 170, 160, 0.1);
+  border-bottom: 1rpx solid rgba(200, 160, 82, 0.1);
 }
 
 .address-header {
@@ -64,11 +64,11 @@ page {
 
 .default-tag {
   font-size: 22rpx;
-  color: #5a8a7e;
-  background: rgba(90, 138, 126, 0.1);
+  color: #c8a052;
+  background: rgba(200, 160, 82, 0.1);
   padding: 4rpx 12rpx;
   border-radius: 8rpx;
-  border: 1rpx solid rgba(90, 138, 126, 0.3);
+  border: 1rpx solid rgba(200, 160, 82, 0.3);
 }
 
 .address-detail {
@@ -105,7 +105,7 @@ page {
 }
 
 .switch-track.active {
-  background: #5a8a7e;
+  background: #c8a052;
 }
 
 .switch-thumb {
@@ -200,13 +200,13 @@ page {
   align-items: center;
   justify-content: center;
   gap: 8rpx;
-  background: linear-gradient(135deg, #5a8a7e 0%, #4a7a6e 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   color: #fff;
   font-size: 32rpx;
   font-weight: bold;
   padding: 24rpx 0;
   border-radius: 48rpx;
-  box-shadow: 0 8rpx 20rpx rgba(90, 138, 126, 0.3);
+  box-shadow: 0 8rpx 20rpx rgba(200, 160, 82, 0.3);
 }
 
 .add-btn:active {

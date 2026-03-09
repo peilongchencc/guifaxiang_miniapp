@@ -31,10 +31,10 @@ page {
   flex-direction: column;
   background: linear-gradient(
     180deg,
-    #d4e8e0 0%,
-    #e8f4f0 30%,
-    #f0f8f5 60%,
-    #e5f2f0 100%
+    #f2f0ec 0%,
+    #f2f0ec 30%,
+    #f2f0ec 60%,
+    #f2f0ec 100%
   );
 }
 
@@ -129,11 +129,11 @@ page {
 
 .step-item.done .step-dot,
 .step-item.active .step-dot {
-  background: #5a8a7e;
+  background: #c8a052;
 }
 
 .step-item.active .step-dot {
-  box-shadow: 0 0 0 6rpx rgba(90, 138, 126, 0.3);
+  box-shadow: 0 0 0 6rpx rgba(200, 160, 82, 0.3);
 }
 
 .step-line {
@@ -147,7 +147,7 @@ page {
 }
 
 .step-item.done .step-line {
-  background: #5a8a7e;
+  background: #c8a052;
 }
 
 
@@ -164,7 +164,7 @@ page {
 
 .step-item.done .step-label,
 .step-item.active .step-label {
-  color: #5a8a7e;
+  color: #c8a052;
   font-weight: 500;
 }
 
@@ -191,7 +191,7 @@ page {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20rpx;
-  border-bottom: 1rpx solid rgba(130, 170, 160, 0.15);
+  border-bottom: 1rpx solid rgba(200, 160, 82, 0.1);
   margin-bottom: 20rpx;
 }
 
@@ -208,9 +208,9 @@ page {
 
 .copy-btn {
   font-size: 22rpx;
-  color: #5a8a7e;
+  color: #c8a052;
   padding: 6rpx 16rpx;
-  border: 1rpx solid #5a8a7e;
+  border: 1rpx solid #c8a052;
   border-radius: 20rpx;
 }
 
@@ -242,7 +242,7 @@ page {
   align-items: flex-start;
   margin-top: 16rpx;
   padding: 16rpx;
-  background: rgba(90, 138, 126, 0.08);
+  background: rgba(200, 160, 82, 0.08);
   border-radius: 8rpx;
 }
 
@@ -254,7 +254,7 @@ page {
 .latest-text {
   flex: 1;
   font-size: 24rpx;
-  color: #5a8a7e;
+  color: #c8a052;
   line-height: 1.5;
 }
 
@@ -278,7 +278,7 @@ page {
 
 .receiver-phone {
   font-size: 28rpx;
-  color: #5a8a7e;
+  color: #c8a052;
 }
 
 .receiver-address {
@@ -453,7 +453,7 @@ page {
 }
 
 .action-btn.primary {
-  background: linear-gradient(135deg, #6fb1b5 0%, #4c9092 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   color: #fff;
 }
 
@@ -479,7 +479,7 @@ page {
 
 .empty-btn {
   padding: 20rpx 60rpx;
-  background: linear-gradient(135deg, #6fb1b5 0%, #4c9092 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   color: #fff;
   font-size: 28rpx;
   border-radius: 40rpx;

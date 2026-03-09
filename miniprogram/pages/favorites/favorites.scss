@@ -4,10 +4,10 @@ page {
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, 
-    #d4e8e0 0%,
-    #e8f4f0 30%,
-    #f0f8f5 60%,
-    #e5f2f0 100%
+    #f2f0ec 0%,
+    #f2f0ec 30%,
+    #f2f0ec 60%,
+    #f2f0ec 100%
   );
 }
 
@@ -44,7 +44,7 @@ page {
 .go-shopping-btn {
   margin-top: 40rpx;
   padding: 20rpx 60rpx;
-  background: linear-gradient(135deg, #82b4aa 0%, #5a8a7e 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   color: #fff;
   font-size: 28rpx;
   border-radius: 40rpx;
@@ -63,7 +63,7 @@ page {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16rpx;
   padding: 20rpx;
-  box-shadow: 0 4rpx 12rpx rgba(100, 150, 140, 0.1);
+  box-shadow: 0 4rpx 12rpx rgba(26, 31, 46, 0.06);
 }
 
 .product-image {
@@ -100,7 +100,7 @@ page {
 
 .add-cart-btn {
   padding: 12rpx 24rpx;
-  background: linear-gradient(135deg, #82b4aa 0%, #5a8a7e 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   color: #fff;
   font-size: 24rpx;
   border-radius: 24rpx;

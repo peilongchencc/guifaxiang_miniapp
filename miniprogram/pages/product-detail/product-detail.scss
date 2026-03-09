@@ -3,7 +3,7 @@ page {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f5f5f5;
+  background: #f2f0ec;
 }
 
 // 加载状态
@@ -19,8 +19,8 @@ page {
 .loading-spinner {
   width: 60rpx;
   height: 60rpx;
-  border: 4rpx solid rgba(130, 180, 170, 0.2);
-  border-top-color: #82b4aa;
+  border: 4rpx solid rgba(200, 160, 82, 0.2);
+  border-top-color: #c8a052;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -90,9 +90,9 @@ page {
 
       .inquiry-price {
         font-size: 32rpx;
-        color: #5a9690;
+        color: #c8a052;
         font-weight: 600;
-        background: linear-gradient(135deg, rgba(90, 150, 144, 0.1) 0%, rgba(130, 180, 170, 0.15) 100%);
+        background: linear-gradient(135deg, rgba(200, 160, 82, 0.1) 0%, rgba(219, 185, 106, 0.15) 100%);
         padding: 8rpx 24rpx;
         border-radius: 8rpx;
 
@@ -155,7 +155,7 @@ page {
 
     .service-icon {
       font-size: 24rpx;
-      color: #82b4aa;
+      color: #c8a052;
     }
 
     .service-text {
@@ -250,7 +250,7 @@ page {
     padding: 24rpx;
     background: #f8f9fa;
     border-radius: 12rpx;
-    border-left: 6rpx solid #82b4aa;
+    border-left: 6rpx solid #c8a052;
 
     .notice-title {
       font-size: 28rpx;
@@ -330,8 +330,8 @@ page {
 
     .btn-cart {
       background: #fff;
-      color: #82b4aa;
-      border: 2rpx solid #82b4aa;
+      color: #c8a052;
+      border: 2rpx solid #c8a052;
 
       &.disabled {
         opacity: 0.6;
@@ -339,7 +339,7 @@ page {
     }
 
     .btn-buy {
-      background: linear-gradient(135deg, #82b4aa 0%, #6a9e94 100%);
+      background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
       color: #fff;
     }
   }
@@ -424,9 +424,9 @@ page {
 
       .popup-inquiry-price {
         font-size: 28rpx;
-        color: #5a9690;
+        color: #c8a052;
         font-weight: 600;
-        background: linear-gradient(135deg, rgba(90, 150, 144, 0.1) 0%, rgba(130, 180, 170, 0.15) 100%);
+        background: linear-gradient(135deg, rgba(200, 160, 82, 0.1) 0%, rgba(219, 185, 106, 0.15) 100%);
         padding: 6rpx 20rpx;
         border-radius: 6rpx;
       }
@@ -474,7 +474,7 @@ page {
 
         .spec-value-item {
           padding: 16rpx 32rpx;
-          background: #f5f5f5;
+          background: #f2f0ec;
           border-radius: 8rpx;
           font-size: 26rpx;
           color: #333;
@@ -482,9 +482,9 @@ page {
           transition: all 0.2s ease;
 
           &.selected {
-            background: rgba(130, 180, 170, 0.1);
-            border-color: #82b4aa;
-            color: #82b4aa;
+            background: rgba(200, 160, 82, 0.1);
+            border-color: #c8a052;
+            color: #c8a052;
           }
         }
       }
@@ -517,7 +517,7 @@ page {
           justify-content: center;
           font-size: 36rpx;
           color: #333;
-          background: #f5f5f5;
+          background: #f2f0ec;
 
           &.disabled {
             color: #ccc;
@@ -555,12 +555,12 @@ page {
 
       &.cart {
         background: #fff;
-        color: #82b4aa;
-        border: 2rpx solid #82b4aa;
+        color: #c8a052;
+        border: 2rpx solid #c8a052;
       }
 
       &.buy {
-        background: linear-gradient(135deg, #82b4aa 0%, #6a9e94 100%);
+        background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
         color: #fff;
       }
     }

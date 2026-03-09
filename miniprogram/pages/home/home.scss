@@ -3,12 +3,7 @@ page {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, 
-    #d4e8e0 0%,
-    #e8f4f0 30%,
-    #f5f9f7 60%,
-    #f8faf9 100%
-  );
+  background: #f2f0ec;
 }
 
 .scrollarea {
@@ -50,7 +45,7 @@ page {
 
 .search-btn {
   padding: 12rpx 28rpx;
-  background: linear-gradient(135deg, #82b4aa 0%, #5a9690 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   color: #fff;
   font-size: 26rpx;
   border-radius: 30rpx;
@@ -78,7 +73,7 @@ page {
 .banner-image {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #a8d4c8 0%, #7fb8aa 100%);
+  background: linear-gradient(135deg, #252b3b 0%, #1a1f2e 100%);
 }
 
 .banner-title {
@@ -103,14 +98,14 @@ page {
   width: 12rpx;
   height: 12rpx;
   border-radius: 6rpx;
-  background: rgba(90, 150, 144, 0.3);
+  background: rgba(200, 160, 82, 0.3);
   margin: 0 6rpx;
   transition: all 0.3s;
 }
 
 .dot.active {
   width: 28rpx;
-  background: #5a9690;
+  background: #c8a052;
 }
 
 /* 分类入口 */
@@ -140,12 +135,12 @@ page {
   width: 96rpx;
   height: 96rpx;
   border-radius: 24rpx;
-  background: linear-gradient(145deg, #f0f7f5 0%, #e0efe9 100%);
+  background: linear-gradient(145deg, #f8f6f2 0%, #f2ede4 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 14rpx;
-  box-shadow: 0 4rpx 12rpx rgba(90, 150, 144, 0.15);
+  box-shadow: 0 4rpx 12rpx rgba(200, 160, 82, 0.15);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -176,7 +171,7 @@ page {
 .section-title {
   font-size: 32rpx;
   font-weight: 600;
-  color: #333;
+  color: #1a1f2e;
 }
 
 .section-more {
@@ -206,7 +201,7 @@ page {
   bottom: 16rpx;
   width: 48rpx;
   height: 48rpx;
-  background: linear-gradient(135deg, #6b9e96 0%, #5a8a82 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -215,19 +210,19 @@ page {
   font-size: 36rpx;
   font-weight: 300;
   line-height: 1;
-  box-shadow: 0 2rpx 8rpx rgba(90, 138, 130, 0.3);
+  box-shadow: 0 2rpx 8rpx rgba(200, 160, 82, 0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .add-cart-btn:active {
   transform: scale(0.92);
-  box-shadow: 0 1rpx 4rpx rgba(90, 138, 130, 0.2);
+  box-shadow: 0 1rpx 4rpx rgba(200, 160, 82, 0.2);
 }
 
 .product-image {
   width: 100%;
   height: 280rpx;
-  background: linear-gradient(135deg, #e8f4f0 0%, #d4e8e0 100%);
+  background: linear-gradient(135deg, #f2f0ec 0%, #e8e4dc 100%);
 }
 
 .product-info {
@@ -249,9 +244,9 @@ page {
 .inquiry-price {
   display: inline-block;
   font-size: 26rpx;
-  color: #5a9690;
+  color: #a8832e;
   font-weight: 600;
-  background: linear-gradient(135deg, rgba(90, 150, 144, 0.1) 0%, rgba(130, 180, 170, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(200, 160, 82, 0.1) 0%, rgba(219, 185, 106, 0.15) 100%);
   padding: 6rpx 16rpx;
   border-radius: 6rpx;
   margin-top: 12rpx;
@@ -374,14 +369,14 @@ page {
   bottom: 200rpx;
   width: 110rpx;
   height: 110rpx;
-  background: linear-gradient(145deg, #5a9690 0%, #4a8680 100%);
+  background: linear-gradient(145deg, #c8a052 0%, #a8832e 100%);
   border-radius: 28rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: 
-    0 8rpx 32rpx rgba(74, 134, 128, 0.45),
+    0 8rpx 32rpx rgba(200, 160, 82, 0.45),
     0 2rpx 8rpx rgba(0, 0, 0, 0.1),
     inset 0 1rpx 0 rgba(255, 255, 255, 0.2);
   z-index: 100;
@@ -440,20 +435,20 @@ page {
   bottom: 0;
   border-radius: 28rpx;
   background: transparent;
-  box-shadow: 0 0 0 0 rgba(90, 150, 144, 0.5);
+  box-shadow: 0 0 0 0 rgba(200, 160, 82, 0.5);
   animation: pulse 2s infinite;
   pointer-events: none;
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(90, 150, 144, 0.5);
+    box-shadow: 0 0 0 0 rgba(200, 160, 82, 0.5);
   }
   70% {
-    box-shadow: 0 0 0 16rpx rgba(90, 150, 144, 0);
+    box-shadow: 0 0 0 16rpx rgba(200, 160, 82, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(90, 150, 144, 0);
+    box-shadow: 0 0 0 0 rgba(200, 160, 82, 0);
   }
 }
 
@@ -536,7 +531,7 @@ page {
 
 .wechat-id-value {
   font-size: 28rpx;
-  color: #5a9690;
+  color: #c8a052;
   font-weight: 500;
 }
 
@@ -547,7 +542,7 @@ page {
 .wechat-copy-btn {
   width: 100%;
   height: 80rpx;
-  background: linear-gradient(135deg, #5a9690 0%, #4a8680 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   border-radius: 40rpx;
   display: flex;
   align-items: center;

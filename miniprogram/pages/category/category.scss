@@ -3,12 +3,7 @@ page {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, 
-    #d4e8e0 0%,
-    #e8f4f0 30%,
-    #f0f8f5 60%,
-    #e5f2f0 100%
-  );
+  background: #f2f0ec;
 }
 
 /* 自定义导航栏 - 不在滚动容器内，自然固定 */
@@ -29,7 +24,7 @@ page {
   display: flex;
   align-items: center;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.92);
   border-radius: 32rpx;
   padding: 0 24rpx;
   position: relative;
@@ -116,14 +111,14 @@ page {
 .category-item.active {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.85) 100%
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.9) 100%
   );
-  color: #667eea;
+  color: #1a1f2e;
   font-weight: bold;
   font-size: 30rpx;
   box-shadow: 
-    2rpx 0 12rpx rgba(102, 126, 234, 0.15),
+    2rpx 0 12rpx rgba(26, 31, 46, 0.1),
     0 0 0 1rpx rgba(255, 255, 255, 0.3);
   border-radius: 0 16rpx 16rpx 0;
   margin: 0 8rpx 12rpx 0;
@@ -139,11 +134,11 @@ page {
   height: 60rpx;
   background: linear-gradient(
     180deg,
-    #667eea 0%,
-    #764ba2 100%
+    #c8a052 0%,
+    #a8832e 100%
   );
   border-radius: 0 4rpx 4rpx 0;
-  box-shadow: 2rpx 0 8rpx rgba(102, 126, 234, 0.4);
+  box-shadow: 2rpx 0 8rpx rgba(200, 160, 82, 0.4);
 }
 
 /* 右侧商品列表 */
@@ -156,8 +151,8 @@ page {
 .search-result-tip {
   padding: 20rpx 24rpx;
   font-size: 26rpx;
-  color: #667eea;
-  background-color: rgba(102, 126, 234, 0.1);
+  color: #a8832e;
+  background-color: rgba(200, 160, 82, 0.1);
   border-radius: 8rpx;
   margin: 20rpx 20rpx 0;
 }
@@ -186,7 +181,7 @@ page {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(102, 126, 234, 0.3) 50%,
+    rgba(200, 160, 82, 0.3) 50%,
     transparent 100%
   );
 }
@@ -195,7 +190,7 @@ page {
   padding: 0 24rpx;
   font-size: 28rpx;
   font-weight: 500;
-  color: #667eea;
+  color: #a8832e;
 }
 
 /* 商品网格 */
@@ -223,7 +218,7 @@ page {
   top: 110rpx;
   width: 40rpx;
   height: 40rpx;
-  background: linear-gradient(135deg, #6b9e96 0%, #5a8a82 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -232,7 +227,7 @@ page {
   font-size: 32rpx;
   font-weight: 300;
   line-height: 1;
-  box-shadow: 0 2rpx 6rpx rgba(90, 138, 130, 0.3);
+  box-shadow: 0 2rpx 6rpx rgba(200, 160, 82, 0.35);
   transition: transform 0.15s ease;
 }
 
@@ -249,7 +244,7 @@ page {
   width: 150rpx;
   height: 150rpx;
   border-radius: 12rpx;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   margin-bottom: 12rpx;
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
 }
@@ -289,8 +284,8 @@ page {
 .loading-spinner {
   width: 60rpx;
   height: 60rpx;
-  border: 4rpx solid rgba(102, 126, 234, 0.2);
-  border-top-color: #667eea;
+  border: 4rpx solid rgba(200, 160, 82, 0.2);
+  border-top-color: #c8a052;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -311,9 +306,9 @@ page {
   align-items: center;
   margin: 20rpx 20rpx 0;
   padding: 20rpx 24rpx;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(200, 160, 82, 0.1) 0%, rgba(168, 131, 46, 0.08) 100%);
   border-radius: 12rpx;
-  border: 1rpx solid rgba(102, 126, 234, 0.2);
+  border: 1rpx solid rgba(200, 160, 82, 0.25);
 }
 
 .custom-tip-icon {
@@ -324,13 +319,13 @@ page {
 .custom-tip-text {
   flex: 1;
   font-size: 26rpx;
-  color: #667eea;
+  color: #a8832e;
   font-weight: 500;
 }
 
 .custom-tip-arrow {
   font-size: 28rpx;
-  color: #667eea;
+  color: #a8832e;
   opacity: 0.6;
 }
 
@@ -425,7 +420,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
   border-radius: 40rpx;
   font-size: 28rpx;
   color: #fff;

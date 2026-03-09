@@ -1,6 +1,6 @@
 .page-container {
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #f2f0ec;
   padding-bottom: 120rpx;
 }
 
@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 88rpx 32rpx 24rpx;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%);
 }
 
 .nav-back {
@@ -79,13 +79,13 @@
 
 .faq-item.expanded {
   .faq-question {
-    background: #f8f9ff;
+    background: #f8f6f2;
   }
   .question-text {
-    color: #667eea;
+    color: #1a1f2e;
   }
   .arrow-icon {
-    color: #667eea;
+    color: #c8a052;
   }
 }
 
@@ -108,7 +108,7 @@
 }
 
 .contact-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%);
   color: #fff;
   padding: 20rpx 40rpx;
   border-radius: 40rpx;
