@@ -177,10 +177,6 @@
 
   </view>
 
-  <!-- 版本信息 -->
-  <view class="version-info">
-    <text>版本 1.0.0</text>
-  </view>
 </scroll-view>
 
 <!-- 微信联系弹窗组件 -->
