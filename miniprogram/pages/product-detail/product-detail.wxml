@@ -41,10 +41,10 @@
 
     <!-- 商品基本信息 -->
     <view class="product-info-section">
-      <!-- 价格区域：微信询价 -->
+      <!-- 价格区域 -->
       <view class="price-row">
         <view class="price-area">
-          <text class="inquiry-price clickable" bindtap="onInquiryTap">微信询价</text>
+          <text class="inquiry-price">面议</text>
         </view>
         <view class="sold-info">
           <text class="sold-text">已售 {{product.soldCount}} 件</text>
@@ -145,7 +145,7 @@
         <text class="popup-name">{{product.name}}</text>
         <!-- 弹窗内价格显示 -->
         <view class="popup-price-wrap">
-          <text class="popup-inquiry-price">微信询价</text>
+          <text class="popup-inquiry-price">面议</text>
         </view>
         <text class="popup-stock">库存: {{product.stock}} 件</text>
       </view>

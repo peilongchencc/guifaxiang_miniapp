@@ -222,8 +222,8 @@ page {
   height: 72rpx;
 }
 
-// 微信询价
-.inquiry-price {
+// 价格标签（面议）
+.product-price-tag {
   display: inline-block;
   font-size: 26rpx;
   color: #a8832e;
@@ -232,15 +232,6 @@ page {
   padding: 6rpx 16rpx;
   border-radius: 6rpx;
   margin-top: 12rpx;
-
-  &.clickable {
-    text-decoration: underline;
-    text-underline-offset: 4rpx;
-
-    &:active {
-      opacity: 0.7;
-    }
-  }
 }
 
 .product-sales {

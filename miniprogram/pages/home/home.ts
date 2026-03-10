@@ -211,13 +211,6 @@ Component({
     },
 
     /**
-     * 点击"微信询价"标签
-     */
-    onInquiryTap() {
-      this.setData({ showWechatModal: true })
-    },
-
-    /**
      * 查看门店地址
      * 
      * 使用 wx.openLocation 打开微信内置地图

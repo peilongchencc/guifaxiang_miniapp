@@ -80,7 +80,7 @@
         <image class="product-image" src="{{item.image}}" mode="aspectFill"></image>
         <view class="product-info">
           <text class="product-name">{{item.name}}</text>
-          <text class="inquiry-price clickable" catchtap="onInquiryTap">微信询价</text>
+          <text class="product-price-tag">面议</text>
           <text class="product-sales">已售{{item.sales}}件</text>
         </view>
         <!-- 加入购物车按钮 -->

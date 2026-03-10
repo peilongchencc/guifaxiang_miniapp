@@ -326,17 +326,21 @@ Component({
       wx.switchTab({ url: '/pages/cart/cart' })
     },
 
-    /** 联系客服 */
+    /** 联系客服：弹出操作菜单，支持电话或微信联系 */
     contactService() {
-      wx.makePhoneCall({
-        phoneNumber: this.data.contact.phone,
-        fail: () => showToast({ title: '拨打电话失败', type: 'none' })
+      wx.showActionSheet({
+        itemList: ['拨打电话', '微信联系'],
+        success: (res) => {
+          if (res.tapIndex === 0) {
+            wx.makePhoneCall({
+              phoneNumber: this.data.contact.phone,
+              fail: () => showToast({ title: '拨打电话失败', type: 'none' })
+            })
+          } else if (res.tapIndex === 1) {
+            this.setData({ showWechatModal: true })
+          }
+        }
       })
-    },
-
-    /** 点击微信询价 */
-    onInquiryTap() {
-      this.setData({ showWechatModal: true })
     },
 
     /** 关闭微信弹窗 */

@@ -47,10 +47,9 @@
     </view>
     
     <!-- 寿衣系列定制提示条 -->
-    <view wx:if="{{currentCategoryId === '1' && !isSearchMode}}" class="custom-tip-bar" bindtap="onCustomTipTap">
+    <view wx:if="{{currentCategoryId === '1' && !isSearchMode}}" class="custom-tip-bar">
       <image class="custom-tip-icon" src="/images/icons/scissors.svg" mode="aspectFit"></image>
-      <text class="custom-tip-text">如您需要定制寿衣，请微信沟通</text>
-      <text class="custom-tip-arrow">›</text>
+      <text class="custom-tip-text">如需定制寿衣，欢迎联系客服</text>
     </view>
     
     <!-- 按二级分类分组展示 -->
@@ -96,13 +95,5 @@
     </view>
   </scroll-view>
 </view>
-
-<!-- 微信联系弹窗组件 -->
-<wechat-modal 
-  visible="{{showWechatModal}}" 
-  wechat-id="{{contact.wechat}}"
-  qrcode="{{contact.wechatQrcode}}"
-  bind:close="onCloseWechatModal"
-/>
 
 <gold-toast id="gold-toast" />

@@ -52,15 +52,6 @@ Component({
     // 搜索关键词
     searchKeyword: '',
     
-    // 微信联系信息
-    contact: {
-      wechat: 'ccx13895617366',
-      wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png'
-    },
-    
-    // 微信二维码弹窗显示状态
-    showWechatModal: false,
-    
     // 左侧一级分类列表
     categories: [] as Category[],
 
@@ -295,18 +286,5 @@ Component({
       showToast({ title: '已加入购物车', duration: 800 })
     },
 
-    /**
-     * 点击定制寿衣提示条
-     */
-    onCustomTipTap() {
-      this.setData({ showWechatModal: true })
-    },
-
-    /**
-     * 关闭微信二维码弹窗
-     */
-    onCloseWechatModal() {
-      this.setData({ showWechatModal: false })
-    }
   }
 })

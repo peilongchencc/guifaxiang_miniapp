@@ -95,15 +95,6 @@ page {
         background: linear-gradient(135deg, rgba(200, 160, 82, 0.1) 0%, rgba(219, 185, 106, 0.15) 100%);
         padding: 8rpx 24rpx;
         border-radius: 8rpx;
-
-        &.clickable {
-          text-decoration: underline;
-          text-underline-offset: 4rpx;
-
-          &:active {
-            opacity: 0.7;
-          }
-        }
       }
     }
 

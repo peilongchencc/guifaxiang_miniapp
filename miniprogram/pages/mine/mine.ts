@@ -43,6 +43,12 @@ Component({
     },
     nicknameHighlight: false,
     avatarHighlight: false,
+    contact: {
+      phone: '13895617366',
+      wechat: 'ccx13895617366',
+      wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png'
+    },
+    showWechatModal: false,
   },
 
   lifetimes: {
@@ -277,6 +283,30 @@ Component({
     // 关于我们
     goToAbout() {
       wx.navigateTo({ url: '/pages/about/about' })
+    },
+
+    /**
+     * 联系客服：弹出操作菜单，支持电话或微信联系
+     */
+    contactService() {
+      wx.showActionSheet({
+        itemList: ['拨打电话', '微信联系'],
+        success: (res) => {
+          if (res.tapIndex === 0) {
+            wx.makePhoneCall({
+              phoneNumber: this.data.contact.phone,
+              fail: () => showToast({ title: '拨打电话失败', type: 'none' })
+            })
+          } else if (res.tapIndex === 1) {
+            this.setData({ showWechatModal: true })
+          }
+        }
+      })
+    },
+
+    /** 关闭微信弹窗 */
+    onCloseWechatModal() {
+      this.setData({ showWechatModal: false })
     },
 
     /**

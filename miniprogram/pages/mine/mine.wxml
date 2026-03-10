@@ -64,6 +64,13 @@
       <view class="section-title">服务与帮助</view>
     </view>
     <view class="service-list">
+      <view class="service-item" bindtap="contactService">
+        <view class="service-left">
+          <image class="service-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
+          <text class="service-name">联系客服</text>
+        </view>
+        <text class="service-arrow">›</text>
+      </view>
       <view class="service-item" bindtap="goToFAQ">
         <view class="service-left">
           <image class="service-icon" src="/images/icons/faq.svg" mode="aspectFit"></image>
@@ -189,5 +196,13 @@
     <view class="privacy-confirm-btn" bindtap="confirmPrivacyPolicy">我已阅读</view>
   </view>
 </view>
+
+<!-- 微信联系弹窗组件 -->
+<wechat-modal
+  visible="{{showWechatModal}}"
+  wechat-id="{{contact.wechat}}"
+  qrcode="{{contact.wechatQrcode}}"
+  bind:close="onCloseWechatModal"
+/>
 
 <gold-toast id="gold-toast" />
