@@ -1,38 +1,11 @@
+page {
+  background: #f2f0ec;
+}
+
 .page-container {
   min-height: 100vh;
   background: #f2f0ec;
   padding-bottom: 120rpx;
-}
-
-.nav-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 88rpx 32rpx 24rpx;
-  background: linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%);
-}
-
-.nav-back {
-  width: 60rpx;
-  height: 60rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.back-icon {
-  font-size: 40rpx;
-  color: #fff;
-}
-
-.nav-title {
-  font-size: 36rpx;
-  font-weight: 600;
-  color: #fff;
-}
-
-.nav-placeholder {
-  width: 60rpx;
 }
 
 .faq-list {

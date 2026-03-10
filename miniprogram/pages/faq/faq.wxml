@@ -1,13 +1,12 @@
-<view class="page-container">
-  <!-- 自定义导航栏 -->
-  <view class="nav-bar">
-    <view class="nav-back" bind:tap="goBack">
-      <text class="back-icon">←</text>
-    </view>
-    <text class="nav-title">常见问题</text>
-    <view class="nav-placeholder"></view>
-  </view>
+<navigation-bar
+  title="常见问题"
+  back="{{true}}"
+  color="white"
+  background="linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%)"
+  bindback="goBack"
+/>
 
+<view class="page-container">
   <!-- FAQ 列表 -->
   <view class="faq-list">
     <view 
