@@ -11,8 +11,7 @@
     "pages/footprints/footprints",
     "pages/address/address",
     "pages/faq/faq",
-    "pages/about/about",
-    "pages/logs/logs"
+    "pages/about/about"
   ],
   "window": {
     "navigationBarTextStyle": "black",
