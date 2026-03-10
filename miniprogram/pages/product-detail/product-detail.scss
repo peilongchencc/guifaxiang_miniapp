@@ -372,11 +372,13 @@ page {
       height: 180rpx;
       border-radius: 12rpx;
       flex-shrink: 0;
+      background-color: #f2f0ec;
     }
 
     .popup-info {
       flex: 1;
       margin-left: 24rpx;
+      padding-right: 60rpx;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -416,10 +418,10 @@ page {
 
     .popup-close {
       position: absolute;
-      top: 20rpx;
-      right: 20rpx;
-      width: 50rpx;
-      height: 50rpx;
+      top: 16rpx;
+      right: 16rpx;
+      width: 70rpx;
+      height: 70rpx;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -464,6 +466,28 @@ page {
             color: #c8a052;
           }
         }
+      }
+    }
+
+    .no-spec-tip {
+      display: flex;
+      align-items: center;
+      gap: 12rpx;
+      padding: 24rpx 20rpx;
+      margin-bottom: 20rpx;
+      background: linear-gradient(135deg, rgba(200, 160, 82, 0.06) 0%, rgba(248, 246, 242, 0.8) 100%);
+      border-radius: 12rpx;
+      border-left: 6rpx solid #c8a052;
+
+      .no-spec-icon {
+        font-size: 28rpx;
+        color: #c8a052;
+        font-weight: 600;
+      }
+
+      .no-spec-text {
+        font-size: 26rpx;
+        color: #666;
       }
     }
 

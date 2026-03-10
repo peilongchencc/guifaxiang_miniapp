@@ -61,6 +61,7 @@ Component({
     isAddingToCart: false,
     isFavorite: false,
     isLoading: true,
+    popupImageSrc: '',
     contact: {
       phone: '13895617366',
       phoneBackup: '13389582060',
@@ -124,8 +125,13 @@ Component({
             }))
           }
           
+          const popupImageSrc = (product.images && product.images.length > 0)
+            ? product.images[0]
+            : (product.image || '/images/default-product.png')
+
           this.setData({
             product,
+            popupImageSrc,
             selectedSpecText: this.getSelectedSpecText(product.specs || []),
             isLoading: false
           })
@@ -364,6 +370,11 @@ Component({
     /** 分享商品 */
     shareProduct() {
       showToast({ title: '分享功能开发中', type: 'none' })
+    },
+
+    /** 规格弹窗图片加载失败，回退到默认占位图 */
+    onPopupImageError() {
+      this.setData({ popupImageSrc: '/images/default-product.png' })
     },
 
     /** 返回上一页 */
