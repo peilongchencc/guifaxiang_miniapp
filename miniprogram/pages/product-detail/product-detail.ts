@@ -1,5 +1,6 @@
 // product-detail.ts
 // 商品详情页 - 从API获取数据
+import { showToast } from '../../utils/toast'
 
 import { get } from '../../utils/request'
 import { addFootprintApi } from '../../utils/footprint-api'
@@ -102,7 +103,7 @@ Component({
       const id = this.properties.id
 
       if (!id) {
-        wx.showToast({ title: '商品ID不存在', icon: 'none' })
+        showToast({ title: '商品ID不存在', type: 'none' })
         this.setData({ isLoading: false })
         return
       }
@@ -134,7 +135,7 @@ Component({
         }
       } catch (error) {
         console.error('加载商品详情失败:', error)
-        wx.showToast({ title: '加载失败', icon: 'none' })
+        showToast({ title: '加载失败', type: 'none' })
         this.setData({ isLoading: false })
       }
     },
@@ -249,7 +250,7 @@ Component({
         }
         app.removeFavorite(product.id)
         this.setData({ isFavorite: false })
-        wx.showToast({ title: '已取消收藏', icon: 'none' })
+        showToast({ title: '已取消收藏', type: 'none' })
       } else {
         // 添加收藏
         if (isLoggedIn) {
@@ -261,7 +262,7 @@ Component({
           image: product.images[0] || product.image
         })
         this.setData({ isFavorite: true })
-        wx.showToast({ title: '已收藏', icon: 'success' })
+        showToast({ title: '已收藏' })
       }
     },
 
@@ -291,7 +292,7 @@ Component({
         quantity: quantity
       })
 
-      wx.showToast({ title: '已加入购物车', icon: 'success', duration: 800 })
+      showToast({ title: '已加入购物车', duration: 800 })
 
       setTimeout(() => {
         this.setData({ isAddingToCart: false, showSpecPopup: false })
@@ -329,7 +330,7 @@ Component({
     contactService() {
       wx.makePhoneCall({
         phoneNumber: this.data.contact.phone,
-        fail: () => wx.showToast({ title: '拨打电话失败', icon: 'none' })
+        fail: () => showToast({ title: '拨打电话失败', type: 'none' })
       })
     },
 
@@ -345,7 +346,7 @@ Component({
 
     /** 分享商品 */
     shareProduct() {
-      wx.showToast({ title: '分享功能开发中', icon: 'none' })
+      showToast({ title: '分享功能开发中', type: 'none' })
     },
 
     /** 返回上一页 */

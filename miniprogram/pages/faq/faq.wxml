@@ -34,3 +34,5 @@
     </view>
   </view>
 </view>
+
+<gold-toast id="gold-toast" />

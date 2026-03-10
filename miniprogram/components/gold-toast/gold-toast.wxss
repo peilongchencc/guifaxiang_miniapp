@@ -1,0 +1,145 @@
+/* gold-toast.wxss */
+/* 品牌金色风格操作反馈提示，与小程序整体深色导航 + 金色主调保持一致 */
+
+/* ── 遮罩层（固定定位，覆盖全屏，不拦截点击） ── */
+.gt-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.gt-mask.gt-visible {
+  opacity: 1;
+}
+
+/* ── 提示框主体 ── */
+.gt-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 200rpx;
+  max-width: 280rpx;
+  padding: 48rpx 40rpx 44rpx;
+  border-radius: 24rpx;
+  transform: scale(0.85);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gt-mask.gt-visible .gt-box {
+  transform: scale(1);
+}
+
+/* 成功 - 深色底 + 金色图标，与页面导航栏风格呼应 */
+.gt-box.gt-success {
+  background: rgba(26, 31, 46, 0.94);
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.36), 0 0 0 1rpx rgba(200, 160, 82, 0.2);
+}
+
+/* 错误 - 深色底，与成功一致，避免色彩跳跃 */
+.gt-box.gt-error {
+  background: rgba(26, 31, 46, 0.94);
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.36), 0 0 0 1rpx rgba(231, 76, 60, 0.2);
+}
+
+/* 纯文字 - 深色底，横向加宽 */
+.gt-box.gt-none {
+  background: rgba(26, 31, 46, 0.94);
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.3);
+  min-width: 240rpx;
+  max-width: 480rpx;
+  padding: 36rpx 48rpx;
+}
+
+/* ── 图标容器 ── */
+.gt-icon-wrap {
+  margin-bottom: 28rpx;
+}
+
+/* ── 圆形图标底盘 ── */
+.gt-circle {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
+  position: relative;
+  box-shadow: 0 8rpx 24rpx rgba(200, 160, 82, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gt-circle-error {
+  background: linear-gradient(135deg, #e07060 0%, #c0392b 100%);
+  box-shadow: 0 8rpx 24rpx rgba(192, 57, 43, 0.4);
+}
+
+/* ── 对勾：两段 ── */
+.gt-check-stem {
+  position: absolute;
+  width: 8rpx;
+  height: 32rpx;
+  background: #fff;
+  border-radius: 4rpx;
+  bottom: 26rpx;
+  left: 28rpx;
+  transform: rotate(-45deg);
+  transform-origin: bottom center;
+}
+
+.gt-check-kick {
+  position: absolute;
+  width: 8rpx;
+  height: 50rpx;
+  background: #fff;
+  border-radius: 4rpx;
+  bottom: 24rpx;
+  left: 40rpx;
+  transform: rotate(40deg);
+  transform-origin: bottom center;
+}
+
+/* ── 叉号：两条线 ── */
+.gt-cross-line {
+  position: absolute;
+  width: 8rpx;
+  height: 54rpx;
+  background: #fff;
+  border-radius: 4rpx;
+  top: 50%;
+  left: 50%;
+  margin-top: -27rpx;
+  margin-left: -4rpx;
+}
+
+.gt-cross-l1 {
+  transform: rotate(45deg);
+}
+
+.gt-cross-l2 {
+  transform: rotate(-45deg);
+}
+
+/* ── 提示文字 ── */
+.gt-title {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: center;
+  letter-spacing: 1rpx;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* 纯文字模式字号稍大 */
+.gt-title-only {
+  font-size: 30rpx;
+}

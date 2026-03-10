@@ -49,6 +49,9 @@
       }
     ]
   },
+  "usingComponents": {
+    "gold-toast": "/components/gold-toast/gold-toast"
+  },
   "style": "v2",
   "rendererOptions": {
     "skyline": {

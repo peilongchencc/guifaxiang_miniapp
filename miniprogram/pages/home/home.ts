@@ -1,5 +1,6 @@
 // home.ts
 // 首页 - 包含搜索、轮播、分类、推荐商品、服务特色、联系方式
+import { showToast } from '../../utils/toast'
 import { get } from '../../utils/request'
 
 /** 热销商品类型 */
@@ -123,7 +124,7 @@ Component({
     onSearch() {
       const keyword = this.data.searchKeyword.trim()
       if (!keyword) {
-        wx.showToast({ title: '请输入搜索内容', icon: 'none' })
+        showToast({ title: '请输入搜索内容', type: 'none' })
         return
       }
       // 设置全局搜索关键词，跳转到分类页
@@ -188,7 +189,7 @@ Component({
       wx.makePhoneCall({
         phoneNumber: this.data.contact.phone.replace(/-/g, ''),
         fail: () => {
-          wx.showToast({ title: '拨打电话失败', icon: 'none' })
+          showToast({ title: '拨打电话失败', type: 'none' })
         }
       })
     },
@@ -230,7 +231,7 @@ Component({
         address: '宁夏银川市兴庆区立达国际建材城39号楼2层203室',
         scale: 16,
         fail: () => {
-          wx.showToast({ title: '打开地图失败', icon: 'none' })
+          showToast({ title: '打开地图失败', type: 'none' })
         }
       })
     },
@@ -269,11 +270,7 @@ Component({
       }
       app.addToCart(cartItem)
       
-      wx.showToast({
-        title: '已加入购物车',
-        icon: 'success',
-        duration: 800
-      })
+      showToast({ title: '已加入购物车', duration: 800 })
     }
   }
 })

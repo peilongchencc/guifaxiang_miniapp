@@ -1,0 +1,26 @@
+<!-- gold-toast.wxml -->
+<!-- 品牌风格的操作反馈提示组件，替代原生灰色 wx.showToast -->
+<view class="gt-mask {{visible ? 'gt-visible' : ''}}">
+  <view class="gt-box gt-{{type}}">
+
+    <!-- 成功图标：金色渐变圆形 + 手绘风格对勾 -->
+    <view wx:if="{{type === 'success'}}" class="gt-icon-wrap">
+      <view class="gt-circle">
+        <view class="gt-check-stem"></view>
+        <view class="gt-check-kick"></view>
+      </view>
+    </view>
+
+    <!-- 错误图标：深色圆形 + 叉号 -->
+    <view wx:elif="{{type === 'error'}}" class="gt-icon-wrap">
+      <view class="gt-circle gt-circle-error">
+        <view class="gt-cross-line gt-cross-l1"></view>
+        <view class="gt-cross-line gt-cross-l2"></view>
+      </view>
+    </view>
+
+    <!-- 无图标：仅文字，加宽 -->
+    <text class="gt-title {{type === 'none' ? 'gt-title-only' : ''}}">{{title}}</text>
+
+  </view>
+</view>

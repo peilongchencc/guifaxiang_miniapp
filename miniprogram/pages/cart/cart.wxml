@@ -117,3 +117,5 @@
     <view class="submit-btn" bindtap="submitOrder">提交订单</view>
   </view>
 </view>
+
+<gold-toast id="gold-toast" />

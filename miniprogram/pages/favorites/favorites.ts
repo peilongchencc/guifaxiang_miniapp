@@ -1,5 +1,6 @@
 // favorites.ts
 // 我的收藏页面
+import { showToast } from '../../utils/toast'
 
 const favApp = getApp<IAppOption>()
 
@@ -57,7 +58,7 @@ Component({
         image: item.image,
         quantity: 1
       })
-      wx.showToast({ title: '已加入购物车', icon: 'success' })
+      showToast({ title: '已加入购物车' })
     },
 
     /**
@@ -72,7 +73,7 @@ Component({
           if (res.confirm) {
             favApp.removeFavorite(id)
             this.loadFavorites()
-            wx.showToast({ title: '已取消收藏', icon: 'none' })
+            showToast({ title: '已取消收藏', type: 'none' })
           }
         }
       })

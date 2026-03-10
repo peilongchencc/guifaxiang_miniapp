@@ -1,5 +1,6 @@
 // category.ts
 // 分类页面 - 二级分类结构，数据从API获取
+import { showToast } from '../../utils/toast'
 
 import { get } from '../../utils/request'
 
@@ -147,7 +148,7 @@ Component({
         }
       } catch (error) {
         console.error('加载商品数据失败:', error)
-        wx.showToast({ title: '加载失败，请重试', icon: 'none' })
+        showToast({ title: '加载失败，请重试', type: 'none' })
         this.setData({ isLoading: false })
       }
     },
@@ -195,16 +196,12 @@ Component({
           this.setData({ groupedProducts: grouped, isLoading: false })
           
           if (searchResults.length === 0) {
-            wx.showToast({
-              title: '未找到相关商品',
-              icon: 'none',
-              duration: 2000
-            })
+            showToast({ title: '未找到相关商品', type: 'none', duration: 2000 })
           }
         }
       } catch (error) {
         console.error('搜索失败:', error)
-        wx.showToast({ title: '搜索失败，请重试', icon: 'none' })
+        showToast({ title: '搜索失败，请重试', type: 'none' })
         this.setData({ isLoading: false })
       }
     },
@@ -295,11 +292,7 @@ Component({
       }
       app.addToCart(cartItem)
       
-      wx.showToast({
-        title: '已加入购物车',
-        icon: 'success',
-        duration: 800
-      })
+      showToast({ title: '已加入购物车', duration: 800 })
     },
 
     /**

@@ -1,5 +1,6 @@
 // footprints.ts
 // 我的足迹页面
+import { showToast } from '../../utils/toast'
 
 import { fetchFootprints, removeFootprintApi, clearFootprintsApi } from '../../utils/footprint-api'
 
@@ -66,7 +67,7 @@ Component({
      */
     async loadFootprints() {
       if (!footprintApp.globalData.isLoggedIn) {
-        wx.showToast({ title: '请先登录', icon: 'none' })
+        showToast({ title: '请先登录', type: 'none' })
         return
       }
 
@@ -132,7 +133,7 @@ Component({
         image: item.image,
         quantity: 1
       })
-      wx.showToast({ title: '已加入购物车', icon: 'success' })
+      showToast({ title: '已加入购物车' })
     },
 
     /**
@@ -153,7 +154,7 @@ Component({
                 footprintList: newList,
                 total: this.data.total - 1
               })
-              wx.showToast({ title: '已删除', icon: 'none' })
+              showToast({ title: '已删除', type: 'none' })
             }
           }
         }
@@ -176,7 +177,7 @@ Component({
                 total: 0,
                 offset: 0
               })
-              wx.showToast({ title: '已清空', icon: 'none' })
+              showToast({ title: '已清空', type: 'none' })
             }
           }
         }

@@ -61,3 +61,5 @@
     <text>新增收货地址</text>
   </view>
 </view>
+
+<gold-toast id="gold-toast" />

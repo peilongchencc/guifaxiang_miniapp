@@ -158,3 +158,5 @@
   <text class="empty-text">订单不存在</text>
   <view class="empty-btn" bindtap="goBack">返回</view>
 </view>
+
+<gold-toast id="gold-toast" />

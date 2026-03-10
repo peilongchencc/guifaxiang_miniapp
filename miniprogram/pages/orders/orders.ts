@@ -1,4 +1,5 @@
 // orders.ts
+import { showToast } from '../../utils/toast'
 import { formatTime } from '../../utils/util'
 
 const app = getApp<IAppOption>()
@@ -69,7 +70,7 @@ Component({
           }
         })
       } else {
-        wx.showToast({ title: '复购失败', icon: 'error' })
+        showToast({ title: '复购失败', type: 'error' })
       }
     },
 

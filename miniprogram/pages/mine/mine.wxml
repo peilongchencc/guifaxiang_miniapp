@@ -189,3 +189,5 @@
     <view class="privacy-confirm-btn" bindtap="confirmPrivacyPolicy">我已阅读</view>
   </view>
 </view>
+
+<gold-toast id="gold-toast" />

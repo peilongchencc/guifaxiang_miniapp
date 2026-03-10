@@ -18,7 +18,7 @@ Component({
       wx.makePhoneCall({
         phoneNumber: this.data.contact.phone,
         fail: () => {
-          wx.showToast({ title: '拨打失败', icon: 'none' })
+          showToast({ title: '拨打失败', type: 'none' })
         }
       })
     },
@@ -42,7 +42,7 @@ Component({
         address: this.data.contact.address,
         scale: 16,
         fail: () => {
-          wx.showToast({ title: '打开地图失败', icon: 'none' })
+          showToast({ title: '打开地图失败', type: 'none' })
         }
       })
     },

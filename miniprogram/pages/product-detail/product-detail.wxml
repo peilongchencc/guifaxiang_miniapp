@@ -192,3 +192,5 @@
       <view class="popup-btn buy" bindtap="buyNow">立即下单</view>
   </view>
 </view>
+
+<gold-toast id="gold-toast" />

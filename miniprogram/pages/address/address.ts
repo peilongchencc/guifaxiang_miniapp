@@ -96,9 +96,9 @@ Component({
             
             if (result) {
               this.loadAddressListFromApi()
-              wx.showToast({ title: '添加成功', icon: 'success' })
+              showToast({ title: '添加成功' })
             } else {
-              wx.showToast({ title: '添加失败', icon: 'error' })
+              showToast({ title: '添加失败', type: 'error' })
             }
           } else {
             // 未登录，保存到本地
@@ -109,7 +109,7 @@ Component({
             const newList = [...this.data.addressList, localAddress]
             this.setData({ addressList: newList })
             wx.setStorageSync('addressList', newList)
-            wx.showToast({ title: '添加成功', icon: 'success' })
+            showToast({ title: '添加成功' })
           }
         },
         fail: (err) => {
@@ -175,9 +175,9 @@ Component({
 
             if (success) {
               this.loadAddressListFromApi()
-              wx.showToast({ title: '修改成功', icon: 'success' })
+              showToast({ title: '修改成功' })
             } else {
-              wx.showToast({ title: '修改失败', icon: 'error' })
+              showToast({ title: '修改失败', type: 'error' })
             }
           } else {
             // 本地更新
@@ -186,7 +186,7 @@ Component({
             )
             this.setData({ addressList: newList })
             wx.setStorageSync('addressList', newList)
-            wx.showToast({ title: '修改成功', icon: 'success' })
+            showToast({ title: '修改成功' })
           }
         },
         fail: (err) => {
@@ -214,9 +214,9 @@ Component({
         
         if (success) {
           this.loadAddressListFromApi()
-          wx.showToast({ title: '已设为默认', icon: 'success' })
+          showToast({ title: '已设为默认' })
         } else {
-          wx.showToast({ title: '设置失败', icon: 'error' })
+          showToast({ title: '设置失败', type: 'error' })
         }
       } else {
         // 本地设置默认
@@ -226,7 +226,7 @@ Component({
         }))
         this.setData({ addressList: newList })
         wx.setStorageSync('addressList', newList)
-        wx.showToast({ title: '已设为默认', icon: 'success' })
+        showToast({ title: '已设为默认' })
       }
     },
 
@@ -247,15 +247,15 @@ Component({
               
               if (success) {
                 this.loadAddressListFromApi()
-                wx.showToast({ title: '已删除', icon: 'success' })
+                showToast({ title: '已删除' })
               } else {
-                wx.showToast({ title: '删除失败', icon: 'error' })
+                showToast({ title: '删除失败', type: 'error' })
               }
             } else {
               const newList = this.data.addressList.filter(item => item.id !== id)
               this.setData({ addressList: newList })
               wx.setStorageSync('addressList', newList)
-              wx.showToast({ title: '已删除', icon: 'success' })
+              showToast({ title: '已删除' })
             }
           }
         }

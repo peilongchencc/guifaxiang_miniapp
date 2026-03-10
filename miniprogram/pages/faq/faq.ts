@@ -66,7 +66,7 @@ Component({
       wx.makePhoneCall({
         phoneNumber: '13895617366',
         fail: () => {
-          wx.showToast({ title: '拨打失败', icon: 'none' })
+          showToast({ title: '拨打失败', type: 'none' })
         }
       })
     },

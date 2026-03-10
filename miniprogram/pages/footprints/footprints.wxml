@@ -58,3 +58,5 @@
     </view>
   </view>
 </scroll-view>
+
+<gold-toast id="gold-toast" />

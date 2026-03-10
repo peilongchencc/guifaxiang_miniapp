@@ -1,4 +1,5 @@
 // mine.ts
+import { showToast } from '../../utils/toast'
 import { miniappLogin, phoneAuth, logout } from '../../utils/auth'
 
 const defaultAvatarUrl = '/images/default-avatar.png'
@@ -73,7 +74,7 @@ Component({
     // 未勾选协议时点击登录按钮
     onLoginBtnTap() {
       if (!this.data.agreedPrivacy) {
-        wx.showToast({ title: '请先阅读并同意用户隐私协议', icon: 'none' })
+        showToast({ title: '请先阅读并同意用户隐私协议', type: 'none' })
       }
     },
 
@@ -121,7 +122,7 @@ Component({
       const { code, errMsg } = e.detail
 
       if (errMsg === 'getPhoneNumber:fail user deny' || !code) {
-        wx.showToast({ title: '需要授权手机号才能登录', icon: 'none' })
+        showToast({ title: '需要授权手机号才能登录', type: 'none' })
         return
       }
 
@@ -142,10 +143,7 @@ Component({
       } catch (err) {
         wx.hideLoading()
         console.error('登录失败:', err)
-        wx.showToast({ 
-          title: err instanceof Error ? err.message : '登录失败', 
-          icon: 'none' 
-        })
+        showToast({ title: '登录失败，请重试', type: 'none' })
       }
     },
 
@@ -179,7 +177,7 @@ Component({
       wx.setStorageSync('isLoggedIn', true)
       wx.setStorageSync('userInfo', globalUserInfo)
       
-      wx.showToast({ title: '登录成功', icon: 'success' })
+      showToast({ title: '登录成功' })
       this.playLoginHighlightAnimation()
       
       // 登录成功后同步云端数据
@@ -207,7 +205,7 @@ Component({
       const { avatarUrl } = e.detail
       this.setData({ "userInfo.avatarUrl": avatarUrl })
       this.saveUserInfo()
-      wx.showToast({ title: '头像已更新', icon: 'success' })
+      showToast({ title: '头像已更新' })
     },
 
     // 输入昵称
@@ -239,7 +237,7 @@ Component({
             })
             appInstance.globalData.isLoggedIn = false
             appInstance.globalData.userInfo = null
-            wx.showToast({ title: '已退出登录', icon: 'success' })
+            showToast({ title: '已退出登录' })
           }
         }
       })
@@ -258,7 +256,7 @@ Component({
     // 我的足迹
     goToFootprints() {
       if (!appInstance.globalData.isLoggedIn) {
-        wx.showToast({ title: '请先登录', icon: 'none' })
+        showToast({ title: '请先登录', type: 'none' })
         return
       }
       wx.navigateTo({ url: '/pages/footprints/footprints' })

@@ -104,3 +104,5 @@
   qrcode="{{contact.wechatQrcode}}"
   bind:close="onCloseWechatModal"
 />
+
+<gold-toast id="gold-toast" />

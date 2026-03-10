@@ -1,5 +1,6 @@
 // wechat-modal.ts
 // 微信联系弹窗组件
+import { showToast } from '../../utils/toast'
 
 Component({
   properties: {
@@ -42,10 +43,10 @@ Component({
       wx.setClipboardData({
         data: this.properties.wechatId,
         success: () => {
-          wx.showToast({ title: '微信号已复制', icon: 'success' })
+          showToast({ title: '微信号已复制' })
         },
         fail: () => {
-          wx.showToast({ title: '复制失败', icon: 'none' })
+          showToast({ title: '复制失败', type: 'none' })
         }
       })
     }

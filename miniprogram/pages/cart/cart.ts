@@ -1,5 +1,6 @@
 // cart.ts
 // 购物车页面 - 展示已选商品，支持修改数量、删除、提交订单
+import { showToast } from '../../utils/toast'
 
 const cartApp = getApp<IAppOption>()
 
@@ -298,7 +299,7 @@ Component({
       const selectedItems = this.data.cartItems.filter(item => item.selected)
       
       if (selectedItems.length === 0) {
-        wx.showToast({ title: '请选择商品', icon: 'none' })
+        showToast({ title: '请选择商品', type: 'none' })
         return
       }
 
@@ -337,7 +338,7 @@ Component({
               })
             } else {
               this.setData({ isSubmitting: false })
-              wx.showToast({ title: '提交失败', icon: 'error' })
+              showToast({ title: '提交失败', type: 'error' })
             }
           }
         }

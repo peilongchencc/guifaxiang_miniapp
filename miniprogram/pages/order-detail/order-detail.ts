@@ -1,4 +1,5 @@
 // order-detail.ts
+import { showToast } from '../../utils/toast'
 import { formatTime } from '../../utils/util'
 import { fetchOrderDetail, cancelOrderApi, confirmReceiveApi } from '../../utils/order-api'
 
@@ -164,7 +165,7 @@ Component({
       wx.setClipboardData({
         data: this.data.order.id,
         success: () => {
-          wx.showToast({ title: '已复制', icon: 'success' })
+          showToast({ title: '已复制' })
         }
       })
     },
@@ -175,7 +176,7 @@ Component({
       wx.setClipboardData({
         data: this.data.order.logistics.trackingNo,
         success: () => {
-          wx.showToast({ title: '已复制', icon: 'success' })
+          showToast({ title: '已复制' })
         }
       })
     },
@@ -242,10 +243,10 @@ Component({
                   localOrder.status = 'cancelled'
                   wx.setStorageSync('orderHistory', app.globalData.orderHistory)
                 }
-                wx.showToast({ title: '订单已取消', icon: 'success' })
+                showToast({ title: '订单已取消' })
                 setTimeout(() => wx.navigateBack(), 1500)
               } else {
-                wx.showToast({ title: '取消失败', icon: 'error' })
+                showToast({ title: '取消失败', type: 'error' })
               }
             } else {
               // 未登录，仅更新本地
@@ -255,7 +256,7 @@ Component({
                 wx.setStorageSync('orderHistory', app.globalData.orderHistory)
               }
               wx.hideLoading()
-              wx.showToast({ title: '订单已取消', icon: 'success' })
+              showToast({ title: '订单已取消' })
               setTimeout(() => wx.navigateBack(), 1500)
             }
           }
@@ -289,9 +290,9 @@ Component({
                 }
                 // 刷新页面显示
                 this.loadOrder(order.id)
-                wx.showToast({ title: '已确认收货', icon: 'success' })
+                showToast({ title: '已确认收货' })
               } else {
-                wx.showToast({ title: '确认失败', icon: 'error' })
+                showToast({ title: '确认失败', type: 'error' })
               }
             } else {
               // 未登录，仅更新本地
@@ -302,7 +303,7 @@ Component({
               }
               wx.hideLoading()
               this.loadOrder(order.id)
-              wx.showToast({ title: '已确认收货', icon: 'success' })
+              showToast({ title: '已确认收货' })
             }
           }
         }
