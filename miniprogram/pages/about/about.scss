@@ -2,8 +2,7 @@
 $dark-bg: #1a1f2e;
 $dark-bg-2: #252b3b;
 $gold: #c8a052;
-$gold-light: rgba(200, 160, 82, 0.15);
-$gold-border: rgba(200, 160, 82, 0.2);
+$gold-border: rgba(200, 160, 82, 0.18);
 $page-bg: #f2f0ec;
 $card-bg: #fff;
 $text-primary: #1a1f2e;
@@ -26,17 +25,23 @@ $divider: #f0ede8;
   background: linear-gradient(135deg, $dark-bg 0%, $dark-bg-2 100%);
 }
 
+// 圆形返回按钮，与导航栏背景形成层次感
 .nav-back {
-  width: 60rpx;
-  height: 60rpx;
+  width: 72rpx;
+  height: 72rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  border: 1rpx solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
 }
 
 .back-icon {
-  font-size: 40rpx;
+  font-size: 36rpx;
   color: #fff;
+  line-height: 1;
 }
 
 .nav-title {
@@ -46,48 +51,59 @@ $divider: #f0ede8;
 }
 
 .nav-placeholder {
-  width: 60rpx;
+  width: 72rpx;
 }
 
-// ---- 头部品牌区域 ----
+// ---- 头部品牌视觉区（与 Web brand-visual 保持一致） ----
 .header-section {
-  background: linear-gradient(160deg, $dark-bg 0%, $dark-bg-2 100%);
-  padding: 40rpx 32rpx 0;
+  background: linear-gradient(160deg, $dark-bg 0%, #1e2537 60%, $dark-bg-2 100%);
+  padding: 48rpx 48rpx 0;
   text-align: center;
+  border-bottom: 1rpx solid rgba(200, 160, 82, 0.12);
 }
 
-.bv-badge {
-  width: 120rpx;
-  height: 120rpx;
-  background: linear-gradient(135deg, $gold 0%, #e8c870 100%);
-  border-radius: 28rpx;
-  margin: 0 auto 28rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8rpx 40rpx rgba(200, 160, 82, 0.45);
-}
-
+// 大号金色"贵"字，带光晕效果（对应 Web .bv-char）
 .bv-char {
-  font-size: 72rpx;
+  display: block;
+  font-size: 160rpx;
   font-weight: 700;
-  color: $dark-bg;
+  color: $gold;
   line-height: 1;
+  margin-bottom: 20rpx;
+  text-shadow: 0 0 80rpx rgba(200, 160, 82, 0.35);
 }
 
-.brand-name {
-  font-size: 40rpx;
+// 品牌名（对应 Web .bv-name）
+.bv-name {
+  font-size: 44rpx;
   font-weight: 700;
   color: #fff;
+  margin-bottom: 8rpx;
   letter-spacing: 2rpx;
-  margin-bottom: 14rpx;
 }
 
-.brand-slogan {
+// 副标题（对应 Web .bv-sub）
+.bv-sub {
   font-size: 24rpx;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.7;
-  margin-bottom: 40rpx;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 3rpx;
+  margin-bottom: 36rpx;
+}
+
+// 金色分隔线（对应 Web .bv-divider）
+.bv-divider {
+  width: 60rpx;
+  height: 2rpx;
+  background: $gold;
+  margin: 0 auto 28rpx;
+}
+
+// 格言（对应 Web .bv-motto）
+.bv-motto {
+  font-size: 26rpx;
+  color: $gold;
+  letter-spacing: 4rpx;
+  margin-bottom: 48rpx;
 }
 
 // 数据亮点横条
@@ -95,8 +111,8 @@ $divider: #f0ede8;
   display: flex;
   align-items: center;
   border-top: 1rpx solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.06);
-  margin: 0 -32rpx;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 0 -48rpx;
   padding: 32rpx 0;
 }
 
@@ -158,33 +174,33 @@ $divider: #f0ede8;
   }
 }
 
-// ---- 核心价值观网格 ----
+// ---- 核心价值观网格（2列2行，使用 CSS Grid 确保稳定渲染） ----
 .values-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20rpx;
 }
 
 .value-card {
-  width: calc(50% - 10rpx);
   background: #f8f6f2;
   border-radius: 16rpx;
   padding: 28rpx 24rpx;
   border: 1rpx solid $gold-border;
 }
 
+// 深色圆形图标（对应 Web .value-icon 深色圆形+金色内容风格）
 .value-badge {
-  width: 64rpx;
-  height: 64rpx;
-  background: linear-gradient(135deg, $gold 0%, #e8c870 100%);
-  border-radius: 16rpx;
+  width: 72rpx;
+  height: 72rpx;
+  background: linear-gradient(135deg, $dark-bg 0%, $dark-bg-2 100%);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 700;
-  color: $dark-bg;
-  margin-bottom: 16rpx;
+  color: $gold;
+  margin-bottom: 18rpx;
 }
 
 .value-name {

@@ -8,13 +8,13 @@
     <view class="nav-placeholder"></view>
   </view>
 
-  <!-- 头部品牌信息 -->
+  <!-- 头部品牌信息（与 Web 端 brand-visual 保持一致） -->
   <view class="header-section">
-    <view class="bv-badge">
-      <text class="bv-char">贵</text>
-    </view>
-    <view class="brand-name">贵发祥殡葬用品</view>
-    <view class="brand-slogan">深耕殡葬用品批发行业，做您可信赖的长期供应伙伴</view>
+    <text class="bv-char">贵</text>
+    <view class="bv-name">贵发祥</view>
+    <view class="bv-sub">殡葬用品服务平台</view>
+    <view class="bv-divider"></view>
+    <view class="bv-motto">诚信经营 · 品质至上</view>
 
     <!-- 数据亮点 -->
     <view class="highlights-strip">
@@ -24,7 +24,7 @@
       </view>
       <view class="highlight-divider"></view>
       <view class="highlight-item">
-        <view class="highlight-num">50+</view>
+        <view class="highlight-num">200+</view>
         <view class="highlight-label">主营品类</view>
       </view>
       <view class="highlight-divider"></view>
