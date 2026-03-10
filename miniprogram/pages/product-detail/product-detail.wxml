@@ -140,7 +140,10 @@
 <view class="spec-popup-mask {{showSpecPopup ? 'show' : ''}}" bindtap="hideSpecPopup"></view>
 <view class="spec-popup {{showSpecPopup ? 'show' : ''}}">
     <view class="popup-header">
-      <image class="popup-image" src="{{popupImageSrc}}" mode="aspectFill" binderror="onPopupImageError" />
+      <view class="popup-image-wrap">
+        <image class="popup-image" src="{{popupImageSrc}}" mode="aspectFill" binderror="onPopupImageError" />
+        <text class="popup-image-label" wx:if="{{popupImageFailed}}">暂无图片</text>
+      </view>
       <view class="popup-info">
         <text class="popup-name">{{product.name}}</text>
         <!-- 弹窗内价格显示 -->

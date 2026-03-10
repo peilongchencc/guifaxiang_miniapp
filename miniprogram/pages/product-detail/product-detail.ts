@@ -62,6 +62,7 @@ Component({
     isFavorite: false,
     isLoading: true,
     popupImageSrc: '',
+    popupImageFailed: false,
     contact: {
       phone: '13895617366',
       phoneBackup: '13389582060',
@@ -372,9 +373,12 @@ Component({
       showToast({ title: '分享功能开发中', type: 'none' })
     },
 
-    /** 规格弹窗图片加载失败，回退到默认占位图 */
+    /** 规格弹窗图片加载失败，回退到默认占位图并显示提示文字 */
     onPopupImageError() {
-      this.setData({ popupImageSrc: '/images/default-product.png' })
+      this.setData({
+        popupImageSrc: '/images/default-product.png',
+        popupImageFailed: true
+      })
     },
 
     /** 返回上一页 */
