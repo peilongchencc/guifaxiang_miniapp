@@ -11,7 +11,7 @@ Component({
     // 微信号
     wechatId: {
       type: String,
-      value: 'peilongchencc'
+      value: 'ccx13895617366'
     },
     // 微信二维码图片地址
     qrcode: {

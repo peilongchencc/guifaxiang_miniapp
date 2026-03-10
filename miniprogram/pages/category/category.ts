@@ -53,7 +53,7 @@ Component({
     
     // 微信联系信息
     contact: {
-      wechat: 'peilongchencc',
+      wechat: 'ccx13895617366',
       wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png'
     },
     

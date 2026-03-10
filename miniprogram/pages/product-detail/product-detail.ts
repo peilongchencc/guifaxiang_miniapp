@@ -62,7 +62,7 @@ Component({
     isLoading: true,
     contact: {
       phone: '13895617366',
-      wechat: 'peilongchencc',
+      wechat: 'ccx13895617366',
       wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png'
     },
     showWechatModal: false

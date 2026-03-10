@@ -5,7 +5,7 @@ Component({
   data: {
     contact: {
       phone: '13895617366',
-      wechat: 'peilongchencc',
+      wechat: 'ccx13895617366',
       address: '宁夏银川市兴庆区立达国际建材城39号楼2层203室'
     }
   },
