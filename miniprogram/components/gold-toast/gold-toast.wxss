@@ -70,63 +70,29 @@
   width: 96rpx;
   height: 96rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
-  position: relative;
-  box-shadow: 0 8rpx 24rpx rgba(200, 160, 82, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* 成功：金色，与购物车勾选图标颜色一致 */
+.gt-circle-success {
+  background: #c8a052;
+  box-shadow: 0 8rpx 24rpx rgba(200, 160, 82, 0.45);
+}
+
+/* 错误：暖红 */
 .gt-circle-error {
-  background: linear-gradient(135deg, #e07060 0%, #c0392b 100%);
+  background: #c0392b;
   box-shadow: 0 8rpx 24rpx rgba(192, 57, 43, 0.4);
 }
 
-/* ── 对勾：两段 ── */
-.gt-check-stem {
-  position: absolute;
-  width: 8rpx;
-  height: 32rpx;
-  background: #fff;
-  border-radius: 4rpx;
-  bottom: 26rpx;
-  left: 28rpx;
-  transform: rotate(-45deg);
-  transform-origin: bottom center;
-}
-
-.gt-check-kick {
-  position: absolute;
-  width: 8rpx;
-  height: 50rpx;
-  background: #fff;
-  border-radius: 4rpx;
-  bottom: 24rpx;
-  left: 40rpx;
-  transform: rotate(40deg);
-  transform-origin: bottom center;
-}
-
-/* ── 叉号：两条线 ── */
-.gt-cross-line {
-  position: absolute;
-  width: 8rpx;
-  height: 54rpx;
-  background: #fff;
-  border-radius: 4rpx;
-  top: 50%;
-  left: 50%;
-  margin-top: -27rpx;
-  margin-left: -4rpx;
-}
-
-.gt-cross-l1 {
-  transform: rotate(45deg);
-}
-
-.gt-cross-l2 {
-  transform: rotate(-45deg);
+/* ── 图标字符（✓ / ✕） ── */
+.gt-icon-text {
+  color: #fff;
+  font-size: 48rpx;
+  line-height: 1;
+  font-weight: 600;
 }
 
 /* ── 提示文字 ── */

@@ -3,19 +3,17 @@
 <view class="gt-mask {{visible ? 'gt-visible' : ''}}">
   <view class="gt-box gt-{{type}}">
 
-    <!-- 成功图标：金色渐变圆形 + 手绘风格对勾 -->
+    <!-- 成功图标：金色圆形 + ✓ 字符（与购物车勾选图标保持一致） -->
     <view wx:if="{{type === 'success'}}" class="gt-icon-wrap">
-      <view class="gt-circle">
-        <view class="gt-check-stem"></view>
-        <view class="gt-check-kick"></view>
+      <view class="gt-circle gt-circle-success">
+        <text class="gt-icon-text">✓</text>
       </view>
     </view>
 
-    <!-- 错误图标：深色圆形 + 叉号 -->
+    <!-- 错误图标：暖红圆形 + ✕ 字符 -->
     <view wx:elif="{{type === 'error'}}" class="gt-icon-wrap">
       <view class="gt-circle gt-circle-error">
-        <view class="gt-cross-line gt-cross-l1"></view>
-        <view class="gt-cross-line gt-cross-l2"></view>
+        <text class="gt-icon-text">✕</text>
       </view>
     </view>
 
