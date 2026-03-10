@@ -1,13 +1,13 @@
-<view class="page-container">
-  <!-- 自定义导航栏（与商品详情页保持一致） -->
-  <navigation-bar
-    title="关于我们"
-    back="{{true}}"
-    color="white"
-    background="linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%)"
-    bindback="goBack"
-  />
+<!-- 固定导航栏，始终置顶 -->
+<navigation-bar
+  title="关于我们"
+  back="{{true}}"
+  color="white"
+  background="linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%)"
+  bindback="goBack"
+/>
 
+<scroll-view class="scrollarea" scroll-y type="list" enhanced show-scrollbar="{{false}}">
   <!-- 头部品牌信息（PNG 图片，与 Web brand-visual 字体完全一致） -->
   <view class="header-section">
     <image
@@ -177,7 +177,7 @@
   <view class="version-info">
     <text>版本 1.0.0</text>
   </view>
-</view>
+</scroll-view>
 
 <!-- 微信联系弹窗组件 -->
 <wechat-modal

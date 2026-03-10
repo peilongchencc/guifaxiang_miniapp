@@ -10,10 +10,18 @@ $text-secondary: #666;
 $text-muted: #999;
 $divider: #f0ede8;
 
-// ---- 页面容器 ----
-.page-container {
-  min-height: 100vh;
+// ---- 页面根节点：flex 列布局，导航栏固定，内容区滚动 ----
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: $page-bg;
+}
+
+// ---- 可滚动内容区 ----
+.scrollarea {
+  flex: 1;
+  overflow: hidden;
 }
 
 
