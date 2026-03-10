@@ -57,9 +57,10 @@ Component({
     
     // 联系信息（修改电话号码在此处）
     contact: {
-      phone: '13895617366',  // 服务热线号码，点击后会调用 wx.makePhoneCall
-      wechat: 'ccx13895617366',  // 微信号
-      wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png',  // 微信二维码图片
+      phone: '13895617366',          // 主号，直接触发拨号时使用
+      phoneBackup: '13389582060',    // 备用号，供用户在号码选择菜单中选择
+      wechat: 'ccx13895617366',
+      wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png',
       workTime: '24小时服务',
       address: '宁夏回族自治区银川市兴庆区立达国际建材城39号楼2层203室'
     },
@@ -179,25 +180,50 @@ Component({
     },
 
     /**
-     * 拨打服务热线
-     * 
-     * 使用 wx.makePhoneCall 调起系统拨号界面
-     * 注意：弹窗文案 "拨打xxx?" 是系统原生弹窗，无法自定义
-     * 开发者工具中显示 "【仅为模拟】"，真机上会直接调起拨号
+     * 拨打服务热线（直接拨主号，用于联系方式区"服务热线"行）
      */
     onCallPhone() {
       wx.makePhoneCall({
-        phoneNumber: this.data.contact.phone.replace(/-/g, ''),
-        fail: () => {
-          showToast({ title: '拨打电话失败', type: 'none' })
+        phoneNumber: this.data.contact.phone,
+        fail: () => showToast({ title: '拨打电话失败', type: 'none' })
+      })
+    },
+
+    /**
+     * 悬浮客服按钮：弹出操作菜单，支持电话或微信联系
+     */
+    onFloatServiceTap() {
+      wx.showActionSheet({
+        itemList: ['拨打电话', '微信联系'],
+        success: (res) => {
+          if (res.tapIndex === 0) {
+            this.showPhoneChoice()
+          } else if (res.tapIndex === 1) {
+            this.setData({ showWechatModal: true })
+          }
         }
       })
     },
 
     /**
-     * 微信联系
-     * 
-     * 显示微信二维码弹窗，用户可长按识别或复制微信号
+     * 弹出号码选择菜单（主号 / 备用号）
+     */
+    showPhoneChoice() {
+      const { phone, phoneBackup } = this.data.contact
+      wx.showActionSheet({
+        itemList: [`${phone}（主号）`, `${phoneBackup}（备用）`],
+        success: (res) => {
+          const phoneNumber = res.tapIndex === 0 ? phone : phoneBackup
+          wx.makePhoneCall({
+            phoneNumber,
+            fail: () => showToast({ title: '拨打电话失败', type: 'none' })
+          })
+        }
+      })
+    },
+
+    /**
+     * 微信联系（联系方式区"微信联系"行）
      */
     onContactWechat() {
       this.setData({ showWechatModal: true })

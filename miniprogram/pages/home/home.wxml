@@ -147,7 +147,7 @@
 </scroll-view>
 
 <!-- 悬浮客服按钮 -->
-<view class="float-service" bindtap="onCallPhone">
+<view class="float-service" bindtap="onFloatServiceTap">
   <view class="float-icon-wrapper">
     <view class="float-headset"></view>
   </view>
