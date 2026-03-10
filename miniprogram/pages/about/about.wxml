@@ -8,13 +8,13 @@
     bindback="goBack"
   />
 
-  <!-- 头部品牌信息（与 Web 端 brand-visual 保持一致） -->
+  <!-- 头部品牌信息（PNG 图片，与 Web brand-visual 字体完全一致） -->
   <view class="header-section">
-    <text class="bv-char">贵</text>
-    <view class="bv-name">贵发祥</view>
-    <view class="bv-sub">殡葬用品服务平台</view>
-    <view class="bv-divider"></view>
-    <view class="bv-motto">诚信经营 · 品质至上</view>
+    <image
+      class="brand-visual-img"
+      src="/images/brand-visual.png"
+      mode="widthFix"
+    />
 
     <!-- 数据亮点 -->
     <view class="highlights-strip">
@@ -40,9 +40,13 @@
 
     <!-- 公司简介 -->
     <view class="info-card">
-      <view class="card-title">公司简介</view>
-      <view class="card-text">
+      <view class="section-tag">公司简介</view>
+      <view class="card-title-lg">贵发祥殡葬用品服务平台</view>
+      <view class="card-text card-lead">
         贵发祥是一家深耕殡葬行业逾30年的专业批发服务平台，凭借丰富的行业积累和稳定的供应链资源，为全国各地的殡仪馆、殡葬用品店、公墓及陵园提供可靠的产品与服务。
+      </view>
+      <view class="card-text">
+        我们深知殡葬行业的特殊性——每一件产品背后，都承载着对逝者的尊重与对家属的慰藉。因此，我们在产品品质上严格把关，在服务上追求专业与用心，致力于成为殡葬行业值得信赖的长期供应伙伴。
       </view>
       <view class="card-text">
         主营品类涵盖实木骨灰盒、寿衣寿被、冰棺、香烛祭祀用品、殡葬礼仪用品、墓地装饰用品等，货源充足，品类齐全，支持全国配送。
@@ -50,76 +54,86 @@
     </view>
 
     <!-- 核心价值观 -->
-    <view class="info-card">
-      <view class="card-title">核心价值观</view>
+    <view class="info-card info-card-light">
+      <view class="section-tag">核心价值观</view>
+      <view class="card-title-lg">我们坚守的经营理念</view>
       <view class="values-grid">
         <view class="value-card">
-          <image class="value-icon" src="/images/icons/value-trust.png" mode="aspectFit"></image>
+          <view class="value-icon-wrap">
+            <image class="value-icon" src="/images/icons/value-trust.svg" mode="aspectFit"></image>
+          </view>
           <view class="value-name">诚信为本</view>
-          <view class="value-desc">言出必行，承诺严格兑现，建立长久信任合作关系</view>
+          <view class="value-desc">言出必行，承诺的货品规格、质量与交期严格兑现，建立长久信任的合作关系</view>
         </view>
         <view class="value-card">
-          <image class="value-icon" src="/images/icons/value-quality.png" mode="aspectFit"></image>
+          <view class="value-icon-wrap">
+            <image class="value-icon" src="/images/icons/value-quality.svg" mode="aspectFit"></image>
+          </view>
           <view class="value-name">品质至上</view>
-          <view class="value-desc">严格筛选合作厂家，每批产品入库前严格质检</view>
+          <view class="value-desc">严格筛选合作厂家，每批产品入库前质检，为客户提供经得起检验的优质产品</view>
         </view>
         <view class="value-card">
-          <image class="value-icon" src="/images/icons/value-customer.png" mode="aspectFit"></image>
+          <view class="value-icon-wrap">
+            <image class="value-icon" src="/images/icons/value-customer.svg" mode="aspectFit"></image>
+          </view>
           <view class="value-name">客户优先</view>
-          <view class="value-desc">快速响应需求，灵活配合各类采购特殊要求</view>
+          <view class="value-desc">快速响应客户需求，灵活配合各类特殊要求，真正以客户为中心</view>
         </view>
         <view class="value-card">
-          <image class="value-icon" src="/images/icons/value-progress.png" mode="aspectFit"></image>
+          <view class="value-icon-wrap">
+            <image class="value-icon" src="/images/icons/value-progress.svg" mode="aspectFit"></image>
+          </view>
           <view class="value-name">持续进步</view>
-          <view class="value-desc">持续优化供应链效率，不断提升服务水平</view>
+          <view class="value-desc">持续拓展产品品类，优化供应链效率，不断提升服务水平</view>
         </view>
       </view>
     </view>
 
     <!-- 服务优势 -->
-    <view class="info-card">
-      <view class="card-title">服务优势</view>
+    <view class="info-card info-card-dark">
+      <view class="section-tag section-tag-gold">服务优势</view>
+      <view class="card-title-lg card-title-white">我们能为您做什么</view>
       <view class="advantage-list">
         <view class="advantage-item">
           <view class="advantage-num">01</view>
           <view class="advantage-body">
-            <view class="advantage-name">稳定的货源供应</view>
-            <view class="advantage-desc">与多家优质生产厂家建立深度合作，常规产品保持充足库存，即使旺季（清明、冬至前后）也能保障供货。</view>
+            <view class="advantage-name advantage-name-white">稳定的货源供应</view>
+            <view class="advantage-desc advantage-desc-light">与多家优质生产厂家建立深度合作，常规产品保持充足库存，即使旺季（清明、冬至前后）也能保障供货，不让您因缺货而影响业务。</view>
           </view>
         </view>
         <view class="advantage-item">
           <view class="advantage-num">02</view>
           <view class="advantage-body">
-            <view class="advantage-name">完善的品质保障</view>
-            <view class="advantage-desc">所有入库产品经严格质量核验，原材料来源清晰。如遇质量问题，承诺全力协助处理，保障采购安全。</view>
+            <view class="advantage-name advantage-name-white">完善的品质保障</view>
+            <view class="advantage-desc advantage-desc-light">所有入库产品经过严格质量核验，原材料来源清晰，工艺标准规范。如遇质量问题，承诺全力协助处理，保障采购安全。</view>
           </view>
         </view>
         <view class="advantage-item">
           <view class="advantage-num">03</view>
           <view class="advantage-body">
-            <view class="advantage-name">极具竞争力的批发价格</view>
-            <view class="advantage-desc">厂家直供模式，减少中间商环节，批量越大优惠越多，帮助您控制采购成本，提升经营利润。</view>
+            <view class="advantage-name advantage-name-white">极具竞争力的批发价格</view>
+            <view class="advantage-desc advantage-desc-light">厂家直供模式，减少中间商环节，确保批发价格具有市场竞争力。批量越大，优惠越多，帮助您控制采购成本，提升经营利润。</view>
           </view>
         </view>
         <view class="advantage-item">
           <view class="advantage-num">04</view>
           <view class="advantage-body">
-            <view class="advantage-name">全国物流网络覆盖</view>
-            <view class="advantage-desc">与主流物流公司深度合作，专业包装防护运输损坏，提供全国范围货运服务与实时物流追踪。</view>
+            <view class="advantage-name advantage-name-white">全国物流网络覆盖</view>
+            <view class="advantage-desc advantage-desc-light">与主流物流公司深度合作，专业包装防护产品在运输中不受损坏，提供全国范围货运服务与实时物流追踪。</view>
           </view>
         </view>
         <view class="advantage-item">
           <view class="advantage-num">05</view>
           <view class="advantage-body">
-            <view class="advantage-name">一站式采购服务</view>
-            <view class="advantage-desc">骨灰盒、寿衣寿被、冰棺、香烛祭祀用品等多品类一站采购，简化供应商管理，节省时间与精力。</view>
+            <view class="advantage-name advantage-name-white">一站式采购服务</view>
+            <view class="advantage-desc advantage-desc-light">骨灰盒、寿衣寿被、冰棺、香烛祭祀用品等多品类一站采购，简化供应商管理，节省时间与精力。</view>
           </view>
         </view>
         <view class="advantage-item advantage-item-last">
           <view class="advantage-num">06</view>
           <view class="advantage-body">
-            <view class="advantage-name">30年行业资源对接</view>
-            <view class="advantage-desc">深厚行业人脉，可精准对接实木棺材厂家、殡葬礼仪策划等专业服务，且价格优于自行市场寻找。</view>
+            <view class="advantage-name advantage-name-white">30年行业资源对接</view>
+            <view class="advantage-desc advantage-desc-light">深厚行业人脉，可精准对接实木棺材厂家、殡葬礼仪策划等专业服务，且价格优于自行市场寻找。</view>
           </view>
         </view>
       </view>
@@ -127,7 +141,8 @@
 
     <!-- 联系方式 -->
     <view class="info-card">
-      <view class="card-title">联系我们</view>
+      <view class="section-tag">联系我们</view>
+      <view class="card-title-lg">期待与您合作</view>
       <view class="contact-list">
         <view class="contact-item" bind:tap="callPhone">
           <image class="contact-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
