@@ -1,5 +1,5 @@
 <!--home.wxml-->
-<navigation-bar title="首页" back="{{false}}" color="white" background="linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%)"></navigation-bar>
+<navigation-bar title="贵发祥" back="{{false}}" color="white" background="linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%)"></navigation-bar>
 
 <scroll-view class="scrollarea" scroll-y type="list" enhanced show-scrollbar="{{false}}">
   <!-- 1. 搜索栏 -->
