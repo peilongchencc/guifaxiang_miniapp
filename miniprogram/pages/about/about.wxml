@@ -40,8 +40,9 @@
 
     <!-- 公司简介 -->
     <view class="info-card">
-      <view class="section-tag">公司简介</view>
-      <view class="card-title-lg">贵发祥殡葬用品服务平台</view>
+      <view class="section-header">
+        <text class="section-title">公司简介</text>
+      </view>
       <view class="card-text card-lead">
         贵发祥是一家深耕殡葬行业逾30年的专业批发服务平台，凭借丰富的行业积累和稳定的供应链资源，为全国各地的殡仪馆、殡葬用品店、公墓及陵园提供可靠的产品与服务。
       </view>
@@ -55,8 +56,9 @@
 
     <!-- 核心价值观 -->
     <view class="info-card info-card-light">
-      <view class="section-tag">核心价值观</view>
-      <view class="card-title-lg">我们坚守的经营理念</view>
+      <view class="section-header">
+        <text class="section-title">核心价值观</text>
+      </view>
       <view class="values-grid">
         <view class="value-card">
           <view class="value-icon-wrap">
@@ -91,8 +93,9 @@
 
     <!-- 服务优势 -->
     <view class="info-card info-card-dark">
-      <view class="section-tag section-tag-gold">服务优势</view>
-      <view class="card-title-lg card-title-white">我们能为您做什么</view>
+      <view class="section-header">
+        <text class="section-title section-title-white">服务优势</text>
+      </view>
       <view class="advantage-list">
         <view class="advantage-item">
           <view class="advantage-num">01</view>
@@ -141,8 +144,9 @@
 
     <!-- 联系方式 -->
     <view class="info-card">
-      <view class="section-tag">联系我们</view>
-      <view class="card-title-lg">期待与您合作</view>
+      <view class="section-header">
+        <text class="section-title">联系我们</text>
+      </view>
       <view class="contact-list">
         <view class="contact-item" bind:tap="callPhone">
           <image class="contact-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
