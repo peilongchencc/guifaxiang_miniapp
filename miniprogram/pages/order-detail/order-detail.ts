@@ -50,6 +50,13 @@ Component({
     order: null as OrderDetail | null,
     orderId: '' as string,
     showSuccessTip: false,  // 是否显示提交成功提示
+    contact: {
+      phone: '13895617366',
+      phoneBackup: '13389582060',
+      wechat: 'ccx13895617366',
+      wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png'
+    },
+    showWechatModal: false,
     statusMap: {
       pending: '待确认',
       confirmed: '已确认',
@@ -188,14 +195,38 @@ Component({
       })
     },
 
-    // 联系客服
+    // 联系客服：弹出操作菜单，支持电话或微信联系
     contactService() {
-      wx.showModal({
-        title: '联系客服',
-        content: '客服电话：400-XXX-XXXX\n服务时间：9:00-18:00',
-        showCancel: false,
-        confirmText: '知道了'
+      wx.showActionSheet({
+        itemList: ['拨打电话', '微信联系'],
+        success: (res) => {
+          if (res.tapIndex === 0) {
+            this.showPhoneChoice()
+          } else if (res.tapIndex === 1) {
+            this.setData({ showWechatModal: true })
+          }
+        }
       })
+    },
+
+    // 弹出号码选择菜单（主号 / 备用号）
+    showPhoneChoice() {
+      const { phone, phoneBackup } = this.data.contact
+      wx.showActionSheet({
+        itemList: [`${phone}（主号）`, `${phoneBackup}（备用）`],
+        success: (res) => {
+          const phoneNumber = res.tapIndex === 0 ? phone : phoneBackup
+          wx.makePhoneCall({
+            phoneNumber,
+            fail: () => showToast({ title: '拨打电话失败', type: 'none' })
+          })
+        }
+      })
+    },
+
+    // 关闭微信弹窗
+    onCloseWechatModal() {
+      this.setData({ showWechatModal: false })
     },
 
     // 快捷复购

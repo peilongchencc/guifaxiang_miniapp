@@ -190,6 +190,16 @@ Component({
     },
 
     /**
+     * 拨打备用热线（直接拨备用号，用于联系方式区"备用热线"行）
+     */
+    onCallBackupPhone() {
+      wx.makePhoneCall({
+        phoneNumber: this.data.contact.phoneBackup,
+        fail: () => showToast({ title: '拨打电话失败', type: 'none' })
+      })
+    },
+
+    /**
      * 悬浮客服按钮：弹出操作菜单，支持电话或微信联系
      */
     onFloatServiceTap() {

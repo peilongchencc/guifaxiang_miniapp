@@ -159,4 +159,12 @@
   <view class="empty-btn" bindtap="goBack">返回</view>
 </view>
 
+<!-- 微信联系弹窗组件 -->
+<wechat-modal
+  visible="{{showWechatModal}}"
+  wechat-id="{{contact.wechat}}"
+  qrcode="{{contact.wechatQrcode}}"
+  bind:close="onCloseWechatModal"
+/>
+
 <gold-toast id="gold-toast" />

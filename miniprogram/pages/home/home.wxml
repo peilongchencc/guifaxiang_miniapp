@@ -123,6 +123,14 @@
         </view>
         <text class="contact-arrow">›</text>
       </view>
+      <view class="contact-item" bindtap="onCallBackupPhone">
+        <image class="contact-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
+        <view class="contact-info">
+          <text class="contact-label">备用热线</text>
+          <text class="contact-value">{{contact.phoneBackup}}</text>
+        </view>
+        <text class="contact-arrow">›</text>
+      </view>
       <view class="contact-item" bindtap="onContactWechat">
         <image class="contact-icon" src="/images/icons/wechat.svg" mode="aspectFit"></image>
         <view class="contact-info">

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "wechat-modal": "/components/wechat-modal/wechat-modal"
+  },
   "navigationStyle": "custom"
 }
