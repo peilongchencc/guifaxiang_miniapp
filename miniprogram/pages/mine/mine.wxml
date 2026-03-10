@@ -31,6 +31,50 @@
         <text class="phone-display">{{userInfo.phoneNumber}}</text>
       </view>
     </block>
+
+    <!-- 右侧品牌装饰徽章（两种状态共用） -->
+    <view class="header-deco">
+      <view class="deco-ring">
+        <view class="deco-ring-inner">
+          <text class="deco-char">貴</text>
+        </view>
+      </view>
+      <text class="deco-label">专属服务</text>
+    </view>
+  </view>
+
+  <!-- 订单状态快捷入口 -->
+  <view class="order-status-section" bindtap="goToOrders">
+    <view class="order-status-header">
+      <text class="order-status-title">我的订单</text>
+      <text class="order-status-all">全部订单 ›</text>
+    </view>
+    <view class="order-status-grid">
+      <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="pending">
+        <view class="status-icon-wrapper">
+          <image class="status-icon-img" src="/images/icons/pending.svg" mode="aspectFit"></image>
+        </view>
+        <text class="status-text">待付款</text>
+      </view>
+      <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="confirmed">
+        <view class="status-icon-wrapper">
+          <image class="status-icon-img" src="/images/icons/confirmed.svg" mode="aspectFit"></image>
+        </view>
+        <text class="status-text">待发货</text>
+      </view>
+      <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="shipped">
+        <view class="status-icon-wrapper">
+          <image class="status-icon-img" src="/images/icons/shipped.svg" mode="aspectFit"></image>
+        </view>
+        <text class="status-text">待收货</text>
+      </view>
+      <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="completed">
+        <view class="status-icon-wrapper">
+          <image class="status-icon-img" src="/images/icons/completed.svg" mode="aspectFit"></image>
+        </view>
+        <text class="status-text">已完成</text>
+      </view>
+    </view>
   </view>
 
   <!-- 常用功能区域 -->

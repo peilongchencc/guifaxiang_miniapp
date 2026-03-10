@@ -252,9 +252,15 @@ Component({
       })
     },
 
-    // 我的订单
+    // 我的订单（全部）
     goToOrders() {
       wx.navigateTo({ url: '/pages/orders/orders' })
+    },
+
+    // 跳转至指定状态的订单列表
+    goToOrdersByStatus(e: WechatMiniprogram.CustomEvent) {
+      const status = e.currentTarget.dataset.status as string
+      wx.navigateTo({ url: `/pages/orders/orders?status=${status}` })
     },
 
     // 我的收藏
