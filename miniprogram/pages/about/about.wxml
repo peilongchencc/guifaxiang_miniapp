@@ -152,11 +152,11 @@
           </view>
           <text class="contact-arrow">›</text>
         </view>
-        <view class="contact-item" bind:tap="copyWechat">
+        <view class="contact-item" bind:tap="openWechatModal">
           <image class="contact-icon" src="/images/icons/wechat.svg" mode="aspectFit"></image>
           <view class="contact-info">
-            <view class="contact-label">微信号（点击复制）</view>
-            <view class="contact-value">{{contact.wechat}}</view>
+            <view class="contact-label">微信联系</view>
+            <view class="contact-value">24小时服务</view>
           </view>
           <text class="contact-arrow">›</text>
         </view>
@@ -178,3 +178,11 @@
     <text>版本 1.0.0</text>
   </view>
 </view>
+
+<!-- 微信联系弹窗组件 -->
+<wechat-modal
+  visible="{{showWechatModal}}"
+  wechat-id="{{contact.wechat}}"
+  qrcode="{{contact.wechatQrcode}}"
+  bind:close="onCloseWechatModal"
+/>

@@ -6,8 +6,10 @@ Component({
     contact: {
       phone: '13895617366',
       wechat: 'ccx13895617366',
+      wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png',
       address: '宁夏银川市兴庆区立达国际建材城39号楼2层203室'
-    }
+    },
+    showWechatModal: false
   },
 
   methods: {
@@ -21,14 +23,14 @@ Component({
       })
     },
 
-    // 复制微信号
-    copyWechat() {
-      wx.setClipboardData({
-        data: this.data.contact.wechat,
-        success: () => {
-          wx.showToast({ title: '微信号已复制', icon: 'success' })
-        }
-      })
+    // 打开微信联系弹窗
+    openWechatModal() {
+      this.setData({ showWechatModal: true })
+    },
+
+    // 关闭微信联系弹窗
+    onCloseWechatModal() {
+      this.setData({ showWechatModal: false })
     },
 
     // 打开地图
