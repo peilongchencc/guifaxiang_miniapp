@@ -212,6 +212,8 @@ page {
 }
 
 .deco-char {
+  display: block;
+  text-align: center;
   font-size: 30rpx;
   font-weight: bold;
   color: rgba(200, 160, 82, 0.9);
