@@ -256,28 +256,9 @@ page {
   z-index: 1;
 }
 
+/* section-title 已移至 app.scss 全局样式，此处保留局部间距覆盖 */
 .section-title {
-  font-size: 32rpx;
-  font-weight: bold;
-  color: #1a1f2e;
   margin-bottom: 24rpx;
-  position: relative;
-  padding-left: 20rpx;
-}
-
-.section-title::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8rpx;
-  height: 28rpx;
-  background: linear-gradient(180deg, 
-    #c8a052 0%, 
-    #a8832e 100%
-  );
-  border-radius: 4rpx;
 }
 
 .function-grid {

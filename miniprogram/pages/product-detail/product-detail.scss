@@ -204,24 +204,9 @@ page {
   padding: 30rpx;
   margin-top: 20rpx;
 
+  /* section-header 已由 app.scss 全局样式接管 */
   .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20rpx;
     margin-bottom: 30rpx;
-
-    .header-line {
-      width: 80rpx;
-      height: 2rpx;
-      background: #ddd;
-    }
-
-    .header-title {
-      font-size: 30rpx;
-      font-weight: 600;
-      color: #333;
-    }
   }
 
   .detail-content {

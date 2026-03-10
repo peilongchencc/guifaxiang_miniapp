@@ -84,9 +84,8 @@
     <!-- 商品详情 -->
     <view class="detail-section">
       <view class="section-header">
-        <view class="header-line"></view>
-        <text class="header-title">商品详情</text>
-        <view class="header-line"></view>
+        <text class="section-tag">产品介绍</text>
+        <text class="section-title">商品详情</text>
       </view>
       
       <view class="detail-content">

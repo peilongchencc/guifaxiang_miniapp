@@ -64,8 +64,11 @@
   <!-- 4. 热销/推荐商品 -->
   <view class="product-section">
     <view class="section-header">
+      <view class="section-header-row">
+        <text class="section-tag">精选好物</text>
+        <text class="section-more" bindtap="onViewMoreHot">查看更多 ›</text>
+      </view>
       <text class="section-title">热销推荐</text>
-      <text class="section-more" bindtap="onViewMoreHot">查看更多 ></text>
     </view>
     <view class="product-grid">
       <view 
@@ -98,6 +101,7 @@
   <!-- 5. 服务特色 -->
   <view class="service-section">
     <view class="section-header">
+      <text class="section-tag">品质承诺</text>
       <text class="section-title">服务保障</text>
     </view>
     <view class="service-grid">
@@ -112,6 +116,7 @@
   <!-- 6. 联系方式 -->
   <view class="contact-section">
     <view class="section-header">
+      <text class="section-tag">随时联络</text>
       <text class="section-title">联系我们</text>
     </view>
     <view class="contact-list">

@@ -159,26 +159,7 @@ page {
   margin-bottom: 28rpx;
 }
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20rpx;
-  padding-left: 16rpx;
-  border-left: 6rpx solid #c8a052;
-}
-
-.section-title {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #1a1f2e;
-  letter-spacing: 1rpx;
-}
-
-.section-more {
-  font-size: 24rpx;
-  color: #c8a052;
-}
+/* section-header / section-title / section-more 已移至 app.scss 全局样式 */
 
 .product-grid {
   display: grid;
