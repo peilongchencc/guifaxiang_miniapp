@@ -1,14 +1,29 @@
+// ---- 颜色变量 ----
+$dark-bg: #1a1f2e;
+$dark-bg-2: #252b3b;
+$gold: #c8a052;
+$gold-light: rgba(200, 160, 82, 0.15);
+$gold-border: rgba(200, 160, 82, 0.2);
+$page-bg: #f2f0ec;
+$card-bg: #fff;
+$text-primary: #1a1f2e;
+$text-secondary: #666;
+$text-muted: #999;
+$divider: #f0ede8;
+
+// ---- 页面容器 ----
 .page-container {
   min-height: 100vh;
-  background: #f2f0ec;
+  background: $page-bg;
 }
 
+// ---- 导航栏 ----
 .nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 88rpx 32rpx 24rpx;
-  background: linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%);
+  background: linear-gradient(135deg, $dark-bg 0%, $dark-bg-2 100%);
 }
 
 .nav-back {
@@ -34,48 +49,89 @@
   width: 60rpx;
 }
 
+// ---- 头部品牌区域 ----
 .header-section {
-  background: linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%);
-  padding: 40rpx 32rpx 80rpx;
+  background: linear-gradient(160deg, $dark-bg 0%, $dark-bg-2 100%);
+  padding: 40rpx 32rpx 0;
   text-align: center;
 }
 
-.logo-wrapper {
-  width: 160rpx;
-  height: 160rpx;
-  background: #fff;
-  border-radius: 32rpx;
-  margin: 0 auto 24rpx;
+.bv-badge {
+  width: 120rpx;
+  height: 120rpx;
+  background: linear-gradient(135deg, $gold 0%, #e8c870 100%);
+  border-radius: 28rpx;
+  margin: 0 auto 28rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8rpx 40rpx rgba(200, 160, 82, 0.45);
 }
 
-.logo-icon {
-  width: 80rpx;
-  height: 80rpx;
+.bv-char {
+  font-size: 72rpx;
+  font-weight: 700;
+  color: $dark-bg;
+  line-height: 1;
 }
 
 .brand-name {
   font-size: 40rpx;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
-  margin-bottom: 12rpx;
+  letter-spacing: 2rpx;
+  margin-bottom: 14rpx;
 }
 
 .brand-slogan {
-  font-size: 26rpx;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  margin-bottom: 40rpx;
 }
 
+// 数据亮点横条
+.highlights-strip {
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0 -32rpx;
+  padding: 32rpx 0;
+}
+
+.highlight-item {
+  flex: 1;
+  text-align: center;
+}
+
+.highlight-num {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: $gold;
+  line-height: 1.1;
+  margin-bottom: 8rpx;
+}
+
+.highlight-label {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.highlight-divider {
+  width: 1rpx;
+  height: 56rpx;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+// ---- 内容区域 ----
 .content-section {
-  margin-top: -40rpx;
-  padding: 0 24rpx 40rpx;
+  padding: 32rpx 24rpx 48rpx;
 }
 
+// ---- 通用卡片 ----
 .info-card {
-  background: #fff;
+  background: $card-bg;
   border-radius: 20rpx;
   padding: 40rpx 32rpx;
   margin-bottom: 24rpx;
@@ -85,71 +141,133 @@
 .card-title {
   font-size: 32rpx;
   font-weight: 600;
-  color: #1a1f2e;
-  margin-bottom: 24rpx;
-  display: flex;
-  align-items: center;
+  color: $text-primary;
+  margin-bottom: 28rpx;
+  padding-left: 20rpx;
+  border-left: 6rpx solid $gold;
+  line-height: 1.2;
 }
 
-.title-icon {
-  width: 36rpx;
-  height: 36rpx;
-  margin-right: 12rpx;
-  flex-shrink: 0;
-}
-
-.card-content {
+.card-text {
   font-size: 28rpx;
-  color: #666;
-  line-height: 1.8;
+  color: $text-secondary;
+  line-height: 1.85;
+
+  & + & {
+    margin-top: 20rpx;
+  }
 }
 
-.service-list {
+// ---- 核心价值观网格 ----
+.values-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20rpx;
 }
 
-.service-item {
+.value-card {
   width: calc(50% - 10rpx);
   background: #f8f6f2;
-  border-radius: 12rpx;
-  padding: 24rpx;
-  text-align: center;
-  border: 1rpx solid rgba(200, 160, 82, 0.12);
+  border-radius: 16rpx;
+  padding: 28rpx 24rpx;
+  border: 1rpx solid $gold-border;
 }
 
-.service-icon {
-  width: 52rpx;
-  height: 52rpx;
-  margin-bottom: 12rpx;
+.value-badge {
+  width: 64rpx;
+  height: 64rpx;
+  background: linear-gradient(135deg, $gold 0%, #e8c870 100%);
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: $dark-bg;
+  margin-bottom: 16rpx;
 }
 
-.service-name {
+.value-name {
   font-size: 28rpx;
-  color: #333;
-  font-weight: 500;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 10rpx;
 }
 
+.value-desc {
+  font-size: 22rpx;
+  color: $text-muted;
+  line-height: 1.65;
+}
+
+// ---- 服务优势列表 ----
+.advantage-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.advantage-item {
+  display: flex;
+  gap: 24rpx;
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid $divider;
+
+  &-last {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.advantage-num {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: rgba(200, 160, 82, 0.3);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 72rpx;
+  padding-top: 4rpx;
+}
+
+.advantage-body {
+  flex: 1;
+}
+
+.advantage-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 10rpx;
+  line-height: 1.4;
+}
+
+.advantage-desc {
+  font-size: 24rpx;
+  color: $text-secondary;
+  line-height: 1.75;
+}
+
+// ---- 联系方式列表 ----
 .contact-list {
   display: flex;
   flex-direction: column;
-  gap: 24rpx;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  padding: 20rpx;
-  background: #f8f6f2;
-  border-radius: 12rpx;
-  border: 1rpx solid rgba(200, 160, 82, 0.12);
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid $divider;
+
+  &-last {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 
 .contact-icon {
   width: 44rpx;
   height: 44rpx;
-  margin-right: 20rpx;
+  margin-right: 24rpx;
   flex-shrink: 0;
 }
 
@@ -158,19 +276,29 @@
 }
 
 .contact-label {
-  font-size: 24rpx;
-  color: #999;
-  margin-bottom: 4rpx;
+  font-size: 22rpx;
+  color: $text-muted;
+  margin-bottom: 6rpx;
 }
 
 .contact-value {
   font-size: 28rpx;
-  color: #333;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
+.contact-arrow {
+  font-size: 44rpx;
+  color: $text-muted;
+  margin-left: 16rpx;
+  line-height: 1;
+}
+
+// ---- 版本信息 ----
 .version-info {
   text-align: center;
-  padding: 40rpx;
+  padding: 24rpx 0 48rpx;
   font-size: 24rpx;
-  color: #999;
+  color: $text-muted;
 }

@@ -10,58 +10,124 @@
 
   <!-- 头部品牌信息 -->
   <view class="header-section">
-    <view class="logo-wrapper">
-      <image class="logo-icon" src="/images/icons/logo.svg" mode="aspectFit"></image>
+    <view class="bv-badge">
+      <text class="bv-char">贵</text>
     </view>
     <view class="brand-name">贵发祥殡葬用品</view>
-    <view class="brand-slogan">专业服务 · 用心守护</view>
+    <view class="brand-slogan">深耕殡葬用品批发行业，做您可信赖的长期供应伙伴</view>
+
+    <!-- 数据亮点 -->
+    <view class="highlights-strip">
+      <view class="highlight-item">
+        <view class="highlight-num">1000+</view>
+        <view class="highlight-label">合作客户</view>
+      </view>
+      <view class="highlight-divider"></view>
+      <view class="highlight-item">
+        <view class="highlight-num">50+</view>
+        <view class="highlight-label">主营品类</view>
+      </view>
+      <view class="highlight-divider"></view>
+      <view class="highlight-item">
+        <view class="highlight-num">30年+</view>
+        <view class="highlight-label">行业经验</view>
+      </view>
+    </view>
   </view>
 
   <!-- 内容区域 -->
   <view class="content-section">
+
     <!-- 公司简介 -->
     <view class="info-card">
-      <view class="card-title">
-        <image class="title-icon" src="/images/icons/book.svg" mode="aspectFit"></image>
-        <text>公司简介</text>
+      <view class="card-title">公司简介</view>
+      <view class="card-text">
+        贵发祥是一家深耕殡葬行业逾30年的专业批发服务平台，凭借丰富的行业积累和稳定的供应链资源，为全国各地的殡仪馆、殡葬用品店、公墓及陵园提供可靠的产品与服务。
       </view>
-      <view class="card-content">
-        贵发祥殡葬用品服务平台，致力于为客户提供专业、周到的殡葬用品服务。我们秉承"用心服务、真诚相待"的理念，为每一位客户提供优质的产品和贴心的服务。
+      <view class="card-text">
+        主营品类涵盖实木骨灰盒、寿衣寿被、冰棺、香烛祭祀用品、殡葬礼仪用品、墓地装饰用品等，货源充足，品类齐全，支持全国配送。
       </view>
     </view>
 
-    <!-- 服务特色 -->
+    <!-- 核心价值观 -->
     <view class="info-card">
-      <view class="card-title">
-        <image class="title-icon" src="/images/icons/star.svg" mode="aspectFit"></image>
-        <text>服务特色</text>
+      <view class="card-title">核心价值观</view>
+      <view class="values-grid">
+        <view class="value-card">
+          <view class="value-badge">信</view>
+          <view class="value-name">诚信为本</view>
+          <view class="value-desc">言出必行，承诺严格兑现，建立长久信任合作关系</view>
+        </view>
+        <view class="value-card">
+          <view class="value-badge">质</view>
+          <view class="value-name">品质至上</view>
+          <view class="value-desc">严格筛选合作厂家，每批产品入库前严格质检</view>
+        </view>
+        <view class="value-card">
+          <view class="value-badge">客</view>
+          <view class="value-name">客户优先</view>
+          <view class="value-desc">快速响应需求，灵活配合各类采购特殊要求</view>
+        </view>
+        <view class="value-card">
+          <view class="value-badge">进</view>
+          <view class="value-name">持续进步</view>
+          <view class="value-desc">持续优化供应链效率，不断提升服务水平</view>
+        </view>
       </view>
-      <view class="service-list">
-        <view class="service-item">
-          <image class="service-icon" src="/images/icons/clock.svg" mode="aspectFit"></image>
-          <view class="service-name">24小时服务</view>
+    </view>
+
+    <!-- 服务优势 -->
+    <view class="info-card">
+      <view class="card-title">服务优势</view>
+      <view class="advantage-list">
+        <view class="advantage-item">
+          <view class="advantage-num">01</view>
+          <view class="advantage-body">
+            <view class="advantage-name">稳定的货源供应</view>
+            <view class="advantage-desc">与多家优质生产厂家建立深度合作，常规产品保持充足库存，即使旺季（清明、冬至前后）也能保障供货。</view>
+          </view>
         </view>
-        <view class="service-item">
-          <image class="service-icon" src="/images/icons/truck.svg" mode="aspectFit"></image>
-          <view class="service-name">全城免费配送</view>
+        <view class="advantage-item">
+          <view class="advantage-num">02</view>
+          <view class="advantage-body">
+            <view class="advantage-name">完善的品质保障</view>
+            <view class="advantage-desc">所有入库产品经严格质量核验，原材料来源清晰。如遇质量问题，承诺全力协助处理，保障采购安全。</view>
+          </view>
         </view>
-        <view class="service-item">
-          <image class="service-icon" src="/images/icons/expert.svg" mode="aspectFit"></image>
-          <view class="service-name">专业指导</view>
+        <view class="advantage-item">
+          <view class="advantage-num">03</view>
+          <view class="advantage-body">
+            <view class="advantage-name">极具竞争力的批发价格</view>
+            <view class="advantage-desc">厂家直供模式，减少中间商环节，批量越大优惠越多，帮助您控制采购成本，提升经营利润。</view>
+          </view>
         </view>
-        <view class="service-item">
-          <image class="service-icon" src="/images/icons/shield.svg" mode="aspectFit"></image>
-          <view class="service-name">品质保障</view>
+        <view class="advantage-item">
+          <view class="advantage-num">04</view>
+          <view class="advantage-body">
+            <view class="advantage-name">全国物流网络覆盖</view>
+            <view class="advantage-desc">与主流物流公司深度合作，专业包装防护运输损坏，提供全国范围货运服务与实时物流追踪。</view>
+          </view>
+        </view>
+        <view class="advantage-item">
+          <view class="advantage-num">05</view>
+          <view class="advantage-body">
+            <view class="advantage-name">一站式采购服务</view>
+            <view class="advantage-desc">骨灰盒、寿衣寿被、冰棺、香烛祭祀用品等多品类一站采购，简化供应商管理，节省时间与精力。</view>
+          </view>
+        </view>
+        <view class="advantage-item advantage-item-last">
+          <view class="advantage-num">06</view>
+          <view class="advantage-body">
+            <view class="advantage-name">30年行业资源对接</view>
+            <view class="advantage-desc">深厚行业人脉，可精准对接实木棺材厂家、殡葬礼仪策划等专业服务，且价格优于自行市场寻找。</view>
+          </view>
         </view>
       </view>
     </view>
 
     <!-- 联系方式 -->
     <view class="info-card">
-      <view class="card-title">
-        <image class="title-icon" src="/images/icons/contact.svg" mode="aspectFit"></image>
-        <text>联系我们</text>
-      </view>
+      <view class="card-title">联系我们</view>
       <view class="contact-list">
         <view class="contact-item" bind:tap="callPhone">
           <image class="contact-icon" src="/images/icons/phone.svg" mode="aspectFit"></image>
@@ -69,23 +135,27 @@
             <view class="contact-label">服务热线</view>
             <view class="contact-value">{{contact.phone}}</view>
           </view>
+          <text class="contact-arrow">›</text>
         </view>
         <view class="contact-item" bind:tap="copyWechat">
           <image class="contact-icon" src="/images/icons/wechat.svg" mode="aspectFit"></image>
           <view class="contact-info">
-            <view class="contact-label">微信号</view>
+            <view class="contact-label">微信号（点击复制）</view>
             <view class="contact-value">{{contact.wechat}}</view>
           </view>
+          <text class="contact-arrow">›</text>
         </view>
-        <view class="contact-item" bind:tap="openLocation">
+        <view class="contact-item contact-item-last" bind:tap="openLocation">
           <image class="contact-icon" src="/images/icons/location.svg" mode="aspectFit"></image>
           <view class="contact-info">
-            <view class="contact-label">门店地址</view>
+            <view class="contact-label">门店地址（点击导航）</view>
             <view class="contact-value">{{contact.address}}</view>
           </view>
+          <text class="contact-arrow">›</text>
         </view>
       </view>
     </view>
+
   </view>
 
   <!-- 版本信息 -->
