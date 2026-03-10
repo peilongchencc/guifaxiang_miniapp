@@ -39,6 +39,43 @@ page {
   color: #999;
 }
 
+/* 状态 Tab 筛选栏 */
+.status-tabs {
+  display: flex;
+  background: #fff;
+  border-bottom: 1rpx solid rgba(200, 160, 82, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 26rpx;
+  color: #666;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tab-item.active {
+  color: #a8832e;
+  font-weight: 600;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background: linear-gradient(90deg, #c8a052 0%, #e8c97a 100%);
+  border-radius: 2rpx;
+}
+
 /* 订单列表 */
 .order-list {
   display: flex;

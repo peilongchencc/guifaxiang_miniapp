@@ -9,47 +9,101 @@ interface FormattedOrder extends Omit<IOrder, 'createTime'> {
   createTime: string
 }
 
-Component({
+type StatusKey = 'all' | 'pending' | 'confirmed' | 'shipped' | 'completed'
+
+interface OrdersInstance {
+  _loadedByOnLoad: boolean
+}
+
+const STATUS_MAP: Record<string, string> = {
+  pending: '待确认',
+  confirmed: '已确认',
+  shipped: '配送中',
+  completed: '已完成',
+}
+
+const TABS = [
+  { key: 'all', label: '全部' },
+  { key: 'pending', label: '待确认' },
+  { key: 'confirmed', label: '已确认' },
+  { key: 'shipped', label: '配送中' },
+  { key: 'completed', label: '已完成' },
+]
+
+Component<OrdersInstance>({
   data: {
     orderList: [] as FormattedOrder[],
+    filteredList: [] as FormattedOrder[],
     loading: false,
-    statusMap: {
-      pending: '待确认',
-      confirmed: '已确认',
-      shipped: '配送中',
-      completed: '已完成'
-    } as Record<string, string>
+    activeTab: 'all' as StatusKey,
+    tabs: TABS,
+    statusMap: STATUS_MAP,
   },
 
   lifetimes: {
     attached() {
-      this.loadOrders()
+      this._loadedByOnLoad = false
     }
   },
 
   pageLifetimes: {
     show() {
+      // onLoad 已触发加载时跳过首次 show，之后（如从详情页返回）正常刷新
+      if (this._loadedByOnLoad) {
+        this._loadedByOnLoad = false
+        return
+      }
       this.loadOrders()
     }
   },
 
   methods: {
+    /**
+     * 接收页面参数（来自"我的"页快捷入口的 status 过滤）
+     */
+    onLoad(options: Record<string, string>) {
+      const status = (options.status || 'all') as StatusKey
+      const validKeys: StatusKey[] = ['all', 'pending', 'confirmed', 'shipped', 'completed']
+      const activeTab = validKeys.includes(status) ? status : 'all'
+      this.setData({ activeTab })
+      this._loadedByOnLoad = true
+      this.loadOrders()
+    },
+
     // 加载订单列表
     async loadOrders() {
       this.setData({ loading: true })
-      
-      // 已登录则从云端获取
+
       if (app.globalData.isLoggedIn) {
         await app.refreshOrdersFromCloud()
       }
-      
+
       const orderHistory = app.globalData.orderHistory || []
-      // 格式化订单时间
       const formattedOrders: FormattedOrder[] = orderHistory.map(order => ({
         ...order,
         createTime: formatTime(new Date(order.createTime))
       }))
+
       this.setData({ orderList: formattedOrders, loading: false })
+      this.applyFilter()
+    },
+
+    /**
+     * 根据当前激活的 Tab 过滤订单列表
+     */
+    applyFilter() {
+      const { orderList, activeTab } = this.data
+      const filteredList = activeTab === 'all'
+        ? orderList
+        : orderList.filter(o => o.status === activeTab)
+      this.setData({ filteredList })
+    },
+
+    // 切换状态 Tab
+    onTabChange(e: WechatMiniprogram.TouchEvent) {
+      const key = e.currentTarget.dataset.key as StatusKey
+      this.setData({ activeTab: key })
+      this.applyFilter()
     },
 
     // 快捷复购

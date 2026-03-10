@@ -62,7 +62,7 @@
         </view>
         <text class="status-text">已确认</text>
       </view>
-      <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="shipping">
+      <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="shipped">
         <view class="status-icon-wrapper">
           <image class="status-icon-img" src="/images/icons/shipped.svg" mode="aspectFit"></image>
         </view>

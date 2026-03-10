@@ -7,16 +7,26 @@
   bindback="goBack"
 ></navigation-bar>
 
+<view class="status-tabs">
+  <view
+    wx:for="{{tabs}}"
+    wx:key="key"
+    class="tab-item {{activeTab === item.key ? 'active' : ''}}"
+    data-key="{{item.key}}"
+    bindtap="onTabChange"
+  >{{item.label}}</view>
+</view>
+
 <scroll-view class="scrollarea" scroll-y type="list" enhanced show-scrollbar="{{false}}">
   <!-- 空状态 -->
-  <view class="empty-state" wx:if="{{orderList.length === 0}}">
+  <view class="empty-state" wx:if="{{filteredList.length === 0}}">
     <image class="empty-image" src="/images/cart-empty.svg" mode="aspectFit"></image>
     <text class="empty-text">暂无订单记录</text>
   </view>
 
   <!-- 订单列表 -->
   <view class="order-list" wx:else>
-    <view class="order-card" wx:for="{{orderList}}" wx:key="id" data-id="{{item.id}}" bindtap="goToDetail">
+    <view class="order-card" wx:for="{{filteredList}}" wx:key="id" data-id="{{item.id}}" bindtap="goToDetail">
       <view class="order-header">
         <text class="order-id">订单号: {{item.id}}</text>
         <text class="order-status status-{{item.status}}">{{statusMap[item.status]}}</text>
