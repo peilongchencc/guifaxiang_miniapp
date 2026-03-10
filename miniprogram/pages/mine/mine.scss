@@ -238,24 +238,6 @@ page {
   z-index: 2;
 }
 
-.order-status-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24rpx;
-}
-
-.order-status-title {
-  font-size: 28rpx;
-  font-weight: bold;
-  color: #1a1f2e;
-}
-
-.order-status-all {
-  font-size: 24rpx;
-  color: #a8832e;
-}
-
 .order-status-grid {
   display: flex;
   justify-content: space-around;

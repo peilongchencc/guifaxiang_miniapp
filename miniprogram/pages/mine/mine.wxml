@@ -44,29 +44,29 @@
   </view>
 
   <!-- 订单状态快捷入口 -->
-  <view class="order-status-section" bindtap="goToOrders">
-    <view class="order-status-header">
-      <text class="order-status-title">我的订单</text>
-      <text class="order-status-all">全部订单 ›</text>
+  <view class="order-status-section">
+    <view class="section-header">
+      <text class="section-title">我的订单</text>
+      <text class="section-more" bindtap="goToOrders">全部订单 ›</text>
     </view>
     <view class="order-status-grid">
       <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="pending">
         <view class="status-icon-wrapper">
           <image class="status-icon-img" src="/images/icons/pending.svg" mode="aspectFit"></image>
         </view>
-        <text class="status-text">待付款</text>
+        <text class="status-text">待确认</text>
       </view>
       <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="confirmed">
         <view class="status-icon-wrapper">
           <image class="status-icon-img" src="/images/icons/confirmed.svg" mode="aspectFit"></image>
         </view>
-        <text class="status-text">待发货</text>
+        <text class="status-text">已确认</text>
       </view>
-      <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="shipped">
+      <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="shipping">
         <view class="status-icon-wrapper">
           <image class="status-icon-img" src="/images/icons/shipped.svg" mode="aspectFit"></image>
         </view>
-        <text class="status-text">待收货</text>
+        <text class="status-text">配送中</text>
       </view>
       <view class="order-status-item" bindtap="goToOrdersByStatus" data-status="completed">
         <view class="status-icon-wrapper">
