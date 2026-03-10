@@ -16,43 +16,6 @@ $divider: #f0ede8;
   background: $page-bg;
 }
 
-// ---- 导航栏 ----
-.nav-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 88rpx 32rpx 24rpx;
-  background: linear-gradient(135deg, $dark-bg 0%, $dark-bg-2 100%);
-}
-
-// 圆形返回按钮，与导航栏背景形成层次感
-.nav-back {
-  width: 72rpx;
-  height: 72rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1rpx solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.12);
-  flex-shrink: 0;
-}
-
-.back-icon {
-  font-size: 36rpx;
-  color: #fff;
-  line-height: 1;
-}
-
-.nav-title {
-  font-size: 36rpx;
-  font-weight: 600;
-  color: #fff;
-}
-
-.nav-placeholder {
-  width: 72rpx;
-}
 
 // ---- 头部品牌视觉区（与 Web brand-visual 保持一致） ----
 .header-section {
@@ -188,19 +151,12 @@ $divider: #f0ede8;
   border: 1rpx solid $gold-border;
 }
 
-// 深色圆形图标（对应 Web .value-icon 深色圆形+金色内容风格）
-.value-badge {
+// PNG图标，与网页端保持一致（深色圆形背景+金色描边图标）
+.value-icon {
   width: 72rpx;
   height: 72rpx;
-  background: linear-gradient(135deg, $dark-bg 0%, $dark-bg-2 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30rpx;
-  font-weight: 700;
-  color: $gold;
   margin-bottom: 18rpx;
+  flex-shrink: 0;
 }
 
 .value-name {

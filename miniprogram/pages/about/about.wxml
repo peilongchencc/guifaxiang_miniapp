@@ -1,12 +1,12 @@
 <view class="page-container">
-  <!-- 自定义导航栏 -->
-  <view class="nav-bar">
-    <view class="nav-back" bind:tap="goBack">
-      <text class="back-icon">←</text>
-    </view>
-    <text class="nav-title">关于我们</text>
-    <view class="nav-placeholder"></view>
-  </view>
+  <!-- 自定义导航栏（与商品详情页保持一致） -->
+  <navigation-bar
+    title="关于我们"
+    back="{{true}}"
+    color="white"
+    background="linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%)"
+    bindback="goBack"
+  />
 
   <!-- 头部品牌信息（与 Web 端 brand-visual 保持一致） -->
   <view class="header-section">
@@ -54,22 +54,22 @@
       <view class="card-title">核心价值观</view>
       <view class="values-grid">
         <view class="value-card">
-          <view class="value-badge">信</view>
+          <image class="value-icon" src="/images/icons/value-trust.png" mode="aspectFit"></image>
           <view class="value-name">诚信为本</view>
           <view class="value-desc">言出必行，承诺严格兑现，建立长久信任合作关系</view>
         </view>
         <view class="value-card">
-          <view class="value-badge">质</view>
+          <image class="value-icon" src="/images/icons/value-quality.png" mode="aspectFit"></image>
           <view class="value-name">品质至上</view>
           <view class="value-desc">严格筛选合作厂家，每批产品入库前严格质检</view>
         </view>
         <view class="value-card">
-          <view class="value-badge">客</view>
+          <image class="value-icon" src="/images/icons/value-customer.png" mode="aspectFit"></image>
           <view class="value-name">客户优先</view>
           <view class="value-desc">快速响应需求，灵活配合各类采购特殊要求</view>
         </view>
         <view class="value-card">
-          <view class="value-badge">进</view>
+          <image class="value-icon" src="/images/icons/value-progress.png" mode="aspectFit"></image>
           <view class="value-name">持续进步</view>
           <view class="value-desc">持续优化供应链效率，不断提升服务水平</view>
         </view>
