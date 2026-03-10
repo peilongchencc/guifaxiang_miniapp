@@ -256,10 +256,7 @@ page {
   z-index: 1;
 }
 
-/* section-title 已移至 app.scss 全局样式，此处保留局部间距覆盖 */
-.section-title {
-  margin-bottom: 24rpx;
-}
+/* section-title 由 app.scss 全局提供，间距由 section-header 统一控制 */
 
 .function-grid {
   display: flex;
