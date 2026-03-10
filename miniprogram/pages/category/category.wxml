@@ -74,16 +74,18 @@
           data-image="{{product.image}}"
           bindtap="onProductTap"
         >
-          <image class="product-image" src="{{product.image}}" mode="aspectFill"></image>
+          <view class="product-image-wrapper">
+            <image class="product-image" src="{{product.image}}" mode="aspectFill"></image>
+            <!-- 加入购物车按钮 -->
+            <view 
+              class="add-cart-btn" 
+              catchtap="onAddToCart"
+              data-id="{{product.id}}"
+              data-name="{{product.name}}"
+              data-image="{{product.image}}"
+            >+</view>
+          </view>
           <text class="product-name">{{product.name}}</text>
-          <!-- 加入购物车按钮 -->
-          <view 
-            class="add-cart-btn" 
-            catchtap="onAddToCart"
-            data-id="{{product.id}}"
-            data-name="{{product.name}}"
-            data-image="{{product.image}}"
-          >+</view>
         </view>
       </view>
     </view>

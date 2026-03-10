@@ -208,11 +208,19 @@ page {
   position: relative;
 }
 
+/* 图片容器（用于精准定位加购按钮） */
+.product-image-wrapper {
+  position: relative;
+  width: 150rpx;
+  height: 150rpx;
+  margin-bottom: 12rpx;
+}
+
 /* 加入购物车按钮 */
 .add-cart-btn {
   position: absolute;
-  right: 4rpx;
-  top: 110rpx;
+  right: -10rpx;
+  bottom: -10rpx;
   width: 40rpx;
   height: 40rpx;
   background: linear-gradient(135deg, #c8a052 0%, #a8832e 100%);
@@ -242,7 +250,6 @@ page {
   height: 150rpx;
   border-radius: 12rpx;
   background-color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 12rpx;
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
 }
 
