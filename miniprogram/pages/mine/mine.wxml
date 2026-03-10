@@ -36,7 +36,6 @@
   <!-- 常用功能区域 -->
   <view class="common-functions">
     <view class="section-header">
-      <text class="section-tag">快捷操作</text>
       <view class="section-title">常用功能</view>
     </view>
     <view class="function-grid">
@@ -62,7 +61,6 @@
   <!-- 服务与帮助 -->
   <view class="service-help-section">
     <view class="section-header">
-      <text class="section-tag">帮助中心</text>
       <view class="section-title">服务与帮助</view>
     </view>
     <view class="service-list">
