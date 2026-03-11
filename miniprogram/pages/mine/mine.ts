@@ -2,7 +2,7 @@
 import { showToast } from '../../utils/toast'
 import { miniappLogin, phoneAuth, logout } from '../../utils/auth'
 
-const defaultAvatarUrl = '/images/default-avatar.png'
+const defaultAvatarUrl = 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-avatar.png'
 
 // 随机昵称列表
 const nicknameList = [

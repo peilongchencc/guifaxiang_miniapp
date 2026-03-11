@@ -128,7 +128,7 @@ Component({
           
           const popupImageSrc = (product.images && product.images.length > 0)
             ? product.images[0]
-            : (product.image || '/images/default-product.png')
+            : (product.image || 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png')
 
           this.setData({
             product,
@@ -376,7 +376,7 @@ Component({
     /** 规格弹窗图片加载失败，回退到默认占位图并显示提示文字 */
     onPopupImageError() {
       this.setData({
-        popupImageSrc: '/images/default-product.png',
+        popupImageSrc: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png',
         popupImageFailed: true
       })
     },

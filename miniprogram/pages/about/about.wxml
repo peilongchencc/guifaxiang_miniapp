@@ -12,7 +12,7 @@
   <view class="header-section">
     <image
       class="brand-visual-img"
-      src="/images/brand-visual.png"
+      src="https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/brand-visual.png"
       mode="widthFix"
     />
 

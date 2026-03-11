@@ -21,9 +21,9 @@ Component({
     
     // 轮播图数据（link 为点击后跳转路径，linkType: 'tab' 用 switchTab，'navigate' 用 navigateTo）
     banners: [
-      { id: 1, image: '/images/banner-1.png', link: '/pages/about/about', linkType: 'navigate' },
-      { id: 2, image: '/images/banner-2.png', link: '/pages/category/category', linkType: 'tab' },
-      { id: 3, image: '/images/banner-3.png', link: '/pages/category/category', linkType: 'tab' }
+      { id: 1, image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/banner-images/banner-1.png', link: '/pages/about/about', linkType: 'navigate' },
+      { id: 2, image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/banner-images/banner-2.png', link: '/pages/category/category', linkType: 'tab' },
+      { id: 3, image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/banner-images/banner-3.png', link: '/pages/category/category', linkType: 'tab' }
     ],
     currentBanner: 0,
     
@@ -41,10 +41,10 @@ Component({
     
     // 热销/推荐商品
     hotProducts: [
-      { id: '1', name: '高档真丝寿衣七件套', image: '/images/default-product.png', sales: 328 },
-      { id: '2', name: '天然玉石骨灰盒', image: '/images/default-product.png', sales: 256 },
-      { id: '3', name: '鲜花花圈精选款', image: '/images/default-product.png', sales: 512 },
-      { id: '4', name: '祭祀用品套装', image: '/images/default-product.png', sales: 892 }
+      { id: '1', name: '高档真丝寿衣七件套', image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png', sales: 328 },
+      { id: '2', name: '天然玉石骨灰盒', image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png', sales: 256 },
+      { id: '3', name: '鲜花花圈精选款', image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png', sales: 512 },
+      { id: '4', name: '祭祀用品套装', image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png', sales: 892 }
     ] as HotProduct[],
     
     // 服务特色
@@ -107,10 +107,10 @@ Component({
         // 失败时使用默认数据
         this.setData({
           hotProducts: [
-            { id: '1', name: '高档真丝寿衣七件套', image: '/images/default-product.png', sales: 328 },
-            { id: '2', name: '天然玉石骨灰盒', image: '/images/default-product.png', sales: 256 },
-            { id: '3', name: '鲜花花圈精选款', image: '/images/default-product.png', sales: 512 },
-            { id: '4', name: '祭祀用品套装', image: '/images/default-product.png', sales: 892 }
+            { id: '1', name: '高档真丝寿衣七件套', image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png', sales: 328 },
+            { id: '2', name: '天然玉石骨灰盒', image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png', sales: 256 },
+            { id: '3', name: '鲜花花圈精选款', image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png', sales: 512 },
+            { id: '4', name: '祭祀用品套装', image: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/miniapp/brand-images/default-product.png', sales: 892 }
           ]
         })
       }
