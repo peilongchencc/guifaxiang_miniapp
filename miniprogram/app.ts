@@ -56,9 +56,8 @@ App<IAppOption>({
 
     // 登录
     wx.login({
-      success: res => {
-        console.log(res.code)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      success: (_res) => {
+        // 发送 _res.code 到后台换取 openId, sessionKey, unionId
       },
     })
 

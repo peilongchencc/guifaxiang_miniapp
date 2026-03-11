@@ -19,7 +19,7 @@ interface CartItem {
 const DELETE_BTN_WIDTH = 160  // 删除按钮宽度 (rpx)
 const SWIPE_THRESHOLD = 60   // 触发阈值 (rpx)
 
-// 临时变量，用于记录滑动状态
+// 模块级滑动状态变量（避免在 Component data 中频繁 setData）
 let startX = 0
 let startOffsetX = 0
 let touchIndex = -1

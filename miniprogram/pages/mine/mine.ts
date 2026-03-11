@@ -203,7 +203,6 @@ Component({
           appInstance.syncCartAfterLogin(),
           appInstance.syncFavoritesAfterLogin()
         ])
-        console.log('数据同步完成')
       } catch (err) {
         console.error('数据同步失败:', err)
       }
