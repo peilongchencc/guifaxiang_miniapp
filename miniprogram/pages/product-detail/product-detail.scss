@@ -454,6 +454,7 @@ page {
     flex: 1;
     padding: 30rpx;
     overflow-y: auto;
+    box-sizing: border-box;
 
     .spec-group {
       margin-bottom: 30rpx;
