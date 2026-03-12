@@ -330,7 +330,7 @@ Component({
             if (order) {
               // 先跳转，再更新购物车数据（在 pageLifetimes.show 中会自动刷新）
               wx.navigateTo({
-                url: `/pages/order-detail/order-detail?id=${order.id}&fromSubmit=1`,
+                url: `/subpackages/orders/order-detail/order-detail?id=${order.id}&fromSubmit=1`,
                 complete: () => {
                   // 跳转完成后重置状态
                   this.setData({ isSubmitting: false })

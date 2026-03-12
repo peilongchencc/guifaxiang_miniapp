@@ -131,7 +131,7 @@ Component<OrdersInstance>({
     // 跳转订单详情
     goToDetail(e: WechatMiniprogram.TouchEvent) {
       const orderId = e.currentTarget.dataset.id as string
-      wx.navigateTo({ url: `/pages/order-detail/order-detail?id=${orderId}` })
+      wx.navigateTo({ url: `/subpackages/orders/order-detail/order-detail?id=${orderId}` })
     },
 
     // 返回上一页

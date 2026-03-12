@@ -118,7 +118,7 @@ Component({
     goToDetail(e: WechatMiniprogram.TouchEvent) {
       const { item } = e.currentTarget.dataset
       wx.navigateTo({ 
-        url: `/pages/product-detail/product-detail?id=${item.id}` 
+        url: `/subpackages/user/product-detail/product-detail?id=${item.id}` 
       })
     },
 

@@ -3,16 +3,40 @@
     "pages/home/home",
     "pages/category/category",
     "pages/cart/cart",
-    "pages/mine/mine",
-    "pages/orders/orders",
-    "pages/order-detail/order-detail",
-    "pages/product-detail/product-detail",
-    "pages/favorites/favorites",
-    "pages/footprints/footprints",
-    "pages/address/address",
-    "pages/faq/faq",
-    "pages/about/about"
+    "pages/mine/mine"
   ],
+  "subPackages": [
+    {
+      "root": "subpackages/orders",
+      "name": "orders",
+      "pages": [
+        "orders/orders",
+        "order-detail/order-detail"
+      ]
+    },
+    {
+      "root": "subpackages/user",
+      "name": "user",
+      "pages": [
+        "product-detail/product-detail",
+        "favorites/favorites",
+        "footprints/footprints",
+        "address/address",
+        "faq/faq",
+        "about/about"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/mine/mine": {
+      "network": "all",
+      "packages": ["orders", "user"]
+    },
+    "pages/home/home": {
+      "network": "all",
+      "packages": ["user"]
+    }
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"

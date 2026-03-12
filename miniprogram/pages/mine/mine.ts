@@ -253,18 +253,18 @@ Component({
 
     // 我的订单（全部）
     goToOrders() {
-      wx.navigateTo({ url: '/pages/orders/orders' })
+      wx.navigateTo({ url: '/subpackages/orders/orders/orders' })
     },
 
     // 跳转至指定状态的订单列表
     goToOrdersByStatus(e: WechatMiniprogram.CustomEvent) {
       const status = e.currentTarget.dataset.status as string
-      wx.navigateTo({ url: `/pages/orders/orders?status=${status}` })
+      wx.navigateTo({ url: `/subpackages/orders/orders/orders?status=${status}` })
     },
 
     // 我的收藏
     goToFavorites() {
-      wx.navigateTo({ url: '/pages/favorites/favorites' })
+      wx.navigateTo({ url: '/subpackages/user/favorites/favorites' })
     },
 
     // 我的足迹
@@ -273,22 +273,22 @@ Component({
         showToast({ title: '请先登录', type: 'none' })
         return
       }
-      wx.navigateTo({ url: '/pages/footprints/footprints' })
+      wx.navigateTo({ url: '/subpackages/user/footprints/footprints' })
     },
 
     // 收货地址
     goToAddress() {
-      wx.navigateTo({ url: '/pages/address/address' })
+      wx.navigateTo({ url: '/subpackages/user/address/address' })
     },
 
     // 常见问题
     goToFAQ() {
-      wx.navigateTo({ url: '/pages/faq/faq' })
+      wx.navigateTo({ url: '/subpackages/user/faq/faq' })
     },
 
     // 关于我们
     goToAbout() {
-      wx.navigateTo({ url: '/pages/about/about' })
+      wx.navigateTo({ url: '/subpackages/user/about/about' })
     },
 
     /**

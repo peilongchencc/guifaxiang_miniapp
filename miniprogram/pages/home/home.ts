@@ -175,7 +175,7 @@ Component({
     onProductTap(e: WechatMiniprogram.TouchEvent) {
       const { id, name, image } = e.currentTarget.dataset
       wx.navigateTo({
-        url: `/pages/product-detail/product-detail?id=${id}&name=${encodeURIComponent(name)}&image=${encodeURIComponent(image)}`
+        url: `/subpackages/user/product-detail/product-detail?id=${id}&name=${encodeURIComponent(name)}&image=${encodeURIComponent(image)}`
       })
     },
 

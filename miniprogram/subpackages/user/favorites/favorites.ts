@@ -44,7 +44,7 @@ Component({
     goToDetail(e: WechatMiniprogram.TouchEvent) {
       const { item } = e.currentTarget.dataset
       const params = `id=${item.id}&name=${encodeURIComponent(item.name)}&image=${encodeURIComponent(item.image)}`
-      wx.navigateTo({ url: `/pages/product-detail/product-detail?${params}` })
+      wx.navigateTo({ url: `/subpackages/user/product-detail/product-detail?${params}` })
     },
 
     /**
