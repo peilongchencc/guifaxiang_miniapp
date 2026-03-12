@@ -8,7 +8,7 @@ import {
   deleteAddressApi, 
   setDefaultAddressApi,
   type AddressData 
-} from '/utils/address-api'
+} from '../../../utils/address-api'
 
 Component({
   data: {

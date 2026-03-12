@@ -1,10 +1,10 @@
 // product-detail.ts
 // 商品详情页 - 从API获取数据
-import { showToast } from '/utils/toast'
+import { showToast } from '../../../utils/toast'
 
-import { get } from '/utils/request'
-import { addFootprintApi } from '/utils/footprint-api'
-import { checkFavoriteApi, addFavoriteApi, removeFavoriteApi } from '/utils/favorite-api'
+import { get } from '../../../utils/request'
+import { addFootprintApi } from '../../../utils/footprint-api'
+import { checkFavoriteApi, addFavoriteApi, removeFavoriteApi } from '../../../utils/favorite-api'
 
 const app = getApp<IAppOption>()
 

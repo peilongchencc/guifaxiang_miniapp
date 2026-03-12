@@ -1,6 +1,6 @@
 // orders.ts
-import { showToast } from '/utils/toast'
-import { formatTime } from '/utils/util'
+import { showToast } from '../../../utils/toast'
+import { formatTime } from '../../../utils/util'
 
 const app = getApp<IAppOption>()
 

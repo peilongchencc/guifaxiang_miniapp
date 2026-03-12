@@ -1,7 +1,7 @@
 // order-detail.ts
-import { showToast } from '/utils/toast'
-import { formatTime } from '/utils/util'
-import { fetchOrderDetail, cancelOrderApi, confirmReceiveApi } from '/utils/order-api'
+import { showToast } from '../../../utils/toast'
+import { formatTime } from '../../../utils/util'
+import { fetchOrderDetail, cancelOrderApi, confirmReceiveApi } from '../../../utils/order-api'
 
 const app = getApp<IAppOption>()
 
