@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 870 560" fill="none" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 
-  <!-- dome lid top -->
-  <path d="M38,148 L38,98 C38,28 138,20 435,20 C732,20 832,28 832,98 L832,148 Z"/>
+  <!-- dome lid -->
+  <path d="M1,8 L1,6.5 C1,4 3.5,4 12,4 C20.5,4 23,4 23,6.5 L23,8 Z"/>
 
-  <!-- body outline L-shape: main body + lower-left equipment bay -->
-  <path d="M38,148 L38,465 L200,465 L200,432 L832,432 L832,148"/>
+  <!-- body L-shape: main body + lower-left equipment bay -->
+  <path d="M1,8 L1,19 L5.5,19 L5.5,18 L23,18 L23,8"/>
 
-  <!-- left latch: horizontal bar + vertical stem -->
-  <line x1="56" y1="140" x2="106" y2="140"/>
-  <rect x="69" y="140" width="24" height="46" rx="2"/>
+  <!-- left latch: bar + stem -->
+  <line x1="1.8" y1="7.5" x2="4.2" y2="7.5"/>
+  <rect x="2.3" y="7.5" width="1.4" height="2.2" rx="0.2"/>
 
-  <!-- right latch: horizontal bar + vertical stem -->
-  <line x1="764" y1="140" x2="814" y2="140"/>
-  <rect x="777" y="140" width="24" height="46" rx="2"/>
+  <!-- right latch: bar + stem -->
+  <line x1="19.8" y1="7.5" x2="22.2" y2="7.5"/>
+  <rect x="20.3" y="7.5" width="1.4" height="2.2" rx="0.2"/>
 
   <!-- control panel window (upper-left of body) -->
-  <rect x="50" y="170" width="72" height="50" rx="3"/>
+  <rect x="1.5" y="9.2" width="2.5" height="1.8" rx="0.2"/>
 
-  <!-- ventilation grilles (3 horizontal lines, lower-left) -->
-  <line x1="50" y1="320" x2="122" y2="320"/>
-  <line x1="50" y1="342" x2="122" y2="342"/>
-  <line x1="50" y1="364" x2="122" y2="364"/>
+  <!-- ventilation grilles -->
+  <line x1="1.5" y1="14" x2="4.5" y2="14"/>
+  <line x1="1.5" y1="15" x2="4.5" y2="15"/>
+  <line x1="1.5" y1="16" x2="4.5" y2="16"/>
 
   <!-- left caster wheel -->
-  <circle cx="128" cy="490" r="50"/>
+  <circle cx="3.5" cy="21" r="1.5"/>
 
   <!-- right caster wheel -->
-  <circle cx="742" cy="490" r="50"/>
+  <circle cx="20.5" cy="21" r="1.5"/>
 
 </svg>
