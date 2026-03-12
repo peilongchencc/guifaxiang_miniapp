@@ -20,7 +20,7 @@
 <scroll-view class="scrollarea" scroll-y type="list" enhanced show-scrollbar="{{false}}">
   <!-- 空状态 -->
   <view class="empty-state" wx:if="{{filteredList.length === 0}}">
-    <image class="empty-image" src="/images/cart-empty.svg" mode="aspectFit"></image>
+    <image class="empty-image" src="/images/illustrations/cart-empty.svg" mode="aspectFit"></image>
     <text class="empty-text">暂无订单记录</text>
   </view>
 

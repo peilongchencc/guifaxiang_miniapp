@@ -10,7 +10,7 @@
   <view class="favorites-container">
     <!-- 空状态 -->
     <view wx:if="{{favoriteList.length === 0}}" class="empty-state">
-      <image class="empty-icon" src="/images/cart-empty.svg" mode="aspectFit"></image>
+      <image class="empty-icon" src="/images/illustrations/cart-empty.svg" mode="aspectFit"></image>
       <text class="empty-text">暂无收藏商品</text>
       <view class="go-shopping-btn" bindtap="goShopping">去逛逛</view>
     </view>
