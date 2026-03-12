@@ -33,7 +33,7 @@ Component({
       { id: 2, name: '骨灰盒', icon: '/images/icons/urn.svg' },
       { id: 3, name: '花圈', icon: '/images/icons/wreath.svg' },
       { id: 4, name: '祭祀用品', icon: '/images/icons/ritual.svg' },
-      { id: 5, name: '丧葬服务', icon: '/images/icons/funeral-service.svg' },
+      { id: 5, name: '冰棺', icon: '/images/icons/coffin.svg' },
       { id: 6, name: '纸扎用品', icon: '/images/icons/paper.svg' },
       { id: 7, name: '香烛', icon: '/images/icons/incense.svg' },
       { id: 8, name: '更多', icon: '/images/icons/more.svg' }
