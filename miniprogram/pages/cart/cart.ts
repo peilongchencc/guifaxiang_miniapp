@@ -1,6 +1,7 @@
 // cart.ts
 // 购物车页面 - 展示已选商品，支持修改数量、删除、提交订单
 import { showToast } from '../../utils/toast'
+import type { AddressData } from '../../utils/address-api'
 
 const cartApp = getApp<IAppOption>()
 
@@ -32,18 +33,21 @@ Component({
     selectAll: true,
     totalCount: 0,
     remark: '',
-    isSubmitting: false  // 提交中状态，防止显示空购物车
+    isSubmitting: false,  // 提交中状态，防止显示空购物车
+    selectedAddress: null as AddressData | null
   },
 
   lifetimes: {
     attached() {
       this.loadCartItems()
+      this.loadDefaultAddress()
     }
   },
 
   pageLifetimes: {
     show() {
       this.loadCartItems()
+      this.loadDefaultAddress()
     }
   },
 
@@ -294,6 +298,37 @@ Component({
       this.setData({ remark: e.detail.value })
     },
 
+    // 加载默认收货地址
+    loadDefaultAddress() {
+      // 优先使用已选中的地址（页面跳转返回时保留），其次使用默认地址
+      const addressList: AddressData[] = wx.getStorageSync('addressList') || []
+      if (addressList.length === 0) {
+        this.setData({ selectedAddress: null })
+        return
+      }
+      // 当前已有选中地址时，用同样 id 刷新一遍（以防地址被编辑）
+      const current = this.data.selectedAddress
+      if (current) {
+        const refreshed = addressList.find(a => a.id === current.id)
+        if (refreshed) {
+          this.setData({ selectedAddress: refreshed })
+          return
+        }
+      }
+      const defaultAddr = addressList.find(a => a.isDefault) || addressList[0]
+      this.setData({ selectedAddress: defaultAddr })
+    },
+
+    // 跳转地址管理页（选择地址）
+    goToAddress() {
+      wx.navigateTo({ url: '/subpackages/user/address/address' })
+    },
+
+    // 地址页选择回调（由 address.ts 的 selectAddress 方法触发）
+    onAddressSelected(address: AddressData) {
+      this.setData({ selectedAddress: address })
+    },
+
     // 提交订单
     submitOrder() {
       if (!cartApp.globalData.isLoggedIn) {
@@ -312,42 +347,63 @@ Component({
       }
 
       const selectedItems = this.data.cartItems.filter(item => item.selected)
-      
       if (selectedItems.length === 0) {
         showToast({ title: '请选择商品', type: 'none' })
         return
       }
 
+      // 校验收货地址
+      if (!this.data.selectedAddress) {
+        wx.showModal({
+          title: '请添加收货地址',
+          content: '提交订单需要填写收货地址，是否前往添加？',
+          confirmText: '去添加',
+          cancelText: '取消',
+          success: (res) => {
+            if (res.confirm) {
+              wx.navigateTo({ url: '/subpackages/user/address/address' })
+            }
+          }
+        })
+        return
+      }
+
+      const addr = this.data.selectedAddress
+      const addressText = `${addr.provinceName}${addr.cityName}${addr.countyName}${addr.detailInfo}`
+
       wx.showModal({
         title: '确认提交订单',
-        content: '提交后我们会尽快联系您确认订单详情和价格',
+        content: `收货人：${addr.userName}  ${addr.telNumber}\n地址：${addressText}\n\n提交后我们会尽快联系您确认订单详情和价格`,
         confirmText: '确认提交',
         success: async (res) => {
           if (res.confirm) {
             // 设置提交中状态，防止显示空购物车
             this.setData({ isSubmitting: true })
-            
+
             // 只提交选中的商品
             const itemsToSubmit = selectedItems.map(({ selected, offsetX, swiped, ...rest }) => rest)
-            
+
             // 临时替换全局购物车为选中商品
             cartApp.globalData.cartItems = itemsToSubmit
-            
-            const order = await cartApp.submitOrder(this.data.remark)
-            
+
+            const order = await cartApp.submitOrder(
+              this.data.remark,
+              addr.userName,
+              addr.telNumber,
+              addressText
+            )
+
             // 恢复未选中的商品到购物车
             const unselectedItems = this.data.cartItems
               .filter(item => !item.selected)
               .map(({ selected, offsetX, swiped, ...rest }) => rest)
             cartApp.globalData.cartItems = unselectedItems
             wx.setStorageSync('cartItems', unselectedItems)
-            
+
             if (order) {
-              // 先跳转，再更新购物车数据（在 pageLifetimes.show 中会自动刷新）
               wx.navigateTo({
                 url: `/subpackages/orders/order-detail/order-detail?id=${order.id}&fromSubmit=1`,
                 complete: () => {
-                  // 跳转完成后重置状态
                   this.setData({ isSubmitting: false })
                 }
               })

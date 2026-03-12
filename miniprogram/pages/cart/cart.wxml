@@ -82,6 +82,27 @@
         </view>
       </view>
 
+      <!-- 收货地址 -->
+      <view class="address-section" bindtap="goToAddress">
+        <view class="address-icon-wrap">
+          <image class="address-icon" src="/images/icons/location.svg" mode="aspectFit"></image>
+        </view>
+        <!-- 已有地址 -->
+        <view class="address-info" wx:if="{{selectedAddress}}">
+          <view class="address-name-row">
+            <text class="address-name">{{selectedAddress.userName}}</text>
+            <text class="address-phone">{{selectedAddress.telNumber}}</text>
+            <text class="address-default-tag" wx:if="{{selectedAddress.isDefault}}">默认</text>
+          </view>
+          <text class="address-detail">{{selectedAddress.provinceName}}{{selectedAddress.cityName}}{{selectedAddress.countyName}}{{selectedAddress.detailInfo}}</text>
+        </view>
+        <!-- 无地址提示 -->
+        <view class="address-empty" wx:else>
+          <text class="address-empty-text">请添加收货地址</text>
+        </view>
+        <image class="address-arrow" src="/images/icons/arrow-right.svg" mode="aspectFit"></image>
+      </view>
+
       <!-- 备注输入 -->
       <view class="remark-section" bindtap="resetAllSwipedItems">
         <text class="remark-label">订单备注</text>

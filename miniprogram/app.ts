@@ -164,12 +164,17 @@ App<IAppOption>({
   },
 
   // 提交订单（将购物车转为订单），必须在已登录状态下调用
-  async submitOrder(remark?: string): Promise<IOrder | null> {
+  async submitOrder(
+    remark?: string,
+    contactName?: string,
+    contactPhone?: string,
+    address?: string
+  ): Promise<IOrder | null> {
     if (!this.globalData.isLoggedIn) return null
     if (this.globalData.cartItems.length === 0) return null
 
     const items = [...this.globalData.cartItems]
-    const result = await submitOrderApi(items, remark)
+    const result = await submitOrderApi(items, remark, contactName, contactPhone, address)
     if (result.success && result.orderId) {
       const order: IOrder = {
         id: result.orderId,
