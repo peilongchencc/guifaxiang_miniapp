@@ -39,10 +39,10 @@
   <view class="content-section">
 
     <!-- 公司简介 -->
+    <view class="section-header">
+      <text class="section-title">公司简介</text>
+    </view>
     <view class="info-card">
-      <view class="section-header">
-        <text class="section-title">公司简介</text>
-      </view>
       <view class="card-text card-lead">
         贵发祥是一家深耕殡葬行业逾30年的专业批发服务平台，凭借丰富的行业积累和稳定的供应链资源，为全国各地的殡仪馆、殡葬用品店、公墓及陵园提供可靠的产品与服务。
       </view>
@@ -55,10 +55,10 @@
     </view>
 
     <!-- 核心价值观 -->
+    <view class="section-header">
+      <text class="section-title">核心价值观</text>
+    </view>
     <view class="info-card info-card-light">
-      <view class="section-header">
-        <text class="section-title">核心价值观</text>
-      </view>
       <view class="values-grid">
         <view class="value-card">
           <view class="value-icon-wrap">
@@ -92,10 +92,10 @@
     </view>
 
     <!-- 服务优势 -->
+    <view class="section-header">
+      <text class="section-title">服务优势</text>
+    </view>
     <view class="info-card info-card-dark">
-      <view class="section-header">
-        <text class="section-title section-title-white">服务优势</text>
-      </view>
       <view class="advantage-list">
         <view class="advantage-item">
           <view class="advantage-num">01</view>
