@@ -1,6 +1,6 @@
 // favorites.ts
 // 我的收藏页面
-import { showToast } from '../../utils/toast'
+import { showToast } from '/utils/toast'
 
 const favApp = getApp<IAppOption>()
 

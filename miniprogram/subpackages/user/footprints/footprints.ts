@@ -1,8 +1,8 @@
 // footprints.ts
 // 我的足迹页面
-import { showToast } from '../../utils/toast'
+import { showToast } from '/utils/toast'
 
-import { fetchFootprints, removeFootprintApi, clearFootprintsApi } from '../../utils/footprint-api'
+import { fetchFootprints, removeFootprintApi, clearFootprintsApi } from '/utils/footprint-api'
 
 const footprintApp = getApp<IAppOption>()
 
