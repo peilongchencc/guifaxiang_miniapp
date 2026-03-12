@@ -5,6 +5,7 @@ Component({
   data: {
     contact: {
       phone: '13895617366',
+      phoneBackup: '13389582060',
       wechat: 'ccx13895617366',
       wechatQrcode: 'https://funeral-supplies.oss-cn-beijing.aliyuncs.com/wechat/wechat-qrcode.png',
       address: '宁夏银川市兴庆区立达国际建材城39号楼2层203室'
@@ -13,10 +14,20 @@ Component({
   },
 
   methods: {
-    // 拨打电话
+    // 拨打服务热线
     callPhone() {
       wx.makePhoneCall({
         phoneNumber: this.data.contact.phone,
+        fail: () => {
+          showToast({ title: '拨打失败', type: 'none' })
+        }
+      })
+    },
+
+    // 拨打备用热线
+    callBackupPhone() {
+      wx.makePhoneCall({
+        phoneNumber: this.data.contact.phoneBackup,
         fail: () => {
           showToast({ title: '拨打失败', type: 'none' })
         }
