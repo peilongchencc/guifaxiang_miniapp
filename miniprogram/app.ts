@@ -163,43 +163,27 @@ App<IAppOption>({
     this.updateCartBadge()
   },
 
-  // 提交订单（将购物车转为订单）
+  // 提交订单（将购物车转为订单），必须在已登录状态下调用
   async submitOrder(remark?: string): Promise<IOrder | null> {
+    if (!this.globalData.isLoggedIn) return null
     if (this.globalData.cartItems.length === 0) return null
-    
+
     const items = [...this.globalData.cartItems]
-    
-    // 已登录则提交到云端
-    if (this.globalData.isLoggedIn) {
-      const result = await submitOrderApi(items, remark)
-      if (result.success && result.orderId) {
-        const order: IOrder = {
-          id: result.orderId,
-          items,
-          createTime: Date.now(),
-          status: 'pending',
-          remark
-        }
-        this.globalData.orderHistory.unshift(order)
-        wx.setStorageSync('orderHistory', this.globalData.orderHistory)
-        this.clearCart()
-        return order
+    const result = await submitOrderApi(items, remark)
+    if (result.success && result.orderId) {
+      const order: IOrder = {
+        id: result.orderId,
+        items,
+        createTime: Date.now(),
+        status: 'pending',
+        remark
       }
-      return null
+      this.globalData.orderHistory.unshift(order)
+      wx.setStorageSync('orderHistory', this.globalData.orderHistory)
+      this.clearCart()
+      return order
     }
-    
-    // 未登录则本地存储
-    const order: IOrder = {
-      id: `ORD${Date.now()}`,
-      items,
-      createTime: Date.now(),
-      status: 'pending',
-      remark
-    }
-    this.globalData.orderHistory.unshift(order)
-    wx.setStorageSync('orderHistory', this.globalData.orderHistory)
-    this.clearCart()
-    return order
+    return null
   },
 
   // 从云端刷新订单列表

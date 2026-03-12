@@ -63,6 +63,19 @@ export function clearToken(): void {
   wx.removeStorageSync('refresh_token')
 }
 
+/**
+ * 清除所有登录状态（Storage + globalData），Token 失效时统一调用
+ */
+function clearLoginState(): void {
+  clearToken()
+  wx.removeStorageSync('isLoggedIn')
+  wx.removeStorageSync('userInfo')
+  const appInstance = getApp<IAppOption>()
+  if (appInstance) {
+    appInstance.globalData.isLoggedIn = false
+    appInstance.globalData.userInfo = null
+  }
+}
 
 /**
  * 订阅 Token 刷新完成事件
@@ -105,17 +118,12 @@ async function refreshToken(): Promise<string | null> {
           setRefreshToken(response.data.refresh_token)
           resolve(response.data.access_token)
         } else {
-          // 刷新失败，清除登录状态
-          clearToken()
-          wx.removeStorageSync('isLoggedIn')
-          wx.removeStorageSync('userInfo')
+          clearLoginState()
           resolve(null)
         }
       },
       fail: () => {
-        clearToken()
-        wx.removeStorageSync('isLoggedIn')
-        wx.removeStorageSync('userInfo')
+        clearLoginState()
         resolve(null)
       }
     })
@@ -198,10 +206,7 @@ export function request<T = unknown>(options: RequestOptions): Promise<ApiRespon
           if (retryResult) {
             resolve(retryResult)
           } else {
-            // 刷新失败，清除登录状态
-            clearToken()
-            wx.removeStorageSync('isLoggedIn')
-            wx.removeStorageSync('userInfo')
+            clearLoginState()
             reject(new Error(response.message || '登录已过期，请重新登录'))
           }
         } else {

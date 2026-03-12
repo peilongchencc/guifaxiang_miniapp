@@ -253,11 +253,19 @@ Component({
 
     // 我的订单（全部）
     goToOrders() {
+      if (!appInstance.globalData.isLoggedIn) {
+        this.setData({ showLoginPopup: true })
+        return
+      }
       wx.navigateTo({ url: '/subpackages/orders/orders/orders' })
     },
 
     // 跳转至指定状态的订单列表
     goToOrdersByStatus(e: WechatMiniprogram.CustomEvent) {
+      if (!appInstance.globalData.isLoggedIn) {
+        this.setData({ showLoginPopup: true })
+        return
+      }
       const status = e.currentTarget.dataset.status as string
       wx.navigateTo({ url: `/subpackages/orders/orders/orders?status=${status}` })
     },
@@ -270,7 +278,7 @@ Component({
     // 我的足迹
     goToFootprints() {
       if (!appInstance.globalData.isLoggedIn) {
-        showToast({ title: '请先登录', type: 'none' })
+        this.setData({ showLoginPopup: true })
         return
       }
       wx.navigateTo({ url: '/subpackages/user/footprints/footprints' })
@@ -278,6 +286,10 @@ Component({
 
     // 收货地址
     goToAddress() {
+      if (!appInstance.globalData.isLoggedIn) {
+        this.setData({ showLoginPopup: true })
+        return
+      }
       wx.navigateTo({ url: '/subpackages/user/address/address' })
     },
 

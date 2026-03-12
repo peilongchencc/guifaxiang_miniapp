@@ -274,55 +274,28 @@ Component({
       }
     },
 
-    /** 加入购物车 */
+    /** 加入购物车（无需登录，本地暂存；提交订单时才需要登录） */
     addToCart() {
-      const { product, quantity, isAddingToCart, isLoggedIn } = this.data
+      const { product, quantity, isAddingToCart } = this.data
       if (!product || isAddingToCart) return
 
-      if (!isLoggedIn) {
-        wx.showModal({
-          title: '提示',
-          content: '请先登录后再操作',
-          confirmText: '去登录',
-          success: (res) => {
-            if (res.confirm) wx.switchTab({ url: '/pages/mine/mine' })
-          }
-        })
-        return
-      }
-
       this.setData({ isAddingToCart: true })
-
       app.addToCart({
         id: product.id,
         name: product.name,
         image: product.images[0] || product.image,
         quantity: quantity
       })
-
       showToast({ title: '已加入购物车', duration: 800 })
-
       setTimeout(() => {
         this.setData({ isAddingToCart: false, showSpecPopup: false })
       }, 800)
     },
 
-    /** 立即购买 */
+    /** 立即购买（无需登录，加入购物车后跳转；提交订单时才需要登录） */
     buyNow() {
-      const { product, quantity, isLoggedIn } = this.data
+      const { product, quantity } = this.data
       if (!product) return
-
-      if (!isLoggedIn) {
-        wx.showModal({
-          title: '提示',
-          content: '请先登录后再操作',
-          confirmText: '去登录',
-          success: (res) => {
-            if (res.confirm) wx.switchTab({ url: '/pages/mine/mine' })
-          }
-        })
-        return
-      }
 
       app.addToCart({
         id: product.id,
@@ -330,7 +303,6 @@ Component({
         image: product.images[0] || product.image,
         quantity: quantity
       })
-
       wx.switchTab({ url: '/pages/cart/cart' })
     },
 

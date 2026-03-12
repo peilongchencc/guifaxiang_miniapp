@@ -296,6 +296,21 @@ Component({
 
     // 提交订单
     submitOrder() {
+      if (!cartApp.globalData.isLoggedIn) {
+        wx.showModal({
+          title: '请先登录',
+          content: '提交订单需要登录账号，登录后订单将同步至您的账户',
+          confirmText: '去登录',
+          cancelText: '取消',
+          success: (res) => {
+            if (res.confirm) {
+              wx.switchTab({ url: '/pages/mine/mine' })
+            }
+          }
+        })
+        return
+      }
+
       const selectedItems = this.data.cartItems.filter(item => item.selected)
       
       if (selectedItems.length === 0) {

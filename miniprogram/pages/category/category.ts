@@ -253,36 +253,17 @@ Component({
     },
 
     /**
-     * 加入购物车
+     * 加入购物车（无需登录，本地暂存；提交订单时才需要登录）
      */
     onAddToCart(e: WechatMiniprogram.CustomEvent) {
       const { id, name, image } = e.currentTarget.dataset
-      
-      const isLoggedIn = wx.getStorageSync('isLoggedIn') || false
-      if (!isLoggedIn) {
-        wx.showModal({
-          title: '提示',
-          content: '请先登录后再加入购物车',
-          confirmText: '去登录',
-          cancelText: '取消',
-          success: (res) => {
-            if (res.confirm) {
-              wx.switchTab({ url: '/pages/mine/mine' })
-            }
-          }
-        })
-        return
-      }
-      
       const app = getApp<IAppOption>()
-      const cartItem: ICartItem = {
+      app.addToCart({
         id: String(id),
         name,
         image,
         quantity: 1
-      }
-      app.addToCart(cartItem)
-      
+      })
       showToast({ title: '已加入购物车', duration: 800 })
     },
 
