@@ -4,8 +4,8 @@
   <!-- 棺身：与棺盖等宽 -->
   <rect x="3" y="4.5" width="18" height="4"/>
   <!-- 机身：比棺盖/棺身窄 -->
-  <rect x="5" y="8.5" width="14" height="3.5"/>
+  <rect x="5" y="8.5" width="14" height="2.5"/>
   <!-- 轮子：贴近机身两侧最外缘 -->
-  <circle cx="6" cy="13.5" r="1.2"/>
-  <circle cx="18" cy="13.5" r="1.2"/>
+  <circle cx="6" cy="12.5" r="1.2"/>
+  <circle cx="18" cy="12.5" r="1.2"/>
 </svg>
