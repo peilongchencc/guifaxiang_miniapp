@@ -31,7 +31,7 @@ Component({
     categories: [
       { id: 1, name: '寿衣',     icon: '/images/icons/garment.svg',  targetId: 'm-sy'  },
       { id: 2, name: '骨灰盒',   icon: '/images/icons/urn.svg',      targetId: 'ghh'   },
-      { id: 3, name: '寿衣配衣', icon: '/images/icons/hat.svg',      targetId: 'peiy'  },
+      { id: 3, name: '寿衣配衣', icon: '/images/icons/companion-robe.svg', targetId: 'peiy'  },
       { id: 4, name: '鞋帽枕袜', icon: '/images/icons/shoe.svg',     targetId: 'xhmz'  },
       { id: 5, name: '冰棺',     icon: '/images/icons/coffin.svg',   targetId: 'bg'    },
       { id: 6, name: '遗体覆盖', icon: '/images/icons/blanket.svg',  targetId: 'yiti'  },
