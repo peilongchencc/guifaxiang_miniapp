@@ -95,10 +95,10 @@
         data-id="{{item.id}}"
         bindtap="onToggleExpand"
       >
-        <view class="expand-btn-inner">
-          <text wx:if="{{!item.expanded}}" class="expand-btn-text">展开全部 {{item.total}} 款 ▾</text>
-          <text wx:else class="expand-btn-text">收起 ▴</text>
-        </view>
+        <view class="expand-btn-line"></view>
+        <text wx:if="{{!item.expanded}}" class="expand-btn-text">展开全部 {{item.total}} 款 ▾</text>
+        <text wx:else class="expand-btn-text">收起 ▴</text>
+        <view class="expand-btn-line"></view>
       </view>
     </view>
     
