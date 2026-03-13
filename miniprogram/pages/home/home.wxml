@@ -51,7 +51,7 @@
         wx:key="id" 
         class="category-item"
         bindtap="onCategoryTap"
-        data-id="{{item.id}}"
+        data-target-id="{{item.targetId}}"
       >
         <view class="category-icon-wrapper">
           <image class="category-icon" src="{{item.icon}}" mode="aspectFit"></image>

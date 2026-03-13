@@ -27,16 +27,16 @@ Component({
     ],
     currentBanner: 0,
     
-    // 商品分类入口
+    // 商品分类入口（targetId 对应分类页一级分类的 ID）
     categories: [
-      { id: 1, name: '寿衣', icon: '/images/icons/garment.svg' },
-      { id: 2, name: '骨灰盒', icon: '/images/icons/urn.svg' },
-      { id: 3, name: '寿帽', icon: '/images/icons/hat.svg' },
-      { id: 4, name: '寿鞋', icon: '/images/icons/shoe.svg' },
-      { id: 5, name: '冰棺', icon: '/images/icons/coffin.svg' },
-      { id: 6, name: '遗体覆盖', icon: '/images/icons/blanket.svg' },
-      { id: 7, name: '香烛', icon: '/images/icons/incense.svg' },
-      { id: 8, name: '更多', icon: '/images/icons/more.svg' }
+      { id: 1, name: '寿衣',     icon: '/images/icons/garment.svg',  targetId: 'm-sy'  },
+      { id: 2, name: '骨灰盒',   icon: '/images/icons/urn.svg',      targetId: 'ghh'   },
+      { id: 3, name: '寿衣配衣', icon: '/images/icons/hat.svg',      targetId: 'peiy'  },
+      { id: 4, name: '鞋帽枕袜', icon: '/images/icons/shoe.svg',     targetId: 'xhmz'  },
+      { id: 5, name: '冰棺',     icon: '/images/icons/coffin.svg',   targetId: 'bg'    },
+      { id: 6, name: '遗体覆盖', icon: '/images/icons/blanket.svg',  targetId: 'yiti'  },
+      { id: 7, name: '祭祀用品', icon: '/images/icons/incense.svg',  targetId: 'jisi'  },
+      { id: 8, name: '更多',     icon: '/images/icons/more.svg',     targetId: 'hot'   }
     ],
     
     // 热销/推荐商品
@@ -158,8 +158,11 @@ Component({
       }
     },
 
-    // 点击分类
-    onCategoryTap() {
+    // 点击分类 - 传递目标分类 ID，跳转后分类页自动定位到对应分类
+    onCategoryTap(e: WechatMiniprogram.TouchEvent) {
+      const targetId = e.currentTarget.dataset.targetId as string
+      const app = getApp<IAppOption>()
+      app.globalData.targetCategoryId = targetId
       wx.switchTab({ url: '/pages/category/category' })
     },
 
