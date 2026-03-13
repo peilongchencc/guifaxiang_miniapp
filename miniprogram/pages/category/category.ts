@@ -31,6 +31,8 @@ interface GroupedProducts {
   id: string
   subCategory: SubCategory
   products: Product[]
+  total: number
+  expanded: boolean
 }
 
 // API响应数据类型
@@ -63,6 +65,9 @@ Component({
     
     // 所有商品列表
     allProducts: [] as Product[],
+
+    // 搜索结果完整列表（用于搜索模式下的展开/收起）
+    searchResults: [] as Product[],
     
     // 当前显示的分组商品列表
     groupedProducts: [] as GroupedProducts[],
@@ -71,7 +76,10 @@ Component({
     isSearchMode: false,
 
     // 数据加载状态
-    isLoading: true
+    isLoading: true,
+
+    // 各二级分类的展开状态
+    expandedSubCategories: {} as Record<string, boolean>
   },
   
   lifetimes: {
@@ -184,7 +192,7 @@ Component({
         if (res.code === 200 && res.data) {
           const searchResults = res.data.products
           const grouped = this.groupProductsBySubCategory(searchResults)
-          this.setData({ groupedProducts: grouped, isLoading: false })
+          this.setData({ searchResults, groupedProducts: grouped, isLoading: false })
           
           if (searchResults.length === 0) {
             showToast({ title: '未找到相关商品', type: 'none', duration: 2000 })
@@ -203,7 +211,8 @@ Component({
       this.setData({
         currentCategoryId: categoryId,
         searchKeyword: '',
-        isSearchMode: false
+        isSearchMode: false,
+        expandedSubCategories: {}
       })
       this.filterProducts(categoryId)
     },
@@ -219,6 +228,7 @@ Component({
 
     // 将商品按二级分类分组
     groupProductsBySubCategory(products: Product[]): GroupedProducts[] {
+      const FOLD_THRESHOLD = 9
       const subCategoryMap = new Map<string, Product[]>()
       
       products.forEach(product => {
@@ -233,15 +243,33 @@ Component({
           (sc: SubCategory) => sc.id === subCategoryId
         )
         if (subCategory) {
+          const expanded = this.data.expandedSubCategories[subCategoryId] || false
           result.push({
             id: subCategoryId,
             subCategory,
-            products: prods
+            products: expanded ? prods : prods.slice(0, FOLD_THRESHOLD),
+            total: prods.length,
+            expanded
           })
         }
       })
       
       return result
+    },
+
+    // 展开/收起二级分类商品
+    onToggleExpand(e: WechatMiniprogram.CustomEvent) {
+      const subCategoryId = e.currentTarget.dataset.id as string
+      const expandedMap = { ...this.data.expandedSubCategories }
+      expandedMap[subCategoryId] = !expandedMap[subCategoryId]
+      this.setData({ expandedSubCategories: expandedMap })
+
+      if (this.data.isSearchMode) {
+        const grouped = this.groupProductsBySubCategory(this.data.searchResults)
+        this.setData({ groupedProducts: grouped })
+      } else {
+        this.filterProducts(this.data.currentCategoryId)
+      }
     },
     
     // 点击商品

@@ -87,6 +87,19 @@
           <text class="product-name">{{product.name}}</text>
         </view>
       </view>
+
+      <!-- 展开/收起按钮（超过9款时显示） -->
+      <view 
+        wx:if="{{item.total > 9}}"
+        class="expand-btn"
+        data-id="{{item.id}}"
+        bindtap="onToggleExpand"
+      >
+        <view class="expand-btn-inner">
+          <text wx:if="{{!item.expanded}}" class="expand-btn-text">展开全部 {{item.total}} 款 ▾</text>
+          <text wx:else class="expand-btn-text">收起 ▴</text>
+        </view>
+      </view>
     </view>
     
     <!-- 空状态 -->
